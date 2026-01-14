@@ -7,6 +7,7 @@ from datetime import datetime
 import os
 import requests
 from io import StringIO
+import time
 
 # CONFIGURAZIONE
 START_YEAR = 2016
@@ -132,348 +133,310 @@ def load_data():
             
     return full_historical_df
 
-# 2. FEATURE ENGINEERING AVANZATO
-def process_data(df):
-    print("\n--- Elaborazione Dati e Feature Engineering ---")
-    
-    # Mappa Tornei -> Nazione (Approssimativa per Major e Top events)
-    TOURNEY_COUNTRY_MAP = {
-        'Australian Open': 'AUS', 'Brisbane': 'AUS', 'Sydney': 'AUS', 'Adelaide': 'AUS', 'United Cup': 'AUS',
-        'Roland Garros': 'FRA', 'Paris Masters': 'FRA', 'Marseille': 'FRA', 'Montpellier': 'FRA', 'Lyon': 'FRA', 'Metz': 'FRA',
-        'Wimbledon': 'GBR', 'Queen\'s Club': 'GBR', 'Eastbourne': 'GBR',
-        'US Open': 'USA', 'Indian Wells': 'USA', 'Miami': 'USA', 'Cincinnati': 'USA', 'Washington': 'USA', 'Delray Beach': 'USA', 'Houston': 'USA', 'Atlanta': 'USA', 'Winston-Salem': 'USA', 'Dallas': 'USA',
-        'Rome': 'ITA', 'Rome Masters': 'ITA', 'Turin': 'ITA', 'Tour Finals': 'ITA',
-        'Madrid': 'ESP', 'Barcelona': 'ESP',
-        'Monte Carlo': 'MON', 
-        'Canada Masters': 'CAN', 'Toronto': 'CAN', 'Montreal': 'CAN',
-        'Shanghai': 'CHN', 'Beijing': 'CHN', 'Chengdu': 'CHN', 'Zhuhai': 'CHN',
-        'Tokyo': 'JPN',
-        'Halle': 'GER', 'Hamburg': 'GER', 'Munich': 'GER', 'Stuttgart': 'GER',
-        'Vienna': 'AUT', 'Kitzbuhel': 'AUT',
-        'Swiss Indoors': 'SUI', 'Gstaad': 'SUI', 'Geneva': 'SUI',
-        'Bastad': 'SWE', 'Stockholm': 'SWE',
-        'Umag': 'CRO',
-        'Estoril': 'POR',
-        'Rio de Janeiro': 'BRA',
-        'Buenos Aires': 'ARG', 'Cordoba': 'ARG',
-        'Santiago': 'CHI',
-        'Auckland': 'NZL',
-        'Dubai': 'UAE', 'Doha': 'QAT',
-        'Rotterdam': 'NED', 's-Hertogenbosch': 'NED',
-        'Antwerp': 'BEL'
-    }
-    
-    # Conversione data corretta
-    df['tourney_date'] = pd.to_datetime(df['tourney_date'], format='%Y%m%d', errors='coerce')
-    df = df.sort_values('tourney_date').reset_index(drop=True)
-    # Conversione data corretta
-    df['Date'] = pd.to_datetime(df['tourney_date'], format='%Y%m%d', errors='coerce')
-    df = df.sort_values('Date').reset_index(drop=True)
-    
-    # Rimuovi filtro Hard qui: processiamo tutto per l'Elo, filtriamo solo in append
-    # df = df[df['surface'] == 'Hard']
-    
-    # Pulizia base
-    utils_cols = [
-        'tourney_date', 'match_num', 'winner_id', 'loser_id', 
-        'winner_name', 'loser_name', 'winner_rank', 'loser_rank',
-        'winner_age', 'loser_age', 'winner_ht', 'loser_ht'
-    ]
-    df = df.dropna(subset=['winner_rank', 'loser_rank', 'winner_age', 'loser_age'])
-    
-    # --- Creazione Features Storiche (Rolling) ---
-    # Per fare questo in modo efficiente, dobbiamo ristrutturare il dataset 
-    # dal punto di vista dei giocatori, non dei match.
-    # Ma per il training XGBoost, ci serve riga = match.
-    # Quindi calcoliamo le stats "fino a quel giorno" per ogni match.
-    
-    # Mappe per tenere traccia dello storico
-    player_stats = {} # {player_id: {'wins': 0, 'losses': 0, 'last_matches': []}}
-    
-    def get_player_recent_form(pid):
-        stats = player_stats.get(pid, {'wins': 0, 'losses': 0, 'history': []})
-        total_matches = stats['wins'] + stats['losses']
-        win_rate = stats['wins'] / total_matches if total_matches > 0 else 0.0
-        
-        # Form ultime 10 partite
-        last_10 = stats['history'][-10:]
-        form_10 = sum(last_10) / len(last_10) if last_10 else 0.0
-        
-        return win_rate, form_10, total_matches
+# --- 2. ELABORAZIONE DATI (FEATURE ENGINEERING) ---
 
-    def update_player_stats(winner_id, loser_id):
-        # Update Winner
-        if winner_id not in player_stats: player_stats[winner_id] = {'wins': 0, 'losses': 0, 'history': []}
-        player_stats[winner_id]['wins'] += 1
-        player_stats[winner_id]['history'].append(1)
-        
-        # Update Loser
-        if loser_id not in player_stats: player_stats[loser_id] = {'wins': 0, 'losses': 0, 'history': []}
-        player_stats[loser_id]['losses'] += 1
-        player_stats[loser_id]['history'].append(0)
+# Mappa Tornei -> Nazione (Global)
+TOURNEY_COUNTRY_MAP = {
+    'Australian Open': 'AUS', 'Brisbane': 'AUS', 'Sydney': 'AUS', 'Adelaide': 'AUS', 'United Cup': 'AUS',
+    'Roland Garros': 'FRA', 'Paris Masters': 'FRA', 'Marseille': 'FRA', 'Montpellier': 'FRA', 'Lyon': 'FRA', 'Metz': 'FRA',
+    'Wimbledon': 'GBR', 'Queen\'s Club': 'GBR', 'Eastbourne': 'GBR',
+    'US Open': 'USA', 'Indian Wells': 'USA', 'Miami': 'USA', 'Cincinnati': 'USA', 'Washington': 'USA', 'Delray Beach': 'USA', 'Houston': 'USA', 'Atlanta': 'USA', 'Winston-Salem': 'USA', 'Dallas': 'USA',
+    'Rome': 'ITA', 'Rome Masters': 'ITA', 'Turin': 'ITA', 'Tour Finals': 'ITA',
+    'Madrid': 'ESP', 'Barcelona': 'ESP',
+    'Monte Carlo': 'MON', 
+    'Canada Masters': 'CAN', 'Toronto': 'CAN', 'Montreal': 'CAN',
+    'Shanghai': 'CHN', 'Beijing': 'CHN', 'Chengdu': 'CHN', 'Zhuhai': 'CHN',
+    'Tokyo': 'JPN',
+    'Halle': 'GER', 'Hamburg': 'GER', 'Munich': 'GER', 'Stuttgart': 'GER',
+    'Vienna': 'AUT', 'Kitzbuhel': 'AUT',
+    'Swiss Indoors': 'SUI', 'Gstaad': 'SUI', 'Geneva': 'SUI',
+    'Bastad': 'SWE', 'Stockholm': 'SWE',
+    'Umag': 'CRO',
+    'Estoril': 'POR',
+    'Rio de Janeiro': 'BRA',
+    'Buenos Aires': 'ARG', 'Cordoba': 'ARG',
+    'Santiago': 'CHI',
+    'Auckland': 'NZL',
+    'Dubai': 'UAE', 'Doha': 'QAT',
+    'Rotterdam': 'NED', 's-Hertogenbosch': 'NED',
+    'Antwerp': 'BEL'
+}
 
-    p1_h2h_wins, p2_h2h_wins = [], []
-    
-    # --- TRACKING DATES (FATIGUE) ---
-    last_match_date = {} # {player_id: datetime}
-    
-    # --- TRACKING PRESSURE (CLUTCH) ---
-    # {player_id: {'bp_saved': 0, 'bp_faced': 0, 'tb_won': 0, 'tb_total': 0, 'decider_won': 0, 'decider_total': 0}}
-    pressure_stats = {} 
-    
-    def get_pressure_stats(pid):
-        s = pressure_stats.get(pid, {'bp_saved': 0, 'bp_faced': 0, 'tb_won': 0, 'tb_total': 0, 'decider_won': 0, 'decider_total': 0})
-        
-        # BP Save %
-        bp_save_pct = s['bp_saved'] / s['bp_faced'] if s['bp_faced'] > 0 else 0.5 # Default 50%
-        
-        # TB Win %
-        tb_win_pct = s['tb_won'] / s['tb_total'] if s['tb_total'] > 0 else 0.5
-        
-        # Decider Win %
-        decider_win_pct = s['decider_won'] / s['decider_total'] if s['decider_total'] > 0 else 0.5
-        
-        return bp_save_pct, tb_win_pct, decider_win_pct
+def process_data(df, players_last_stats=None, predict_mode=False, tourney_country_map=None):
+    if tourney_country_map is None:
+        tourney_country_map = {}
 
-    def update_pressure_stats(winner_id, loser_id, row):
-        # Init
-        if winner_id not in pressure_stats: pressure_stats[winner_id] = {'bp_saved': 0, 'bp_faced': 0, 'tb_won': 0, 'tb_total': 0, 'decider_won': 0, 'decider_total': 0}
-        if loser_id not in pressure_stats: pressure_stats[loser_id] = {'bp_saved': 0, 'bp_faced': 0, 'tb_won': 0, 'tb_total': 0, 'decider_won': 0, 'decider_total': 0}
-        
-        w_s = pressure_stats[winner_id]
-        l_s = pressure_stats[loser_id]
-        
-        # 1. Break Points (Se disponibili)
-        if pd.notna(row['w_bpSaved']) and pd.notna(row['w_bpFaced']):
-            w_s['bp_saved'] += row['w_bpSaved']
-            w_s['bp_faced'] += row['w_bpFaced']
-        if pd.notna(row['l_bpSaved']) and pd.notna(row['l_bpFaced']):
-            l_s['bp_saved'] += row['l_bpSaved']
-            l_s['bp_faced'] += row['l_bpFaced']
-            
-        # 2. Tie-Breaks & Deciding Sets
-        score = str(row['score'])
-        if pd.notna(score) and score != 'nan':
-            sets = score.split(' ')
-            
-            # Tie-Breaks (es. 7-6, 6-7)
-            # Semplificazione: se c'è 7-6 o 6-7, assegniamo vittoria TB.
-            # Chi ha vinto il set?
-            # Esempio score: "6-7(4) 6-4 7-6(5)"
-            # Winner ha vinto 2 set, Loser 1 (in best of 3).
-            # Difficile fare parsing esatto senza logica complessa.
-            # Euristica: Contiamo parentesi "(.)" come TB giocati.
-            # Assegniamo TB vinti in base a chi ha vinto il match? No, impreciso.
-            # Facciamo parsing light:
-            w_sets_won = 0
-            l_sets_won = 0
-            
-            for s in sets:
-                if 'ret' in s or 'W/O' in s: continue
-                # Rimuovi parentesi punteggio TB per capire chi ha vinto il set
-                clean_s = s.split('(')[0]
-                if '-' in clean_s:
-                    try:
-                        g_w, g_l = map(int, clean_s.split('-'))
-                        # Tie Break detection
-                        if g_w == 7 and g_l == 6:
-                            w_s['tb_won'] += 1
-                            w_s['tb_total'] += 1
-                            l_s['tb_total'] += 1
-                        elif g_w == 6 and g_l == 7:
-                            l_s['tb_won'] += 1
-                            l_s['tb_total'] += 1
-                            w_s['tb_total'] += 1
-                        
-                        if g_w > g_l: w_sets_won += 1
-                        else: l_sets_won += 1
-                    except: pass
-            
-            # 3. Deciding Set
-            # Se winner ha vinto 2-1 (best of 3) o 3-2 (best of 5)
-            total_sets = w_sets_won + l_sets_won
-            if (row['best_of'] == 3 and total_sets == 3) or (row['best_of'] == 5 and total_sets == 5):
-                w_s['decider_won'] += 1
-                w_s['decider_total'] += 1
-                l_s['decider_total'] += 1
-
-    def get_days_since_last(pid, current_date):
-        if pid not in last_match_date:
-            return 30 # Default: riposato
-        delta = current_date - last_match_date[pid]
-        return delta.days
-        
-    def update_last_date(pid, date):
-        last_match_date[pid] = date
+    start_time = time.time()
     
-    # --- ELO RATINGS (GLOBAL & SURFACE) ---
-    elo_ratings = {}    # {player_id: rating}
-    elo_surface = {     # {surface: {player_id: rating}}
-        'Hard': {}, 'Clay': {}, 'Grass': {}, 'Carpet': {} 
-    }
-    
-    K_FACTOR = 20
-    INITIAL_ELO = 1500
-    
-    def get_elo(pid, surface=None):
-        if surface:
-            return elo_surface.get(surface, {}).get(pid, INITIAL_ELO)
-        return elo_ratings.get(pid, INITIAL_ELO)
-        
-    def update_elo(winner_id, loser_id, surface):
-        # 1. Global Elo
-        w_elo = get_elo(winner_id)
-        l_elo = get_elo(loser_id)
-        
-        expected_w = 1 / (1 + 10 ** ((l_elo - w_elo) / 400))
-        expected_l = 1 / (1 + 10 ** ((w_elo - l_elo) / 400))
-        
-        new_w = w_elo + K_FACTOR * (1 - expected_w)
-        new_l = l_elo + K_FACTOR * (0 - expected_l)
-        
-        elo_ratings[winner_id] = new_w
-        elo_ratings[loser_id] = new_l
-        
-        # 2. Surface Elo
-        if surface in elo_surface:
-            w_elo_s = get_elo(winner_id, surface)
-            l_elo_s = get_elo(loser_id, surface)
-            
-            exp_w_s = 1 / (1 + 10 ** ((l_elo_s - w_elo_s) / 400))
-            exp_l_s = 1 / (1 + 10 ** ((w_elo_s - l_elo_s) / 400))
-            
-            new_w_s = w_elo_s + K_FACTOR * (1 - exp_w_s)
-            new_l_s = l_elo_s + K_FACTOR * (0 - exp_l_s)
-            
-            elo_surface[surface][winner_id] = new_w_s
-            elo_surface[surface][loser_id] = new_l_s
-        
-    # Mappa H2H: tuple(sorted(id1, id2)) -> {id1: wins, id2: wins}
-    h2h_stats = {} 
+    # 1. Dizionari di Storia (Tracking)
+    history = {}        # {player_id: {matches: [], surface_wins: {}, ...}}
+    surface_history = {} # {player_id: {'Hard': [], 'Clay': [], ...}}
+    quality_history = {} # {player_id: []} -> Stores quality points of recent matches
+    serve_history = {}   # {player_id: []} -> Stores serve ratings
+    h2h_stats = {}       # {(p1, p2): {p1: wins, p2: wins}}
     
     processed_rows = []
+    
+    # Ordina cronologicamente
+    if 'Date' not in df.columns:
+        df['Date'] = pd.to_datetime(df['tourney_date'], format='%Y%m%d', errors='coerce')
+    df = df.sort_values(['Date', 'match_num']).reset_index(drop=True)
+    
+    # Helper per Zero Stats
+    def impute_stats(pid, stat_val, stat_name, default_val=0.6):
+        if stat_val > 0:
+            return stat_val
+        # Try to get from history
+        if pid in history and len(history[pid]['matches']) > 0:
+            last_stats = history[pid]['matches'][-20:] # Last 20
+            vals = [m.get(stat_name, 0) for m in last_stats if m.get(stat_name, 0) > 0]
+            if vals:
+                return np.mean(vals)
+        return default_val
 
-    print("Calcolo statistiche storiche e H2H...")
+    # Helper Surface Form
+    def get_surface_form(pid, surf):
+        if pid not in surface_history or surf not in surface_history[pid]:
+            return 0.0
+        # Last 5 matches on this surface
+        last_5 = surface_history[pid][surf][-5:]
+        if not last_5:
+            return 0.0
+        return sum(last_5) / len(last_5)
+
+    # Helper Quality Form
+    def get_quality_form(pid):
+        if pid not in quality_history or not quality_history[pid]:
+            return 0.0
+        # Rolling avg of last 10 quality scores
+        return np.mean(quality_history[pid][-10:])
+
+    # Helper Serve Rating
+    def get_serve_rating(pid):
+        if pid not in serve_history or not serve_history[pid]:
+            return 0.5 # Default avg
+        return np.mean(serve_history[pid][-10:])
+
+    print("Engineering features...")
+    
     for idx, row in df.iterrows():
-        # Randomizziamo P1 e P2 (come prima)
-        if np.random.rand() > 0.5:
-            p1_id, p1_rank, p1_age, p1_ht = row['winner_id'], row['winner_rank'], row['winner_age'], row['winner_ht']
-            p2_id, p2_rank, p2_age, p2_ht = row['loser_id'], row['loser_rank'], row['loser_age'], row['loser_ht']
-            target = 1
-            original_winner = p1_id
-            original_loser = p2_id
-        else:
-            p1_id, p1_rank, p1_age, p1_ht = row['loser_id'], row['loser_rank'], row['loser_age'], row['loser_ht']
-            p2_id, p2_rank, p2_age, p2_ht = row['winner_id'], row['winner_rank'], row['winner_age'], row['winner_ht']
-            target = 0
-            original_winner = p2_id
-            original_loser = p1_id
-            
-        w_id = row['winner_id']
-        l_id = row['loser_id']
-        tourney_name = row['tourney_name']
-        surface = row['surface']
-        date = row['Date']
+        p1 = row['winner_name']
+        p2 = row['loser_name']
         
-        # --- 0. HOME ADVANTAGE FEATURE ---
-        # Determina paese del torneo
-        tourney_country = TOURNEY_COUNTRY_MAP.get(tourney_name, 'UNK')
+        # Init player history if new
+        for p in [p1, p2]:
+            if p not in history:
+                history[p] = {'matches': [], 'elo': 1500, 'elo_surface': {'Hard': 1500, 'Clay': 1500, 'Grass': 1500, 'Carpet': 1500}}
+                surface_history[p] = {'Hard': [], 'Clay': [], 'Grass': [], 'Carpet': []}
+                quality_history[p] = []
+                serve_history[p] = []
+
+        # --- RECOVER STATS & IMPUTE (Fix Zero Stats) ---
+        # Raw percentages
+        w_svpt = float(row.get('w_svpt', 0))
+        l_svpt = float(row.get('l_svpt', 0))
         
-        # Recupera nazionalità (IOC) - Gestione casi mancanti o non standard
-        w_ioc = str(row['winner_ioc']).upper() if pd.notna(row['winner_ioc']) else 'UNK'
-        l_ioc = str(row['loser_ioc']).upper() if pd.notna(row['loser_ioc']) else 'UNK'
+        # Impute if missing (assuming 0 means missing for aces/svpt)
+        # We calculate Key Stats: 1st Won %, 2nd Won %, BP Saved %
         
-        w_is_home = 1 if w_ioc == tourney_country and tourney_country != 'UNK' else 0
-        l_is_home = 1 if l_ioc == tourney_country and tourney_country != 'UNK' else 0
+        # Winner
+        w_1st_won_pct = float(row.get('w_1stWon', 0)) / float(row.get('w_1stIn', 1)) if float(row.get('w_1stIn', 0)) > 0 else 0
+        w_2nd_won_pct = float(row.get('w_2ndWon', 0)) / (float(row.get('w_svpt', 1)) - float(row.get('w_1stIn', 0))) if (float(row.get('w_svpt', 0)) - float(row.get('w_1stIn', 0))) > 0 else 0
+        w_bp_saved_pct = float(row.get('w_bpSaved', 0)) / float(row.get('w_bpFaced', 1)) if float(row.get('w_bpFaced', 0)) > 0 else 0.5 
         
-        diff_home = w_is_home - l_is_home # +1 se W è a casa, -1 se L è a casa, 0 se pari
+        # Impute Winner Stats if suspiciously low
+        w_1st_won_pct = impute_stats(p1, w_1st_won_pct, '1st_won_pct', 0.7)
+        w_2nd_won_pct = impute_stats(p1, w_2nd_won_pct, '2nd_won_pct', 0.5)
         
-        # Recupera stats PRE-MATCH
-        p1_wr, p1_form, p1_exp = get_player_recent_form(p1_id)
-        p2_wr, p2_form, p2_exp = get_player_recent_form(p2_id)
+        # Loser
+        l_1st_won_pct = float(row.get('l_1stWon', 0)) / float(row.get('l_1stIn', 1)) if float(row.get('l_1stIn', 0)) > 0 else 0
+        l_2nd_won_pct = float(row.get('l_2ndWon', 0)) / (float(row.get('l_svpt', 1)) - float(row.get('l_1stIn', 0))) if (float(row.get('l_svpt', 0)) - float(row.get('l_1stIn', 0))) > 0 else 0
+        l_bp_saved_pct = float(row.get('l_bpSaved', 0)) / float(row.get('l_bpFaced', 1)) if float(row.get('l_bpFaced', 0)) > 0 else 0.5
         
-        # Recupera H2H PRE-MATCH
+        l_1st_won_pct = impute_stats(p2, l_1st_won_pct, '1st_won_pct', 0.6)
+        l_2nd_won_pct = impute_stats(p2, l_2nd_won_pct, '2nd_won_pct', 0.45)
+        
+        # --- CALCULATE FEATURES (Before Update) ---
+        surf = row['surface']
+        if surf not in ['Hard', 'Clay', 'Grass', 'Carpet']: surf = 'Hard'
+        
+        # 1. Elo & Rank
+        elo1, elo2 = history[p1]['elo'], history[p2]['elo']
+        elo_surf1, elo_surf2 = history[p1]['elo_surface'][surf], history[p2]['elo_surface'][surf]
+        rank1, rank2 = float(row['winner_rank'] or 500), float(row['loser_rank'] or 500)
+        
+        # 2. Form (Global)
+        matches1 = history[p1]['matches'][-10:]
+        matches2 = history[p2]['matches'][-10:]
+        form1 = sum([m['pts'] for m in matches1]) / 10.0
+        form2 = sum([m['pts'] for m in matches2]) / 10.0
+        
+        # 3. Surface Form (NEW)
+        surf_form1 = get_surface_form(p1, surf)
+        surf_form2 = get_surface_form(p2, surf)
+        
+        # 4. Quality Form (NEW)
+        qual_form1 = get_quality_form(p1)
+        qual_form2 = get_quality_form(p2)
+        
+        # 5. Serve Rating (NEW)
+        serve_rat1 = get_serve_rating(p1)
+        serve_rat2 = get_serve_rating(p2)
+        
+        # 6. Fatigue (Days)
+        date_curr = row['Date']
+        last_date1 = history[p1]['matches'][-1]['date'] if matches1 else date_curr
+        last_date2 = history[p2]['matches'][-1]['date'] if matches2 else date_curr
+        days1 = (date_curr - last_date1).days
+        days2 = (date_curr - last_date2).days
+        
+        # 7. H2H
+        match_key = tuple(sorted([p1, p2])) # Use strings if IDs not avail? Or use P1 name? 
+        # Previous code used P1_ID / P2_ID. But here we iterate strings? 
+        # Wait, row['winner_id'] exists but sometimes we prefer names if cleaner?
+        # Let's use IDs to be safe if consistent. If 0, use name.
+        p1_id = row['winner_id']
+        p2_id = row['loser_id']
         match_key = tuple(sorted([p1_id, p2_id]))
         
-        # Recupera ELO PRE-MATCH
-        p1_elo = get_elo(p1_id)
-        p2_elo = get_elo(p2_id)
-        
-        # Recupera ELO SURFACE PRE-MATCH
-        match_surface = row['surface']
-        p1_elo_surf = get_elo(p1_id, match_surface)
-        p2_elo_surf = get_elo(p2_id, match_surface)
-
         if match_key not in h2h_stats:
             h2h_stats[match_key] = {p1_id: 0, p2_id: 0}
+        
+        p1_h2h = h2h_stats[match_key].get(p1_id, 0)
+        p2_h2h = h2h_stats[match_key].get(p2_id, 0)
+        
+        # 8. Pressure/Clutch (Historical Avg)
+        def get_avg_stat(matches, key):
+            vals = [m[key] for m in matches if key in m]
+            return np.mean(vals) if vals else 0.5
             
-        p1_h2h = h2h_stats[match_key][p1_id]
-        p2_h2h = h2h_stats[match_key][p2_id]
+        bp_save1 = get_avg_stat(matches1, 'bp_saved_pct')
+        bp_save2 = get_avg_stat(matches2, 'bp_saved_pct')
+        tb_win1 = get_avg_stat(matches1, 'tb_win')
+        tb_win2 = get_avg_stat(matches2, 'tb_win')
+        decider_win1 = get_avg_stat(matches1, 'decider_win')
+        decider_win2 = get_avg_stat(matches2, 'decider_win')
+
+        # 9. Home Advantage
+        p1_ioc = row.get('winner_ioc', 'UNK')
+        p2_ioc = row.get('loser_ioc', 'UNK')
+        tourney_name = row['tourney_name']
+        t_country = tourney_country_map.get(tourney_name, 'UNK')
         
-        # Recupera FATIGUE PRE-MATCH
-        # Attenzione: Date è timestamp
-        # FIX: Calcoliamo Diff_Days SOLO se abbiamo lo storico per entrambi.
-        # Altrimenti rischiamo bias (uno ha i giorni contati, l'altro ha il default 30).
-        diff_days = 0
-        if p1_id in last_match_date and p2_id in last_match_date:
-            p1_days = (row['tourney_date'] - last_match_date[p1_id]).days
-            p2_days = (row['tourney_date'] - last_match_date[p2_id]).days
-            diff_days = p1_days - p2_days
+        is_home1 = 1 if p1_ioc == t_country and t_country != 'UNK' else 0
+        is_home2 = 1 if p2_ioc == t_country and t_country != 'UNK' else 0
         
-        # Recupera PRESSURE PRE-MATCH
-        p1_bp, p1_tb, p1_dec = get_pressure_stats(p1_id)
-        p2_bp, p2_tb, p2_dec = get_pressure_stats(p2_id)
+        # 10. Big Server (NEW)
+        ht1 = float(row.get('winner_ht', 185))
+        ht2 = float(row.get('loser_ht', 185))
+        big_server1 = 1 if ht1 > 195 else 0
+        big_server2 = 1 if ht2 > 195 else 0
         
-        # Aggiorna stats POST-MATCH
-        update_player_stats(original_winner, original_loser)
-        update_elo(original_winner, original_loser, match_surface) # Aggiorna Elo
-        update_last_date(original_winner, row['tourney_date'])
-        update_last_date(original_loser, row['tourney_date'])
-        update_pressure_stats(original_winner, original_loser, row)
-        h2h_stats[match_key][original_winner] += 1
+        # 11. Lefty Matchup (NEW)
+        hand1 = str(row.get('winner_hand', 'R'))
+        hand2 = str(row.get('loser_hand', 'R'))
+        is_lefty_matchup = 1 if (hand1 == 'L' and hand2 == 'R') or (hand1 == 'R' and hand2 == 'L') else 0
+
+        # --- PREPARE ROW FOR TRAINING ---
+        # Features: Diff (P1 - P2) for symmetric training
         
-        # --- FILTRO PER TRAINING ---
-        # Salviamo la riga per il training SOLO SE è la superficie che ci interessa (Hard)
-        # O se vogliamo un modello generico, salviamo tutto con la feature surface.
-        # Per AO 2026, filtriamo Hard.
-        if match_surface == 'Hard':
-            # Costruisci riga features
-            diff_rank = p2_rank - p1_rank 
-            diff_age = p2_age - p1_age
-            diff_ht = p1_ht - p2_ht
-            diff_winrate = p1_wr - p2_wr
-            diff_form = p1_form - p2_form
-            diff_exp = p1_exp - p2_exp
-            diff_h2h = p1_h2h - p2_h2h
-            
-            processed_rows.append({
-                'Diff_Rank': diff_rank,
-                'Diff_Age': diff_age,
-                'Diff_Height': diff_ht if not pd.isna(diff_ht) else 0,
-                'Diff_WinRate': diff_winrate,
-                'Diff_Form': diff_form,
-                'Diff_Exp': diff_exp,
-                'Diff_H2H': diff_h2h,
-                'Diff_Days': diff_days, 
-                'Diff_BP_Save': p1_bp - p2_bp,
-                'Diff_TB_Win': p1_tb - p2_tb,
-                'Diff_Decider': p1_dec - p2_dec,
-                'Diff_Decider': p1_dec - p2_dec,
-                'Diff_Elo': p1_elo - p2_elo,
-                'Diff_Elo_Surface': p1_elo_surf - p2_elo_surf, 
-                'Diff_Home': diff_home, # Add to features
-                'Target': target,
-                'Date': row['tourney_date'],
-                # Metadata per ricostruire lo stato finale (solo per l'ultima riga di ogni giocatore)
-                'P1_ID': p1_id, 'P2_ID': p2_id 
-            })
+        common_features = {
+            'Diff_Rank': np.log(rank2 + 1) - np.log(rank1 + 1), 
+            'Diff_Elo': elo1 - elo2,
+            'Diff_Elo_Surface': elo_surf1 - elo_surf2,
+            'Diff_Form': form1 - form2,
+            'Diff_Form_Surface': surf_form1 - surf_form2,      # NEW
+            'Diff_Quality': qual_form1 - qual_form2,           # NEW
+            'Diff_Serve_Rating': serve_rat1 - serve_rat2,      # NEW
+            'Diff_Big_Server': big_server1 - big_server2,      # NEW
+            'Diff_Height': ht1 - ht2,
+            'Diff_Age': float(row['winner_age']) - float(row['loser_age']),
+            'Diff_Days': days1 - days2,
+            'Diff_BP_Save': bp_save1 - bp_save2,
+            'Diff_TB_Win': tb_win1 - tb_win2,
+            'Diff_Decider': decider_win1 - decider_win2,
+            'Diff_Home': is_home1 - is_home2, 
+            'Is_Lefty': is_lefty_matchup,                      # NEW
+            'Target': 1, # P1 (Winner) won
+            'Date': row['Date'],
+            'P1_ID': p1_id,
+            'P2_ID': p2_id
+        }
         
-    return pd.DataFrame(processed_rows), player_stats, h2h_stats, elo_ratings, elo_surface, last_match_date, pressure_stats
+        processed_rows.append(common_features)
+        
+        # Reverse (Loser perspective)
+        reverse_features = common_features.copy()
+        for k in list(reverse_features.keys()):
+            if k.startswith('Diff_'):
+                reverse_features[k] = -reverse_features[k]
+        reverse_features['Target'] = 0
+        processed_rows.append(reverse_features)
+        
+        # --- UPDATE HISTORY (Post-Match) ---
+        
+        # Current Match Stats
+        sr1 = (w_1st_won_pct * 0.4) + (w_2nd_won_pct * 0.6)
+        sr2 = (l_1st_won_pct * 0.4) + (l_2nd_won_pct * 0.6)
+        
+        # Quality Points: 1 + (100 / (Opponent_Rank + 1))
+        # Logic: Winner gets points based on loser rank. Loser gets 0.
+        q_pts1 = 1 + (100 / (rank2 + 1))
+        
+        # Update Elo
+        k_factor = 20
+        exp1 = 1 / (1 + 10 ** ((elo2 - elo1) / 400))
+        new_elo1 = elo1 + k_factor * (1 - exp1)
+        new_elo2 = elo2 + k_factor * (0 - (1 - exp1))
+        
+        # Update Surface Elo
+        k_surf = 20
+        exp_s1 = 1 / (1 + 10 ** ((elo_surf2 - elo_surf1) / 400))
+        new_surf1 = elo_surf1 + k_surf * (1 - exp_s1)
+        new_surf2 = elo_surf2 + k_surf * (0 - (1 - exp_s1))
+        
+        # Update Trackers P1 (Winner)
+        history[p1]['elo'] = new_elo1
+        history[p1]['elo_surface'][surf] = new_surf1
+        
+        score_str = str(row['score']) if pd.notna(row['score']) else ""
+        
+        history[p1]['matches'].append({
+            'date': date_curr, 'opponent': p2, 'result': 'W', 'pts': 1, 
+            'bp_saved_pct': w_bp_saved_pct, 
+            'tb_win': 1 if '7-6' in score_str else 0.5, 
+            'decider_win': 1 if len(score_str) > 15 else 0.5,
+            '1st_won_pct': w_1st_won_pct,
+            '2nd_won_pct': w_2nd_won_pct
+        })
+        surface_history[p1][surf].append(1) # Win
+        quality_history[p1].append(q_pts1)
+        serve_history[p1].append(sr1)
+        
+        # Update Trackers P2 (Loser)
+        history[p2]['elo'] = new_elo2
+        history[p2]['elo_surface'][surf] = new_surf2
+        history[p2]['matches'].append({
+            'date': date_curr, 'opponent': p1, 'result': 'L', 'pts': 0,
+            'bp_saved_pct': l_bp_saved_pct,
+            'tb_win': 0 if '7-6' in score_str else 0.5,
+            'decider_win': 0 if len(score_str) > 15 else 0.5,
+            '1st_won_pct': l_1st_won_pct,
+            '2nd_won_pct': l_2nd_won_pct
+        })
+        surface_history[p2][surf].append(0) # Loss
+        quality_history[p2].append(0)       
+        serve_history[p2].append(sr2)
+        
+        # Update H2H (Post-match)
+        if match_key not in h2h_stats: h2h_stats[match_key] = {p1_id: 0, p2_id: 0}
+        h2h_stats[match_key][p1_id] += 1
+
+    print(f"Dataset finale pronto: {len(processed_rows)} match.")
+    return pd.DataFrame(processed_rows), history, surface_history, quality_history, serve_history, h2h_stats
 
 def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_surface, last_match_date, pressure_stats, last_rankings, p1_name, p2_name, match_surface='Hard', tourney_country_code='UNK'):
     """Versione che ritorna dati grezzi per la GUI"""
-    # Lookup giocatori (molto semplice, case incentive)
-    # last_rankings deve essere un dict {name_lower: {id, rank, age, ht}}
     
     p1_info = last_rankings.get(p1_name.lower())
     p2_info = last_rankings.get(p2_name.lower())
@@ -481,105 +444,88 @@ def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_sur
     if not p1_info or not p2_info:
         return None
 
-    # 1. Recupera stats correnti (fine 2024/2025)
-    def get_stats(pid):
-        s = player_stats.get(pid, {'wins': 0, 'losses': 0, 'history': []})
-        tot = s['wins'] + s['losses']
-        wr = s['wins'] / tot if tot > 0 else 0
-        form = sum(s['history'][-10:]) / len(s['history'][-10:]) if s['history'] else 0
-        return wr, form, tot
+    # Helper: Get Stats from history (reconstructed in last_known)
+    def get_stats(info):
+        # Default empty
+        matches = info.get('matches', [])
+        # Form
+        form = sum([m['pts'] for m in matches[-10:]]) / 10.0 if matches else 0.0
+        # Surface Form (Need to fetch from surface_history if available in info, otherwise mock)
+        surf_hist = info.get('surface_history', {}).get(match_surface, [])
+        surf_form = sum(surf_hist[-5:]) / len(surf_hist[-5:]) if surf_hist else 0.0
+        # Quality
+        qual_hist = info.get('quality_history', [])
+        qual = np.mean(qual_hist[-10:]) if qual_hist else 0.0
+        # Serve Rating
+        serv_hist = info.get('serve_history', [])
+        serv = np.mean(serv_hist[-10:]) if serv_hist else 0.5
+        # Pressure
+        vals = [m['bp_saved_pct'] for m in matches if 'bp_saved_pct' in m]
+        bp = np.mean(vals) if vals else 0.5
+        vals = [m['decider_win'] for m in matches if 'decider_win' in m]
+        dec = np.mean(vals) if vals else 0.5
+        vals = [m['tb_win'] for m in matches if 'tb_win' in m]
+        tb = np.mean(vals) if vals else 0.5
         
-    p1_wr, p1_form, p1_exp = get_stats(p1_info['id'])
-    p2_wr, p2_form, p2_exp = get_stats(p2_info['id'])
-    
-    # 2. H2H
-    match_key = tuple(sorted([p1_info['id'], p2_info['id']]))
-    h2h = h2h_stats.get(match_key, {p1_info['id']: 0, p2_info['id']: 0})
-    p1_h2h_val = h2h.get(p1_info['id'], 0)
-    p2_h2h_val = h2h.get(p2_info['id'], 0)
-    
-    # 3. Elo
-    p1_elo = elo_ratings.get(p1_info['id'], 1500)
-    p2_elo = elo_ratings.get(p2_info['id'], 1500)
-    
-    # 3b. Surface Elo (Dynamic)
-    p1_elo_s = elo_surface.get(match_surface, {}).get(p1_info['id'], 1500)
-    p2_elo_s = elo_surface.get(match_surface, {}).get(p2_info['id'], 1500)
-    
-    # 3c. Fatigue
-    p1_days = 30
-    p2_days = 30
-    
-    # 3d. Pressure
-    # 3d. Pressure
-    def get_p_stats(pid):
-        s = pressure_stats.get(pid, {'bp_saved': 0, 'bp_faced': 0, 'tb_won': 0, 'tb_total': 0, 'decider_won': 0, 'decider_total': 0})
-        bp = s['bp_saved'] / s['bp_faced'] if s['bp_faced'] > 0 else 0.5
-        tb = s['tb_won'] / s['tb_total'] if s['tb_total'] > 0 else 0.5
-        dec = s['decider_won'] / s['decider_total'] if s['decider_total'] > 0 else 0.5
-        return bp, tb, dec
+        return form, surf_form, qual, serv, bp, dec, tb
         
-    p1_bp, p1_tb, p1_dec = get_p_stats(p1_info['id'])
-    p2_bp, p2_tb, p2_dec = get_p_stats(p2_info['id'])
+    p1_form, p1_sform, p1_qual, p1_serv, p1_bp, p1_dec, p1_tb = get_stats(p1_info)
+    p2_form, p2_sform, p2_qual, p2_serv, p2_bp, p2_dec, p2_tb = get_stats(p2_info)
     
-    # 4. HOME ADVANTAGE (Dynamic)
-    # tourney_country must be passed from GUI, usually argument match_surface is abused or we need new arg.
-    # To avoid breaking signature we can add `tourney_country` kwarg or infer.
-    # Actually, we need to add `tourney_country` to the function signature.
-    # But for now, let's assume Neutral unless specified.
-    # Wait, I added match_surface in previous step. Let's add tourney_country_code.
+    # Elo
+    p1_elo = p1_info['elo']
+    p2_elo = p2_info['elo']
+    p1_elo_s = p1_info['elo_surface'].get(match_surface, 1500)
+    p2_elo_s = p2_info['elo_surface'].get(match_surface, 1500)
     
-    # NOTE: I am adding tourney_country argument in the replacement logic below.
+    # Days (Assume 3-4 days if tournament ongoing, simplified)
+    p1_days = 4
+    p2_days = 4
     
-    # Default behavior if not passed
-    tourney_country = 'UNK' 
-    # Logic to be implemented: pass tourney_country in signature
-    
-    # Let's fix signature first... wait, I can do it in this chunk if I'm careful??
-    # No, signature is at line 410. This chunk is 451.
-    
-    # I'll calculate it here assuming the variable exists, and I will update signature in next chunk.
-    
-    # 3. Features differenziali
-    # ORDINE IMPORTANTE! Deve combaciare con features_cols del training
-    # ['Diff_Rank', 'Diff_Elo', 'Diff_Elo_Surface', 'Diff_Age', 'Diff_Height', 'Diff_WinRate', 'Diff_Form', 'Diff_Exp', 'Diff_H2H', 'Diff_Days', 'Diff_BP_Save', 'Diff_TB_Win', 'Diff_Decider', 'Diff_Home']
-    
-    # Recupera info
+    # Features Differentials
+    # Home Adv
     p1_ioc = p1_info.get('ioc', 'UNK')
     p2_ioc = p2_info.get('ioc', 'UNK')
+    is_home1 = 1 if p1_ioc == tourney_country_code and tourney_country_code != 'UNK' else 0
+    is_home2 = 1 if p2_ioc == tourney_country_code and tourney_country_code != 'UNK' else 0
     
-    p1_home = 1 if p1_ioc == tourney_country_code and tourney_country_code != 'UNK' else 0
-    p2_home = 1 if p2_ioc == tourney_country_code and tourney_country_code != 'UNK' else 0
-    diff_home = p1_home - p2_home
+    # Big Server & Lefty
+    big_server1 = 1 if p1_info['ht'] > 195 else 0
+    big_server2 = 1 if p2_info['ht'] > 195 else 0
+    
+    hand1 = p1_info['hand']
+    hand2 = p2_info['hand']
+    is_lefty = 1 if (hand1 == 'L' and hand2 == 'R') or (hand1 == 'R' and hand2 == 'L') else 0
     
     features = pd.DataFrame([{
-        'Diff_Rank': p2_info['rank'] - p1_info['rank'],
+        'Diff_Rank': np.log(p2_info['rank'] + 1) - np.log(p1_info['rank'] + 1),
         'Diff_Elo': p1_elo - p2_elo,
         'Diff_Elo_Surface': p1_elo_s - p2_elo_s,
-        'Diff_Age': p2_info['age'] - p1_info['age'],
-        'Diff_Height': p1_info['ht'] - p2_info['ht'],
-        'Diff_WinRate': p1_wr - p2_wr,
         'Diff_Form': p1_form - p2_form,
-        'Diff_Exp': p1_exp - p2_exp,
-        'Diff_H2H': p1_h2h_val - p2_h2h_val,
-        'Diff_Days': p1_days - p2_days,
+        'Diff_Form_Surface': p1_sform - p2_sform,
+        'Diff_Quality': p1_qual - p2_qual,
+        'Diff_Serve_Rating': p1_serv - p2_serv,
+        'Diff_Big_Server': big_server1 - big_server2,
+        'Diff_Height': p1_info['ht'] - p2_info['ht'],
+        'Diff_Age': p1_info['age'] - p2_info['age'],
+        'Diff_Days': 0, 
         'Diff_BP_Save': p1_bp - p2_bp,
         'Diff_TB_Win': p1_tb - p2_tb,
         'Diff_Decider': p1_dec - p2_dec,
-        'Diff_Home': diff_home
+        'Diff_Home': is_home1 - is_home2,
+        'Is_Lefty': is_lefty
     }])
     
     # 4. Predizione
     prob = model.predict_proba(features)[0][1] # Prob che P1 vinca
     
-    # Return raw data for GUI
     return {
         'p1_name': p1_info['name'],
         'p2_name': p2_info['name'],
         'prob_p1': prob,
         'stats_p1': {'rank': p1_info['rank'], 'elo': p1_elo, 'elo_surface': p1_elo_s, 'form': p1_form, 'bp_save': p1_bp, 'decider': p1_dec},
         'stats_p2': {'rank': p2_info['rank'], 'elo': p2_elo, 'elo_surface': p2_elo_s, 'form': p2_form, 'bp_save': p2_bp, 'decider': p2_dec},
-        'h2h': f"{p1_h2h_val}-{p2_h2h_val}"
+        'h2h': "N/A" # Simplified
     }
 
 def predict_2026_match(model, player_stats, h2h_stats, elo_ratings, elo_surface, last_match_date, pressure_stats, last_rankings, p1_name, p2_name):
@@ -597,27 +543,53 @@ def build_model():
     df_raw = load_data()
     print(f"Totale match caricati: {len(df_raw)}")
     
-    # Processa
-    df_proc, final_player_stats, final_h2h, final_elo, final_elo_surface, final_dates, final_pressure = process_data(df_raw)
+    # Elaborazione
+    df_proc, history, surface_history, quality_history, serve_history, h2h_stats = process_data(df_raw, tourney_country_map=TOURNEY_COUNTRY_MAP)
     
-    # Last Known status
+    # ... Training (Standard XGBoost) ...
+    # Salvo stato giocatori per previsioni future
     last_known = {}
-    df_raw_sorted = df_raw.sort_values('tourney_date')
-    for _, row in df_raw_sorted.iterrows():
-        if pd.isna(row['winner_name']) or pd.isna(row['loser_name']): continue
-        
-        last_known[str(row['winner_name']).lower()] = {
-            'name': row['winner_name'], 'id': row['winner_id'], 
-            'rank': row['winner_rank'], 'age': row['winner_age'] + 1 if pd.notna(row['winner_age']) else 25, 
-            'ht': row['winner_ht'] if pd.notna(row['winner_ht']) else 185,
-            'ioc': str(row['winner_ioc']).upper() if pd.notna(row['winner_ioc']) else 'UNK'
-        }
-        last_known[str(row['loser_name']).lower()] = {
-            'name': row['loser_name'], 'id': row['loser_id'], 
-            'rank': row['loser_rank'], 'age': row['loser_age'] + 1 if pd.notna(row['loser_age']) else 25,
-            'ht': row['loser_ht'] if pd.notna(row['loser_ht']) else 185,
-            'ioc': str(row['loser_ioc']).upper() if pd.notna(row['loser_ioc']) else 'UNK'
-        }
+    for p, info in history.items():
+        if len(info['matches']) > 0:
+            last_known[p.lower()] = {
+                'elo': info['elo'],
+                'elo_surface': info['elo_surface'],
+                'matches': info['matches'][-20:], # Keep more history for stats imputation
+                'surface_history': surface_history.get(p, {}), 
+                'quality_history': quality_history.get(p, []),
+                'serve_history': serve_history.get(p, []),
+                'rank': 100, # Fallback
+                'name': p,
+                'ht': 185, # Fallback
+                'hand': 'R',
+                'age': 25,
+                'ioc': 'UNK' # Default
+            }
+
+    # Populate Metadata from last appearance in DF
+    print("Updating player metadata...")
+    df_sorted = df_raw.sort_values('tourney_date', ascending=True) 
+    meta_dict = {}
+    for idx, row in df_sorted.iterrows():
+        if pd.notna(row['winner_name']):
+            n = str(row['winner_name']).lower()
+            if n not in meta_dict: meta_dict[n] = {}
+            meta_dict[n] = {'rank': row['winner_rank'], 'ht': row['winner_ht'], 'hand': row['winner_hand'], 'age': row['winner_age'], 'ioc': row['winner_ioc']}
+        if pd.notna(row['loser_name']):
+            n = str(row['loser_name']).lower()
+            if n not in meta_dict: meta_dict[n] = {}
+            meta_dict[n] = {'rank': row['loser_rank'], 'ht': row['loser_ht'], 'hand': row['loser_hand'], 'age': row['loser_age'], 'ioc': row['loser_ioc']}
+            
+    # Apply metadata
+    for p_name, p_data in last_known.items():
+        clean_name = str(p_name).lower()
+        if clean_name in meta_dict:
+            m = meta_dict[clean_name]
+            p_data['rank'] = m['rank']
+            p_data['ht'] = m['ht'] if pd.notna(m['ht']) else 185
+            p_data['hand'] = m['hand'] if pd.notna(m['hand']) else 'R'
+            p_data['age'] = m['age'] if pd.notna(m['age']) else 25
+            p_data['ioc'] = str(m['ioc']).upper() if pd.notna(m['ioc']) else 'UNK'
 
     # Filter NaN
     df_train_full = df_proc.dropna()
@@ -630,7 +602,12 @@ def build_model():
     test = df_train_full[df_train_full['Date'] >= split_date]
     
     # Add Diff_Home here!
-    features_cols = ['Diff_Rank', 'Diff_Elo', 'Diff_Elo_Surface', 'Diff_Age', 'Diff_Height', 'Diff_WinRate', 'Diff_Form', 'Diff_Exp', 'Diff_H2H', 'Diff_Days', 'Diff_BP_Save', 'Diff_TB_Win', 'Diff_Decider', 'Diff_Home']
+    features_cols = [
+        'Diff_Rank', 'Diff_Elo', 'Diff_Elo_Surface', 'Diff_Form', 
+        'Diff_Form_Surface', 'Diff_Quality', 'Diff_Serve_Rating',
+        'Diff_Big_Server', 'Diff_Height', 'Diff_Age', 'Diff_Days',
+        'Diff_BP_Save', 'Diff_TB_Win', 'Diff_Decider', 'Diff_Home', 'Is_Lefty'
+    ]
     
     X_train = train[features_cols]
     y_train = train['Target']
@@ -662,7 +639,9 @@ def build_model():
     print("\nFeature Importance:")
     print(pd.Series(model.feature_importances_, index=features_cols).sort_values(ascending=False))
     
-    return model, final_player_stats, final_h2h, final_elo, final_elo_surface, final_dates, final_pressure, last_known
+    # Return compatible signature for tennis_app.py
+    # model, stats, h2h, elo, elo_surf, dates, pressure, players
+    return model, history, h2h_stats, {}, {}, {}, {}, last_known
 
 if __name__ == "__main__":
     model, stats, h2h, elo, elo_s, date, press, last = build_model()
