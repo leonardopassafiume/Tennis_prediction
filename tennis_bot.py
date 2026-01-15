@@ -19,7 +19,15 @@ CACHE_DIR = "tennis_data_cache" # Cartella per salvare i csv locali
 os.makedirs(CACHE_DIR, exist_ok=True)
 
 
+
 # 1. CARICAMENTO DATI ROBUSTO
+FEATURES_COLS = [
+    'Diff_Rank', 'Diff_Elo', 'Diff_Elo_Surface', 'Diff_Form', 
+    'Diff_Form_Surface', 'Diff_Quality', 'Diff_Serve_Rating',
+    'Diff_Big_Server', 'Diff_Height', 'Diff_Age', 'Diff_Days',
+    'Diff_BP_Save', 'Diff_TB_Win', 'Diff_Decider', 'Diff_Home', 'Is_Lefty',
+    'Temperature', 'Humidity', 'Is_Indoor'
+]
 def load_data():
     base_url = "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master/atp_matches_{}.csv"
     years = range(START_YEAR, END_YEAR + 1) # Usa le variabili globali
@@ -565,7 +573,7 @@ def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_sur
         'Temperature': temp,
         'Humidity': hum,
         'Is_Indoor': is_indoor
-    }])
+    }])[FEATURES_COLS]
     
     # 4. Predizione
     prob = model.predict_proba(features)[0][1] # Prob che P1 vinca
@@ -671,17 +679,12 @@ def build_model(force_retrain=False):
     test = df_train_full[df_train_full['Date'] >= split_date]
     
     # Add Diff_Home here!
-    features_cols = [
-        'Diff_Rank', 'Diff_Elo', 'Diff_Elo_Surface', 'Diff_Form', 
-        'Diff_Form_Surface', 'Diff_Quality', 'Diff_Serve_Rating',
-        'Diff_Big_Server', 'Diff_Height', 'Diff_Age', 'Diff_Days',
-        'Diff_BP_Save', 'Diff_TB_Win', 'Diff_Decider', 'Diff_Home', 'Is_Lefty',
-        'Temperature', 'Humidity', 'Is_Indoor'
-    ]
+    # Add Diff_Home here!
+    # Used global FEATURES_COLS
     
-    X_train = train[features_cols]
+    X_train = train[FEATURES_COLS]
     y_train = train['Target']
-    X_test = test[features_cols]
+    X_test = test[FEATURES_COLS]
     y_test = test['Target']
     
     # Train
@@ -707,7 +710,7 @@ def build_model(force_retrain=False):
     
     # Feature Importance
     print("\nFeature Importance:")
-    print(pd.Series(model.feature_importances_, index=features_cols).sort_values(ascending=False))
+    print(pd.Series(model.feature_importances_, index=FEATURES_COLS).sort_values(ascending=False))
     
     # Return compatible signature for tennis_app.py
     # model, stats, h2h, elo, elo_surf, dates, pressure, players
