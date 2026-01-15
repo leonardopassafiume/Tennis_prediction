@@ -199,3 +199,30 @@ class WeatherClient:
 
 # Global instance
 weather_client = WeatherClient()
+
+# Mappa Tornei -> Nazione
+TOURNEY_COUNTRY_MAP = {
+    'Australian Open': 'AUS', 'Brisbane': 'AUS', 'Sydney': 'AUS', 'Adelaide': 'AUS', 'United Cup': 'AUS',
+    'Roland Garros': 'FRA', 'Paris Masters': 'FRA', 'Marseille': 'FRA', 'Montpellier': 'FRA', 'Lyon': 'FRA', 'Metz': 'FRA',
+    'Wimbledon': 'GBR', 'Queen\'s Club': 'GBR', 'Eastbourne': 'GBR',
+    'US Open': 'USA', 'Indian Wells': 'USA', 'Miami': 'USA', 'Cincinnati': 'USA', 'Washington': 'USA', 'Delray Beach': 'USA', 'Houston': 'USA', 'Atlanta': 'USA', 'Winston-Salem': 'USA', 'Dallas': 'USA',
+    'Rome': 'ITA', 'Rome Masters': 'ITA', 'Turin': 'ITA', 'Tour Finals': 'ITA',
+    'Madrid': 'ESP', 'Barcelona': 'ESP',
+    'Monte Carlo': 'MON', 
+    'Canada Masters': 'CAN', 'Toronto': 'CAN', 'Montreal': 'CAN',
+    'Shanghai': 'CHN', 'Beijing': 'CHN', 'Chengdu': 'CHN', 'Zhuhai': 'CHN',
+    'Tokyo': 'JPN',
+    'Halle': 'GER', 'Hamburg': 'GER', 'Munich': 'GER', 'Stuttgart': 'GER',
+    'Vienna': 'AUT', 'Kitzbuhel': 'AUT',
+    'Swiss Indoors': 'SUI', 'Gstaad': 'SUI', 'Geneva': 'SUI',
+    'Bastad': 'SWE', 'Stockholm': 'SWE',
+    'Umag': 'CRO',
+    'Estoril': 'POR',
+    'Rio de Janeiro': 'BRA',
+    'Buenos Aires': 'ARG', 'Cordoba': 'ARG',
+    'Santiago': 'CHI',
+    'Auckland': 'NZL',
+    'Dubai': 'UAE', 'Doha': 'QAT',
+    'Rotterdam': 'NED', 's-Hertogenbosch': 'NED',
+    'Antwerp': 'BEL'
+}

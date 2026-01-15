@@ -141,31 +141,8 @@ import weather_utils
 # --- 2. ELABORAZIONE DATI (FEATURE ENGINEERING) ---
 
 # Mappa Tornei -> Nazione (Global)
-TOURNEY_COUNTRY_MAP = {
-    'Australian Open': 'AUS', 'Brisbane': 'AUS', 'Sydney': 'AUS', 'Adelaide': 'AUS', 'United Cup': 'AUS',
-    'Roland Garros': 'FRA', 'Paris Masters': 'FRA', 'Marseille': 'FRA', 'Montpellier': 'FRA', 'Lyon': 'FRA', 'Metz': 'FRA',
-    'Wimbledon': 'GBR', 'Queen\'s Club': 'GBR', 'Eastbourne': 'GBR',
-    'US Open': 'USA', 'Indian Wells': 'USA', 'Miami': 'USA', 'Cincinnati': 'USA', 'Washington': 'USA', 'Delray Beach': 'USA', 'Houston': 'USA', 'Atlanta': 'USA', 'Winston-Salem': 'USA', 'Dallas': 'USA',
-    'Rome': 'ITA', 'Rome Masters': 'ITA', 'Turin': 'ITA', 'Tour Finals': 'ITA',
-    'Madrid': 'ESP', 'Barcelona': 'ESP',
-    'Monte Carlo': 'MON', 
-    'Canada Masters': 'CAN', 'Toronto': 'CAN', 'Montreal': 'CAN',
-    'Shanghai': 'CHN', 'Beijing': 'CHN', 'Chengdu': 'CHN', 'Zhuhai': 'CHN',
-    'Tokyo': 'JPN',
-    'Halle': 'GER', 'Hamburg': 'GER', 'Munich': 'GER', 'Stuttgart': 'GER',
-    'Vienna': 'AUT', 'Kitzbuhel': 'AUT',
-    'Swiss Indoors': 'SUI', 'Gstaad': 'SUI', 'Geneva': 'SUI',
-    'Bastad': 'SWE', 'Stockholm': 'SWE',
-    'Umag': 'CRO',
-    'Estoril': 'POR',
-    'Rio de Janeiro': 'BRA',
-    'Buenos Aires': 'ARG', 'Cordoba': 'ARG',
-    'Santiago': 'CHI',
-    'Auckland': 'NZL',
-    'Dubai': 'UAE', 'Doha': 'QAT',
-    'Rotterdam': 'NED', 's-Hertogenbosch': 'NED',
-    'Antwerp': 'BEL'
-}
+# Mappa Tornei -> Nazione (Moved to weather_utils)
+# TOURNEY_COUNTRY_MAP removed from here. Use weather_utils.TOURNEY_COUNTRY_MAP
 
 def process_data(df, players_last_stats=None, predict_mode=False, tourney_country_map=None):
     if tourney_country_map is None:
@@ -635,7 +612,7 @@ def build_model(force_retrain=False):
     print(f"Totale match caricati: {len(df_raw)}")
     
     # Elaborazione
-    df_proc, history, surface_history, quality_history, serve_history, h2h_stats = process_data(df_raw, tourney_country_map=TOURNEY_COUNTRY_MAP)
+    df_proc, history, surface_history, quality_history, serve_history, h2h_stats = process_data(df_raw, tourney_country_map=weather_utils.TOURNEY_COUNTRY_MAP)
     
     # ... Training (Standard XGBoost) ...
     # Salvo stato giocatori per previsioni future

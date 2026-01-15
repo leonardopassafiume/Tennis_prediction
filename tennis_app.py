@@ -118,7 +118,7 @@ tourney_country = "UNK" # Simplified, backend handles Home Adv logic via name ma
 # To keep UI simple, I won't ask for Country Code explicitly if I have Tournament Name.
 # But for Home Advantage I need it.
 # I will infer it from tennis_bot.TOURNEY_COUNTRY_MAP if possible.
-country_code = tennis_bot.TOURNEY_COUNTRY_MAP.get(tourney_name, 'UNK')
+country_code = weather_utils.TOURNEY_COUNTRY_MAP.get(tourney_name, 'UNK')
 st.sidebar.caption(f"📍 Location: {country_code}")
 
 try:
