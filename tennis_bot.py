@@ -10,7 +10,7 @@ from io import StringIO
 import time
 import pickle
 
-MODEL_FILE = "tennis_bot_model_v1.pkl"
+MODEL_FILE = "tennis_bot_model_v2.pkl"
 
 # CONFIGURAZIONE
 START_YEAR = 2016
