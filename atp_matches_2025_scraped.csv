@@ -180,222 +180,66 @@ tourney_date,tourney_name,surface,winner_name,loser_name,score,winner_rank,loser
 20250113,Australian Open,Hard,Novak Djokovic,Tomas Machac,6-1 6-4 6-4,7,25,37.65,24.25,188,183,R,R,0,0
 20250113,Australian Open,Hard,Novak Djokovic,Jaime Faria,6-1 6-7(4) 6-3 6-2,7,125,37.65,21.44,188,188,R,R,0,0
 20250113,Australian Open,Hard,Novak Djokovic,Nishesh Basavareddy,4-6 6-3 6-4 6-2,7,107,37.65,19.7,188,180,R,R,0,0
-20260102,United Cup,Hard,Hubert Hurkacz,Alexander Zverev,6-3 6-4,,,28.89,28.7,196,198,R,R,0,0
-20260102,United Cup,Hard,Alexander Zverev,Tallon Griekspoor,7-5 6-0,,,28.7,29.5,198,188,R,R,0,0
-20251122,Davis Cup Finals SF: ESP vs GER,Hard,Alexander Zverev,Jaume Munar,7-6(2) 7-6(5),3,36,28.59,28.55,198,183,R,R,0,0
-20251120,Davis Cup Finals QF: ARG vs GER,Hard,Alexander Zverev,Francisco Cerundolo,6-4 7-6(3),3,21,28.59,27.27,198,185,R,R,0,0
-20251109,Tour Finals,Hard,Alexander Zverev,Ben Shelton,6-3 7-6(6),3,5,28.56,23.09,198,193,R,L,0,0
-20251109,Tour Finals,Hard,Felix Auger Aliassime,Alexander Zverev,6-4 7-6(4),8,3,25.25,28.56,193,198,R,R,0,0
-20251027,Paris Masters,Hard,Alexander Zverev,Daniil Medvedev,2-6 6-3 7-6(5),3,13,28.52,29.71,198,198,R,R,0,0
-20251027,Paris Masters,Hard,Alexander Zverev,Alejandro Davidovich Fokina,6-2 6-4,3,15,28.52,26.4,198,183,R,R,0,0
-20251027,Paris Masters,Hard,Alexander Zverev,Camilo Ugo Carabelli,6-7(5) 6-1 7-5,3,49,28.52,26.36,198,185,R,R,0,0
-20251020,Vienna,Hard,Alexander Zverev,Lorenzo Musetti,6-4 7-5,3,8,28.5,23.63,198,185,R,R,0,0
-20251020,Vienna,Hard,Alexander Zverev,Tallon Griekspoor,W/O,3,28,28.5,29.3,198,188,R,R,0,0
-20251020,Vienna,Hard,Alexander Zverev,Matteo Arnaldi,6-4 6-4,3,72,28.5,24.66,198,185,R,R,0,0
-20251020,Vienna,Hard,Alexander Zverev,Jacob Fearnley,6-4 1-6 7-6(5),3,81,28.5,24.27,198,183,R,R,0,0
-20251001,Shanghai Masters,Hard,Arthur Rinderknech,Alexander Zverev,4-6 6-3 6-2,54,3,30.19,28.45,196,198,R,R,0,0
-20251001,Shanghai Masters,Hard,Alexander Zverev,Valentin Royer,6-4 6-4,3,76,28.45,24.34,198,188,R,R,0,0
-20250925,Beijing,Hard,Daniil Medvedev,Alexander Zverev,6-3 6-3,18,3,29.62,28.43,198,198,R,R,0,0
-20250925,Beijing,Hard,Alexander Zverev,Corentin Moutet,7-5 3-6 6-3,3,37,28.43,26.44,198,180,R,L,0,0
-20250925,Beijing,Hard,Alexander Zverev,Lorenzo Sonego,6-4 6-3,3,44,28.43,30.38,198,191,R,R,0,0
-20250919,Laver Cup,Hard,Alex De Minaur,Alexander Zverev,6-1 6-4,8,3,26.59,28.42,183,198,R,R,0,0
-20250919,Laver Cup,Hard,Taylor Fritz,Alexander Zverev,6-3 7-6(4),5,3,27.89,28.42,196,198,R,R,0,0
-20250825,US Open,Hard,Felix Auger Aliassime,Alexander Zverev,4-6 7-6(7) 6-4 6-4,27,3,25.05,28.35,193,198,R,R,0,0
-20250825,US Open,Hard,Alexander Zverev,Jacob Fearnley,6-4 6-4 6-4,3,60,28.35,24.11,198,183,R,R,0,0
-20250825,US Open,Hard,Alexander Zverev,Alejandro Tabilo,6-2 7-6(4) 6-4,3,122,28.35,28.23,198,188,R,L,0,0
-20250807,Cincinnati Masters,Hard,Alexander Zverev,Ben Shelton,6-2 6-2,3,6,28.3,22.83,198,193,R,L,0,0
-20250807,Cincinnati Masters,Hard,Alexander Zverev,Karen Khachanov,7-5 3-0 RET,3,12,28.3,29.21,198,198,R,R,0,0
-20250807,Cincinnati Masters,Hard,Alexander Zverev,Brandon Nakashima,6-4 6-4,3,31,28.3,24.01,198,188,R,R,0,0
-20250807,Cincinnati Masters,Hard,Alexander Zverev,Nishesh Basavareddy,6-3 6-3,3,109,28.3,20.27,198,180,R,R,0,0
-20250727,Canada Masters,Hard,Karen Khachanov,Alexander Zverev,6-3 4-6 7-6(4),16,3,29.18,28.27,198,198,R,R,0,0
-20250727,Canada Masters,Hard,Alexander Zverev,Alexei Popyrin,6-7(8) 6-4 6-3,3,26,28.27,25.98,198,196,R,R,0,0
-20250727,Canada Masters,Hard,Alexander Zverev,Francisco Cerundolo,6-4 1-0 RET,3,24,28.27,26.95,198,185,R,R,0,0
-20250727,Canada Masters,Hard,Alexander Zverev,Matteo Arnaldi,6-7(5) 6-3 6-2,3,41,28.27,24.42,198,185,R,R,0,0
-20250727,Canada Masters,Hard,Alexander Zverev,Adam Walton,7-6(6) 6-4,3,88,28.27,26.28,198,183,R,R,0,0
-20250630,Wimbledon,Grass,Arthur Rinderknech,Alexander Zverev,7-6(3) 6-7(8) 6-3 6-7(5) 6-4,72,3,29.94,28.19,196,198,R,R,0,0
-20250616,Halle,Grass,Daniil Medvedev,Alexander Zverev,7-6(3) 6-7(1) 6-4,11,3,29.34,28.16,198,198,R,R,0,0
-20250616,Halle,Grass,Alexander Zverev,Flavio Cobolli,6-4 7-6(6),3,24,28.16,23.11,198,183,R,R,0,0
-20250616,Halle,Grass,Alexander Zverev,Lorenzo Sonego,3-6 6-4 7-6(2),3,46,28.16,30.1,198,191,R,R,0,0
-20250616,Halle,Grass,Alexander Zverev,Marcos Giron,6-2 6-1,3,43,28.16,31.9,198,180,R,R,0,0
-20250609,Stuttgart,Grass,Taylor Fritz,Alexander Zverev,6-3 7-6(0),7,3,27.61,28.14,196,198,R,R,0,0
-20250609,Stuttgart,Grass,Alexander Zverev,Ben Shelton,7-6(8) 7-6(1),3,12,28.14,22.67,198,193,R,L,0,0
-20250609,Stuttgart,Grass,Alexander Zverev,Brandon Nakashima,7-5 6-4,3,31,28.14,23.85,198,188,R,R,0,0
-20250609,Stuttgart,Grass,Alexander Zverev,Corentin Moutet,6-2 7-6(7),3,91,28.14,26.14,198,180,R,L,0,0
-20250526,Roland Garros,Clay,Alexander Zverev,Tallon Griekspoor,6-4 3-0 RET,3,35,28.1,28.9,198,188,R,R,0,0
-20250526,Roland Garros,Clay,Alexander Zverev,Flavio Cobolli,6-2 7-6(4) 6-1,3,26,28.1,23.06,198,183,R,R,0,0
-20250526,Roland Garros,Clay,Alexander Zverev,Jesper De Jong,3-6 6-1 6-2 6-3,3,88,28.1,24.99,198,180,R,R,0,0
-20250526,Roland Garros,Clay,Alexander Zverev,Learner Tien,6-3 6-3 6-4,3,67,28.1,19.48,198,180,R,L,0,0
-20250518,Hamburg,Clay,Alexandre Muller,Alexander Zverev,6-3 4-6 7-6(5),40,3,28.29,28.08,183,198,R,R,0,0
-20250518,Hamburg,Clay,Alexander Zverev,Aleksandar Kovacevic,6-1 7-6(5),3,80,28.08,26.72,198,183,R,R,0,0
-20250507,Rome Masters,Clay,Lorenzo Musetti,Alexander Zverev,7-6(1) 6-4,9,2,23.18,28.05,185,198,R,R,0,0
-20250507,Rome Masters,Clay,Alexander Zverev,Arthur Fils,7-6(3) 6-1,2,14,28.05,20.9,198,185,R,R,0,0
-20250507,Rome Masters,Clay,Alexander Zverev,Vilius Gaubas,6-4 6-0,2,154,28.05,20.35,198,178,R,R,0,0
-20250507,Rome Masters,Clay,Alexander Zverev,Camilo Ugo Carabelli,6-2 6-1,2,60,28.05,25.89,198,185,R,R,0,0
-20250423,Madrid Masters,Clay,Francisco Cerundolo,Alexander Zverev,7-5 6-3,21,2,26.69,28.01,185,198,R,R,0,0
-20250423,Madrid Masters,Clay,Alexander Zverev,Alejandro Davidovich Fokina,2-6 7-6(3) 7-6(0),2,29,28.01,25.88,198,183,R,R,0,0
-20250423,Madrid Masters,Clay,Alexander Zverev,Roberto Bautista Agut,6-2 6-2,2,55,28.01,37.02,198,183,R,R,0,0
-20250414,Munich,Clay,Alexander Zverev,Ben Shelton,6-2 6-4,3,15,27.98,22.51,198,193,R,L,0,0
-20250414,Munich,Clay,Alexander Zverev,Fabian Marozsan,7-6(3) 6-3,3,77,27.98,25.52,198,193,R,R,0,0
-20250414,Munich,Clay,Alexander Zverev,Tallon Griekspoor,6-7(6) 7-6(3) 6-4,3,37,27.98,28.78,198,188,R,R,0,0
-20250414,Munich,Clay,Alexander Zverev,Daniel Altmaier,6-3 6-2,3,68,27.98,26.59,198,188,R,R,0,0
-20250414,Munich,Clay,Alexander Zverev,Alexandre Muller,6-4 6-1,3,40,27.98,28.2,198,183,R,R,0,0
-20250407,Monte Carlo Masters,Clay,Matteo Berrettini,Alexander Zverev,2-6 6-3 7-5,34,2,28.99,27.96,196,198,R,R,0,0
-20250319,Miami Masters,Hard,Arthur Fils,Alexander Zverev,3-6 6-3 6-4,18,2,20.77,27.91,185,198,R,R,0,0
-20250319,Miami Masters,Hard,Alexander Zverev,Jordan Thompson,7-5 6-4,2,37,27.91,30.91,198,183,R,R,0,0
-20250319,Miami Masters,Hard,Alexander Zverev,Jacob Fearnley,6-2 6-4,2,83,27.91,23.68,198,183,R,R,0,0
-20250305,Indian Wells Masters,Hard,Tallon Griekspoor,Alexander Zverev,4-6 7-6(5) 7-6(4),43,2,28.67,27.87,188,198,R,R,0,0
-20250224,Acapulco,Hard,Learner Tien,Alexander Zverev,6-3 6-4,83,2,19.23,27.85,180,198,L,R,0,0
-20250224,Acapulco,Hard,Alexander Zverev,Matteo Arnaldi,6-7(2) 6-3 6-4,2,33,27.85,24.01,198,185,R,R,0,0
-20250217,Rio de Janeiro,Clay,Francisco Comesana,Alexander Zverev,4-6 6-3 6-4,86,2,24.37,27.83,178,198,R,R,0,0
-20250217,Rio de Janeiro,Clay,Alexander Zverev,Alexander Shevchenko,7-6(1) 7-6(6),2,103,27.83,24.22,198,185,R,R,0,0
-20250217,Rio de Janeiro,Clay,Alexander Zverev,Bu Yunchaokete,7-6(4) 6-4,2,69,27.83,23.08,198,185,R,R,0,0
-20250210,Buenos Aires,Clay,Francisco Cerundolo,Alexander Zverev,3-6 6-3 6-2,28,2,26.5,27.81,185,198,R,R,0,0
-20250210,Buenos Aires,Clay,Alexander Zverev,Dusan Lajovic,6-4 6-4,2,81,27.81,34.62,198,183,R,R,0,0
-20250113,Australian Open,Hard,Alexander Zverev,Tommy Paul,7-6(1) 7-6(0) 2-6 6-1,2,11,27.73,27.66,198,185,R,R,0,0
-20250113,Australian Open,Hard,Alexander Zverev,Ugo Humbert,6-1 2-6 6-3 6-2,2,14,27.73,26.55,198,188,R,L,0,0
-20250113,Australian Open,Hard,Alexander Zverev,Jacob Fearnley,6-3 6-4 6-4,2,92,27.73,23.5,198,183,R,R,0,0
-20250113,Australian Open,Hard,Alexander Zverev,Pedro Martinez,6-1 6-4 6-1,2,44,27.73,27.72,198,185,R,R,0,0
-20250113,Australian Open,Hard,Alexander Zverev,Lucas Pouille,6-4 6-4 6-4,2,103,27.73,30.89,198,185,R,R,0,0
-20260102,United Cup,Hard,Alex De Minaur,Hubert Hurkacz,6-4 4-6 6-4,,,26.87,28.89,183,196,R,R,0,0
-20260102,United Cup,Hard,Alex De Minaur,Jakub Mensik,6-4 6-1,,,26.87,20.34,183,193,R,R,0,0
-20260102,United Cup,Hard,Casper Ruud,Alex De Minaur,6-3 6-3,,,27.03,26.87,183,183,R,R,0,0
-20251109,Tour Finals,Hard,Lorenzo Musetti,Alex De Minaur,7-5 3-6 7-5,9,7,23.69,26.73,185,183,R,R,0,0
-20251109,Tour Finals,Hard,Alex De Minaur,Taylor Fritz,7-6(3) 6-3,7,6,26.73,28.03,183,196,R,R,0,0
-20251027,Paris Masters,Hard,Alexander Bublik,Alex De Minaur,6-7(5) 6-4 7-5,16,6,28.36,26.69,196,183,R,R,0,0
-20251027,Paris Masters,Hard,Alex De Minaur,Karen Khachanov,6-2 6-2,6,14,26.69,29.43,183,198,R,R,0,0
-20251027,Paris Masters,Hard,Alex De Minaur,Gabriel Diallo,7-6(8) 4-6 6-3,6,42,26.69,24.09,183,203,R,R,0,0
-20251020,Vienna,Hard,Alex De Minaur,Matteo Berrettini,6-1 7-6(4),7,59,26.67,29.52,183,196,R,R,0,0
-20251020,Vienna,Hard,Alex De Minaur,Filip Misolic,6-4 6-4,7,95,26.67,24.2,183,180,R,R,0,0
-20251020,Vienna,Hard,Alex De Minaur,Jurij Rodionov,6-4 6-1,7,154,26.67,26.43,183,191,R,L,0,0
-20251001,Shanghai Masters,Hard,Daniil Medvedev,Alex De Minaur,6-4 6-4,18,7,29.64,26.62,198,183,R,R,0,0
-20251001,Shanghai Masters,Hard,Alex De Minaur,Nuno Borges,7-5 6-2,7,51,26.62,28.61,183,185,R,R,0,0
-20251001,Shanghai Masters,Hard,Alex De Minaur,Kamil Majchrzak,6-1 7-5,7,66,26.62,29.72,183,180,R,R,0,0
-20251001,Shanghai Masters,Hard,Alex De Minaur,Camilo Ugo Carabelli,6-4 6-2,7,45,26.62,26.29,183,185,R,R,0,0
-20250925,Beijing,Hard,Alex De Minaur,Jakub Mensik,4-1 RET,8,19,26.6,20.07,183,193,R,R,0,0
-20250925,Beijing,Hard,Alex De Minaur,Arthur Rinderknech,6-3 3-6 7-6(2),8,54,26.6,30.18,183,196,R,R,0,0
-20250925,Beijing,Hard,Alex De Minaur,Bu Yunchaokete,6-4 6-0,8,89,26.6,23.68,183,185,R,R,0,0
-20250919,Laver Cup,Hard,Alex De Minaur,Jakub Mensik,6-3 6-4,8,17,26.59,20.05,183,193,R,R,0,0
-20250913,Davis Cup QLS R2: AUS vs BEL,Hard,Raphael Collignon,Alex De Minaur,7-5 3-6 6-3,91,8,23.67,26.57,191,183,R,R,0,0
-20250913,Davis Cup QLS R2: AUS vs BEL,Hard,Alex De Minaur,Zizou Bergs,6-2 7-5,8,46,26.57,26.28,183,185,R,R,0,0
-20250825,US Open,Hard,Felix Auger Aliassime,Alex De Minaur,4-6 7-6(7) 7-5 7-6(4),27,8,25.05,26.52,193,183,R,R,0,0
-20250825,US Open,Hard,Alex De Minaur,Leandro Riedi,6-3 6-2 6-1,8,435,26.52,23.58,183,191,R,R,0,0
-20250825,US Open,Hard,Alex De Minaur,Daniel Altmaier,6-7(7) 6-3 6-4 2-0 RET,8,56,26.52,26.95,183,188,R,R,0,0
-20250825,US Open,Hard,Alex De Minaur,Shintaro Mochizuki,6-2 6-4 6-2,8,112,26.52,22.23,183,175,R,R,0,0
-20250825,US Open,Hard,Alex De Minaur,Christopher Oconnell,6-3 6-4 6-4,8,81,26.52,31.23,183,183,R,R,0,0
+20260112,ATP Adelaide,Hard,Tommy Paul,Reilly Opelka,6-4 6-4,21,62,28.66,28.38,185,211,R,R,0,0
+20260112,ATP Adelaide,Hard,Reilly Opelka,Alexei Popyrin,6-3 7-6(6),62,49,28.38,26.44,211,196,R,R,0,0
+20260104,Brisbane,Hard,Kamil Majchrzak,Reilly Opelka,6-7(2) 7-6(7) 7-6(8),59,60,29.98,28.35,180,211,R,R,0,0
+20260104,Brisbane,Hard,Reilly Opelka,Dane Sweeny,6-3 7-5,60,183,28.35,24.89,211,170,R,R,0,0
+20251102,Athens,Hard,Vit Kopriva,Reilly Opelka,6-4 6-3,92,50,28.38,28.18,178,211,R,R,0,0
+20251027,Paris Masters,Hard,Corentin Moutet,Reilly Opelka,3-6 7-5 6-1,32,52,26.52,28.16,180,211,L,R,0,0
+20251027,Paris Masters,Hard,Aleksandar Vukic,Reilly Opelka,W/O,103,52,29.56,28.16,188,211,R,R,0,0
+20251027,Paris Masters,Hard,Reilly Opelka,Mattia Bellucci,6-3 6-4,52,76,28.16,24.41,211,175,R,L,0,0
+20251020,Basel,Hard,Ugo Humbert,Reilly Opelka,7-6(0) 6-4,24,62,27.32,28.15,188,211,L,R,0,0
+20251020,Basel,Hard,Reilly Opelka,Botic Van De Zandschulp,7-6(5) 6-7(7) 6-3,62,82,28.15,30.05,211,191,R,R,0,0
+20251020,Basel,Hard,Reilly Opelka,Sebastian Baez,6-3 6-4,62,43,28.15,24.81,211,170,R,R,0,0
+20251020,Basel,Hard,Reilly Opelka,Mika Brunold,6-7(6) 7-6(9) 7-5,62,312,28.15,21.05,211,191,R,R,0,0
+20251013,Brussels,Hard,Benjamin Bonzi,Reilly Opelka,6-4 6-4,53,62,29.34,28.13,183,211,R,R,0,0
+20251001,Shanghai Masters,Hard,Benjamin Bonzi,Reilly Opelka,7-6(2) 6-4,48,64,29.31,28.09,183,211,R,R,0,0
+20250919,Laver Cup,Hard,Casper Ruud,Reilly Opelka,6-4 7-6(4),12,62,26.74,28.06,183,211,R,R,0,0
+20250807,Cincinnati Masters,Hard,Francisco Comesana,Reilly Opelka,6-7(4) 6-4 7-5,71,73,24.84,27.94,178,211,R,R,0,0
 20250807,Cincinnati Masters,Hard,Reilly Opelka,Alex De Minaur,7-6(6) 6-4,73,8,27.94,26.47,211,183,R,R,0,0
-20250727,Canada Masters,Hard,Ben Shelton,Alex De Minaur,6-3 6-4,7,8,22.8,26.44,193,183,L,R,0,0
-20250727,Canada Masters,Hard,Alex De Minaur,Frances Tiafoe,6-2 4-6 6-4,8,12,26.44,27.52,183,188,R,R,0,0
-20250727,Canada Masters,Hard,Alex De Minaur,Christopher Oconnell,W/O,8,78,26.44,31.15,183,183,R,R,0,0
-20250727,Canada Masters,Hard,Alex De Minaur,Francisco Comesana,6-4 6-2,8,71,26.44,24.8,183,178,R,R,0,0
-20250721,Washington,Hard,Alex De Minaur,Alejandro Davidovich Fokina,5-7 6-1 7-6(3),13,26,26.42,26.13,183,183,R,R,0,0
-20250721,Washington,Hard,Alex De Minaur,Corentin Moutet,6-4 6-3,13,59,26.42,26.26,183,180,R,L,0,0
-20250721,Washington,Hard,Alex De Minaur,Brandon Nakashima,6-4 6-4,13,32,26.42,23.96,183,188,R,R,0,0
-20250721,Washington,Hard,Alex De Minaur,Jiri Lehecka,7-6(4) 6-7(6) 6-4,13,25,26.42,23.7,183,185,R,R,0,0
-20250721,Washington,Hard,Alex De Minaur,Bu Yunchaokete,7-6(5) 6-2,13,75,26.42,23.5,183,185,R,R,0,0
-20250630,Wimbledon,Grass,Alex De Minaur,August Holmgren,6-4 7-6(5) 6-3,11,192,26.37,27.19,183,188,R,R,0,0
-20250630,Wimbledon,Grass,Alex De Minaur,Arthur Cazaux,4-6 6-2 6-4 6-0,11,115,26.37,22.85,183,183,R,R,0,0
-20250630,Wimbledon,Grass,Alex De Minaur,Roberto Carballes Baena,6-2 6-2 7-6(2),11,74,26.37,32.27,183,183,R,R,0,0
-20250616,Queen's Club,Grass,Jiri Lehecka,Alex De Minaur,6-4 6-2,30,12,23.6,26.33,185,183,R,R,0,0
-20250526,Roland Garros,Clay,Alexander Bublik,Alex De Minaur,2-6 2-6 6-4 6-3 6-2,62,9,27.94,26.27,196,183,R,R,0,0
-20250526,Roland Garros,Clay,Alex De Minaur,Laslo Djere,6-3 6-4 7-6(6),9,59,26.27,29.98,183,188,R,R,0,0
-20250507,Rome Masters,Clay,Tommy Paul,Alex De Minaur,7-5 6-3,12,8,27.97,26.22,185,183,R,R,0,0
-20250507,Rome Masters,Clay,Alex De Minaur,Hugo Dellien,6-4 6-4,8,103,26.22,31.89,183,180,R,R,0,0
-20250507,Rome Masters,Clay,Alex De Minaur,Luca Nardi,6-4 7-5,8,95,26.22,21.75,183,185,R,R,0,0
-20250423,Madrid Masters,Clay,Lorenzo Musetti,Alex De Minaur,6-4 6-2,11,7,23.14,26.18,185,183,R,R,0,0
-20250423,Madrid Masters,Clay,Alex De Minaur,Denis Shapovalov,6-3 7-6(3),7,30,26.18,26.02,183,185,R,L,0,0
-20250423,Madrid Masters,Clay,Alex De Minaur,Lorenzo Sonego,6-2 6-3,7,43,26.18,29.95,183,191,R,R,0,0
-20250414,Barcelona,Clay,Alex De Minaur,Jacob Fearnley,6-1 6-2,7,74,26.15,23.75,183,183,R,R,0,0
-20250414,Barcelona,Clay,Alex De Minaur,Tomas Martin Etcheverry,6-4 6-4,7,46,26.15,25.74,183,196,R,R,0,0
-20250407,Monte Carlo Masters,Clay,Lorenzo Musetti,Alex De Minaur,1-6 6-4 7-6(4),16,10,23.1,26.14,185,183,R,R,0,0
-20250407,Monte Carlo Masters,Clay,Alex De Minaur,Grigor Dimitrov,6-0 6-0,10,18,26.14,33.89,183,191,R,R,0,0
-20250407,Monte Carlo Masters,Clay,Alex De Minaur,Daniil Medvedev,6-2 6-2,10,11,26.14,29.15,183,198,R,R,0,0
-20250407,Monte Carlo Masters,Clay,Alex De Minaur,Tomas Machac,3-6 6-0 6-3,10,21,26.14,24.48,183,183,R,R,0,0
-20250319,Miami Masters,Hard,Matteo Berrettini,Alex De Minaur,6-3 7-6(7),30,11,28.93,26.08,196,183,R,R,0,0
-20250319,Miami Masters,Hard,Alex De Minaur,Joao Fonseca,5-7 7-5 6-3,11,60,26.08,18.58,183,185,R,R,0,0
-20250319,Miami Masters,Hard,Alex De Minaur,Bu Yunchaokete,6-4 6-4,11,69,26.08,23.16,183,185,R,R,0,0
-20250305,Indian Wells Masters,Hard,Francisco Cerundolo,Alex De Minaur,7-5 6-3,26,10,26.56,26.05,185,183,R,R,0,0
-20250305,Indian Wells Masters,Hard,Alex De Minaur,Hubert Hurkacz,6-4 6-0,10,22,26.05,28.06,183,196,R,R,0,0
-20250305,Indian Wells Masters,Hard,Alex De Minaur,David Goffin,6-2 6-2,10,56,26.05,34.24,183,180,R,R,0,0
-20250224,Dubai,Hard,Marin Cilic,Alex De Minaur,6-2 3-6 6-3,187,8,36.41,26.02,198,183,R,R,0,0
-20250217,Doha,Hard,Andrey Rublev,Alex De Minaur,6-1 3-6 7-6(8),10,8,27.33,26.0,188,183,R,R,0,0
-20250217,Doha,Hard,Alex De Minaur,Botic Van De Zandschulp,6-4 6-4,8,87,26.0,29.37,183,191,R,R,0,0
-20250217,Doha,Hard,Alex De Minaur,Roman Safiullin,6-1 7-5,8,71,26.0,27.53,183,185,R,R,0,0
-20250203,Rotterdam,Hard,Alex De Minaur,Mattia Bellucci,6-1 6-2,8,92,25.96,23.68,183,175,R,L,0,0
-20250203,Rotterdam,Hard,Alex De Minaur,Daniel Altmaier,6-1 6-4,8,93,25.96,26.4,183,188,R,R,0,0
-20250203,Rotterdam,Hard,Alex De Minaur,Jakub Mensik,6-4 6-4,8,47,25.96,19.43,183,193,R,R,0,0
-20250203,Rotterdam,Hard,Alex De Minaur,David Goffin,6-2 6-4,8,56,25.96,34.16,183,180,R,R,0,0
-20250131,Davis Cup QLS R1: AUS vs SWE,Hard,Alex De Minaur,Mikael Ymer,7-5 6-1,8,,25.95,26.4,183,183,R,R,0,0
-20250113,Australian Open,Hard,Alex De Minaur,Alex Michelsen,6-0 7-6(5) 6-3,8,42,25.91,20.39,183,193,R,R,0,0
-20250113,Australian Open,Hard,Alex De Minaur,Francisco Cerundolo,5-7 7-6(3) 6-3 6-3,8,31,25.91,26.42,183,185,R,R,0,0
-20250113,Australian Open,Hard,Alex De Minaur,Tristan Boyer,6-2 6-4 6-3,8,136,25.91,23.73,183,188,R,R,0,0
-20250113,Australian Open,Hard,Alex De Minaur,Botic Van De Zandschulp,6-1 7-5 6-4,8,84,25.91,29.28,183,191,R,R,0,0
-20260104,Brisbane,Hard,Daniil Medvedev,Brandon Nakashima,6-2 7-6(1),13,33,29.9,24.42,198,188,R,R,0,0
-20260104,Brisbane,Hard,Daniil Medvedev,Alex Michelsen,6-4 6-2,13,37,29.9,21.36,198,193,R,R,0,0
-20260104,Brisbane,Hard,Daniil Medvedev,Kamil Majchrzak,6-7(4) 6-3 6-2,13,59,29.9,29.98,198,180,R,R,0,0
-20260104,Brisbane,Hard,Daniil Medvedev,Frances Tiafoe,6-3 6-2,13,30,29.9,27.96,198,188,R,R,0,0
-20260104,Brisbane,Hard,Daniil Medvedev,Marton Fucsovics,6-2 6-3,13,54,29.9,33.91,198,188,R,R,0,0
-20251027,Paris Masters,Hard,Daniil Medvedev,Lorenzo Sonego,3-6 7-6(5) 6-4,13,45,29.71,30.46,198,191,R,R,0,0
-20251027,Paris Masters,Hard,Daniil Medvedev,Grigor Dimitrov,W/O,13,38,29.71,34.45,198,191,R,R,0,0
-20251027,Paris Masters,Hard,Daniil Medvedev,Jaume Munar,6-1 6-3,13,36,29.71,28.48,198,183,R,R,0,0
-20251020,Vienna,Hard,Corentin Moutet,Daniil Medvedev,7-6(3) 6-4,36,14,26.51,29.69,180,198,L,R,0,0
-20251020,Vienna,Hard,Daniil Medvedev,Nuno Borges,6-4 6-7(7) 6-2,14,47,29.69,28.67,198,185,R,R,0,0
-20251013,Almaty,Hard,Daniil Medvedev,Corentin Moutet,7-5 4-6 6-3,14,41,29.67,26.49,198,180,R,L,0,0
-20251013,Almaty,Hard,Daniil Medvedev,James Duckworth,6-7(8) 6-3 6-2,14,138,29.67,33.73,198,183,R,R,0,0
-20251013,Almaty,Hard,Daniil Medvedev,Fabian Marozsan,7-5 6-2,14,52,29.67,26.02,198,193,R,R,0,0
-20251013,Almaty,Hard,Daniil Medvedev,Adam Walton,7-5 7-6(0),14,76,29.67,26.49,198,183,R,R,0,0
-20251001,Shanghai Masters,Hard,Arthur Rinderknech,Daniil Medvedev,4-6 6-2 6-4,54,18,30.19,29.64,196,198,R,R,0,0
-20251001,Shanghai Masters,Hard,Daniil Medvedev,Learner Tien,7-6(6) 6-7(1) 6-4,18,36,29.64,19.83,198,180,R,L,0,0
-20251001,Shanghai Masters,Hard,Daniil Medvedev,Alejandro Davidovich Fokina,6-3 7-6(5),18,20,29.64,26.32,198,183,R,R,0,0
-20251001,Shanghai Masters,Hard,Daniil Medvedev,Dalibor Svrcina,6-1 6-1,18,91,29.64,23.0,198,178,R,R,0,0
-20250925,Beijing,Hard,Learner Tien,Daniil Medvedev,5-7 7-5 4-0 RET,52,18,19.81,29.62,180,198,L,R,0,0
-20250925,Beijing,Hard,Daniil Medvedev,Alejandro Davidovich Fokina,6-3 6-3,18,20,29.62,26.31,198,183,R,R,0,0
-20250925,Beijing,Hard,Daniil Medvedev,Cameron Norrie,6-3 6-4,18,34,29.62,30.09,198,188,R,L,0,0
-20250917,Hangzhou,Hard,Yibing Wu,Daniil Medvedev,5-7 7-6(5) 6-4,196,18,25.93,29.6,183,198,R,R,0,0
-20250917,Hangzhou,Hard,Daniil Medvedev,Nishesh Basavareddy,6-2 6-3,18,109,29.6,20.38,198,180,R,R,0,0
-20250825,US Open,Hard,Benjamin Bonzi,Daniil Medvedev,6-3 7-5 6-7(5) 0-6 6-4,51,13,29.21,29.54,183,198,R,R,0,0
-20250807,Cincinnati Masters,Hard,Adam Walton,Daniil Medvedev,6-7(0) 6-4 6-1,85,15,26.31,29.49,183,198,R,R,0,0
-20250727,Canada Masters,Hard,Alexei Popyrin,Daniil Medvedev,5-7 6-4 6-4,26,14,25.98,29.46,196,198,R,R,0,0
-20250727,Canada Masters,Hard,Daniil Medvedev,Dalibor Svrcina,7-6(3) 6-4,14,120,29.46,22.82,198,178,R,R,0,0
-20250721,Washington,Hard,Corentin Moutet,Daniil Medvedev,1-6 6-4 6-4,59,14,26.26,29.44,180,198,L,R,0,0
-20250721,Washington,Hard,Daniil Medvedev,Yibing Wu,6-3 6-2,14,243,29.44,25.77,198,183,R,R,0,0
+20250807,Cincinnati Masters,Hard,Reilly Opelka,Hugo Dellien,7-5 7-6(3),73,108,27.94,32.14,211,180,R,R,0,0
+20250727,Canada Masters,Hard,Learner Tien,Reilly Opelka,7-6(3) 6-3,61,74,19.65,27.91,180,211,L,R,0,0
+20250727,Canada Masters,Hard,Reilly Opelka,Tomas Machac,7-6(5) 6-7(5) 6-3,74,22,27.91,24.79,211,183,R,R,0,0
+20250727,Canada Masters,Hard,Reilly Opelka,Sebastian Ofner,7-6(6) 7-5,74,141,27.91,29.21,211,191,R,R,0,0
 20250721,Washington,Hard,Daniil Medvedev,Reilly Opelka,3-6 7-5 6-1,14,74,29.44,27.9,198,211,R,R,0,0
-20250630,Wimbledon,Grass,Benjamin Bonzi,Daniil Medvedev,7-6(2) 3-6 7-6(3) 6-2,64,9,29.06,29.38,183,198,R,R,0,0
-20250616,Halle,Grass,Alexander Bublik,Daniil Medvedev,6-3 7-6(4),45,11,28.0,29.34,196,198,R,R,0,0
-20250616,Halle,Grass,Daniil Medvedev,Alex Michelsen,6-4 6-3,11,33,29.34,20.81,198,193,R,R,0,0
-20250616,Halle,Grass,Daniil Medvedev,Quentin Halys,6-2 7-5,11,48,29.34,28.64,198,191,R,R,0,0
-20250616,Halle,Grass,Daniil Medvedev,Daniel Altmaier,6-3 6-3,11,52,29.34,26.76,198,188,R,R,0,0
+20250721,Washington,Hard,Reilly Opelka,Murphy Cassone,7-6(4) 6-7(5) 6-3,74,185,27.9,22.93,211,188,R,R,0,0
+20250630,Wimbledon,Grass,Brandon Nakashima,Reilly Opelka,7-5 6-2 6-7(6) 6-3,34,70,23.91,27.84,188,211,R,R,0,0
+20250630,Wimbledon,Grass,Reilly Opelka,Alexander Shevchenko,6-3 7-5 7-6(4),70,98,27.84,24.58,211,185,R,R,0,0
+20250623,Eastbourne,Grass,Jakub Mensik,Reilly Opelka,7-5 6-3,17,72,19.81,27.82,193,211,R,R,0,0
+20250623,Eastbourne,Grass,Reilly Opelka,George Loffhagen,7-6(6) 3-6 7-6(1),72,302,27.82,24.18,211,188,R,R,0,0
+20250616,Queen's Club,Grass,Arthur Rinderknech,Reilly Opelka,7-5 7-6(3),80,75,29.9,27.8,196,211,R,R,0,0
+20250616,Queen's Club,Grass,Reilly Opelka,Camilo Ugo Carabelli,7-6(6) 6-4,75,53,27.8,26.0,211,185,R,R,0,0
+20250609,s Hertogenbosch,Grass,Zizou Bergs,Reilly Opelka,6-1 6-4,63,87,26.02,27.78,185,211,R,R,0,0
 20250609,s Hertogenbosch,Grass,Reilly Opelka,Daniil Medvedev,7-6(5) 7-6(5),87,11,27.78,29.33,211,198,R,R,0,0
-20250609,s Hertogenbosch,Grass,Daniil Medvedev,Adrian Mannarino,7-6(6) 6-4,11,127,29.33,36.94,198,180,R,L,0,0
-20250526,Roland Garros,Clay,Cameron Norrie,Daniil Medvedev,7-5 6-3 4-6 1-6 7-5,81,11,29.76,29.29,188,198,L,R,0,0
-20250507,Rome Masters,Clay,Lorenzo Musetti,Daniil Medvedev,7-5 6-4,9,11,23.18,29.23,185,198,R,R,0,0
-20250507,Rome Masters,Clay,Daniil Medvedev,Alexei Popyrin,6-4 6-1,11,25,29.23,25.75,198,196,R,R,0,0
-20250507,Rome Masters,Clay,Daniil Medvedev,Cameron Norrie,6-4 6-2,11,91,29.23,29.71,198,188,R,L,0,0
-20250423,Madrid Masters,Clay,Casper Ruud,Daniil Medvedev,6-3 7-5,15,10,26.34,29.2,183,198,R,R,0,0
-20250423,Madrid Masters,Clay,Daniil Medvedev,Brandon Nakashima,3-6 6-1 6-4,10,32,29.2,23.72,198,188,R,R,0,0
-20250423,Madrid Masters,Clay,Daniil Medvedev,Juan Manuel Cerundolo,6-2 6-2,10,126,29.2,23.44,198,183,R,L,0,0
-20250423,Madrid Masters,Clay,Daniil Medvedev,Laslo Djere,W/O,10,71,29.2,29.89,198,188,R,R,0,0
-20250407,Monte Carlo Masters,Clay,Daniil Medvedev,Alexandre Muller,7-6(6) 5-7 6-2,11,39,29.15,28.18,198,183,R,R,0,0
-20250407,Monte Carlo Masters,Clay,Daniil Medvedev,Karen Khachanov,7-5 4-6 6-4,11,25,29.15,28.88,198,198,R,R,0,0
-20250319,Miami Masters,Hard,Jaume Munar,Daniil Medvedev,6-2 6-3,56,8,27.87,29.1,183,198,R,R,0,0
-20250305,Indian Wells Masters,Hard,Holger Rune,Daniil Medvedev,7-5 6-4,13,6,21.85,29.06,188,198,R,R,0,0
-20250305,Indian Wells Masters,Hard,Daniil Medvedev,Arthur Fils,6-4 2-6 7-6(7),6,21,29.06,20.73,198,185,R,R,0,0
-20250305,Indian Wells Masters,Hard,Daniil Medvedev,Tommy Paul,6-4 6-0,6,11,29.06,27.8,198,185,R,R,0,0
-20250305,Indian Wells Masters,Hard,Daniil Medvedev,Alex Michelsen,2-0 RET,6,32,29.06,20.53,198,193,R,R,0,0
-20250305,Indian Wells Masters,Hard,Daniil Medvedev,Bu Yunchaokete,6-2 6-2,6,71,29.06,23.12,198,185,R,R,0,0
-20250224,Dubai,Hard,Tallon Griekspoor,Daniil Medvedev,2-6 7-6(7) 7-5,47,6,28.65,29.04,188,198,R,R,0,0
-20250224,Dubai,Hard,Daniil Medvedev,Giovanni Mpetshi Perricard,6-4 6-4,6,29,29.04,21.63,198,203,R,R,0,0
-20250224,Dubai,Hard,Daniil Medvedev,Jan Lennard Struff,6-4 7-6(4),6,46,29.04,34.84,198,193,R,R,0,0
-20250217,Doha,Hard,Felix Auger Aliassime,Daniil Medvedev,6-3 0-0 RET,23,6,24.53,29.02,193,198,R,R,0,0
-20250217,Doha,Hard,Daniil Medvedev,Zizou Bergs,6-2 6-1,6,58,29.02,25.71,198,185,R,R,0,0
-20250217,Doha,Hard,Daniil Medvedev,Karen Khachanov,4-6 7-5 6-3,6,21,29.02,28.74,198,198,R,R,0,0
-20250210,Marseille,Hard,Hamad Medjedovic,Daniil Medvedev,6-3 6-2,96,8,21.57,29.0,188,198,R,R,0,0
-20250210,Marseille,Hard,Daniil Medvedev,Jan Lennard Struff,6-3 6-2,8,46,29.0,34.8,198,193,R,R,0,0
-20250210,Marseille,Hard,Daniil Medvedev,Pierre Hugues Herbert,6-2 6-4,8,192,29.0,33.9,198,188,R,R,0,0
-20250203,Rotterdam,Hard,Mattia Bellucci,Daniil Medvedev,6-3 6-7(6) 6-3,92,7,23.68,28.98,175,198,L,R,0,0
-20250203,Rotterdam,Hard,Daniil Medvedev,Stan Wawrinka,6-7(8) 6-4 6-1,7,155,28.98,39.85,198,183,R,R,0,0
-20250113,Australian Open,Hard,Learner Tien,Daniil Medvedev,6-3 7-6(4) 6-7(8) 1-6 7-6(7),121,5,19.12,28.92,180,198,L,R,0,0
-20250113,Australian Open,Hard,Daniil Medvedev,Kasidit Samrej,6-2 4-6 3-6 6-1 6-2,5,418,28.92,23.98,198,191,R,R,0,0
-20260112,ATP Auckland,Hard,Marcos Giron,Luciano Darderi,,60,24,32.47,23.91,180,183,R,R,0,0
+20250609,s Hertogenbosch,Grass,Reilly Opelka,Nicolas Jarry,7-6(5) 6-3,87,150,27.78,29.66,211,201,R,R,0,0
+20250609,s Hertogenbosch,Grass,Reilly Opelka,Jesper De Jong,6-7(5) 7-6(5) 6-2,87,92,27.78,25.02,211,180,R,R,0,0
+20250609,s Hertogenbosch,Grass,Mark Lajal,Reilly Opelka,7-6(3) 6-3,195,87,22.08,27.78,191,211,R,R,0,0
+20250609,s Hertogenbosch,Grass,Reilly Opelka,Denis Yevseyev,6-1 7-6(6),87,265,27.78,32.05,211,188,R,R,0,0
+20250526,Roland Garros,Clay,Mariano Navone,Reilly Opelka,6-1 7-6(1) 6-3,97,93,24.24,27.74,178,211,R,R,0,0
+20250526,Roland Garros,Clay,Reilly Opelka,Rinky Hijikata,1-6 6-3 7-5 7-6(3),93,78,27.74,24.25,211,178,R,R,0,0
+20250518,Geneva,Clay,Sebastian Ofner,Reilly Opelka,7-5 7-6(2),128,95,29.02,27.72,191,211,R,R,0,0
+20250518,Geneva,Clay,Reilly Opelka,Enrico Dalla Valle,6-4 6-4,95,284,27.72,27.16,211,196,R,R,0,0
+20250507,Rome Masters,Clay,Learner Tien,Reilly Opelka,6-4 7-6(11),70,94,19.43,27.69,180,211,L,R,0,0
+20250429,Aix-en-Provence CH,Clay,Ignacio Buse,Reilly Opelka,7-6(4) 2-3 RET,210,103,21.1,27.67,185,211,R,R,0,0
+20250429,Aix-en-Provence CH,Clay,Reilly Opelka,Corentin Moutet,7-6(3) 7-6(3),103,82,27.67,26.03,211,180,R,L,0,0
+20250429,Aix-en-Provence CH,Clay,Reilly Opelka,Kyrian Jacquet,4-6 6-3 6-2,103,152,27.67,23.97,211,178,R,R,0,0
+20250423,Madrid Masters,Clay,Karen Khachanov,Reilly Opelka,7-6(3) 7-6(4),25,103,28.92,27.65,198,211,R,R,0,0
+20250423,Madrid Masters,Clay,Reilly Opelka,Rinky Hijikata,7-5 7-5,103,84,27.65,24.16,211,178,R,R,0,0
+20250414,Barcelona,Clay,Stefanos Tsitsipas,Reilly Opelka,6-2 6-2,16,105,26.67,27.63,193,211,R,R,0,0
+20250319,Miami Masters,Hard,Tomas Machac,Reilly Opelka,7-6(1) 6-3,21,114,24.43,27.56,183,211,R,R,0,0
+20250319,Miami Masters,Hard,Reilly Opelka,Holger Rune,4-6 6-3 7-6(5),114,12,27.56,21.89,211,188,R,R,0,0
+20250319,Miami Masters,Hard,Reilly Opelka,Christopher Eubanks,6-3 7-6(4),114,104,27.56,28.87,211,201,R,R,0,0
+20250311,Phoenix CH,Hard,Hugo Gaston,Reilly Opelka,7-6(6) 6-3,93,114,24.45,27.53,173,211,L,R,0,0
+20250311,Phoenix CH,Hard,Reilly Opelka,Arthur Rinderknech,4-6 7-5 7-5,114,73,27.53,29.63,211,196,R,R,0,0
+20250305,Indian Wells Masters,Hard,Roman Safiullin,Reilly Opelka,7-5 6-4,69,114,27.58,27.52,185,211,R,R,0,0
+20250210,Delray Beach,Hard,Brandon Nakashima,Reilly Opelka,3-6 7-5 6-2,43,121,23.52,27.46,188,211,R,R,0,0
+20250210,Delray Beach,Hard,Reilly Opelka,Christopher Eubanks,6-3 7-6(7),121,104,27.46,28.77,211,201,R,R,0,0
+20250203,Dallas,Hard,Tommy Paul,Reilly Opelka,7-6(3) 6-2,9,145,27.72,27.44,185,211,R,R,0,0
+20250203,Dallas,Hard,Reilly Opelka,Cameron Norrie,4-6 7-6(5) 6-4,145,63,27.44,29.45,211,188,R,L,0,0
+20250203,Dallas,Hard,Reilly Opelka,Alexander Shevchenko,7-6(3) 6-4,145,82,27.44,24.18,211,185,R,R,0,0
+20250113,Australian Open,Hard,Tomas Machac,Reilly Opelka,3-6 7-6(1) 6-7(5) 7-6(4) 6-4,25,170,24.25,27.38,183,211,R,R,0,0
+20250113,Australian Open,Hard,Reilly Opelka,Gauthier Onclin,3-6 7-6(4) 6-3 6-2,170,239,27.38,23.88,211,180,R,R,0,0
+20260112,ATP Auckland,Hard,Marcos Giron,Luciano Darderi,1-6 7-5 6-4,60,24,32.47,23.91,180,183,R,R,0,0
 20260112,ATP Auckland,Hard,Luciano Darderi,Alejandro Tabilo,1-6 7-5 6-3,24,81,23.91,28.61,183,188,R,L,0,0
 20251102,Athens,Hard,Miomir Kecmanovic,Luciano Darderi,4-6 6-2 6-3,54,26,26.17,23.72,183,183,R,R,0,0
 20251027,Paris Masters,Hard,Arthur Cazaux,Luciano Darderi,7-6(5) 7-6(4),62,27,23.18,23.7,183,183,R,R,0,0
@@ -476,115 +320,395 @@ tourney_date,tourney_name,surface,winner_name,loser_name,score,winner_rank,loser
 20250807,Cincinnati Masters,Hard,Tomas Martin Etcheverry,Juncheng Shang,6-7(5) 7-6(4) 6-4,58,110,26.06,20.51,196,180,R,L,0,0
 20250727,Canada Masters,Hard,James Duckworth,Juncheng Shang,6-3 7-6(3),106,109,33.51,20.48,183,180,R,L,0,0
 20250113,Australian Open,Hard,Alejandro Davidovich Fokina,Juncheng Shang,7-6(1) 5-2 RET,66,50,25.61,19.95,183,180,R,L,0,0
-20260104,Brisbane,Hard,Terence Atmane,Yannick Hanfmann,6-4 7-6(3),62,102,23.99,34.14,193,193,L,R,0,0
-20251110,Lyon CH,Hard,Liam Broady,Yannick Hanfmann,7-6(5) 6-4,391,103,31.85,33.99,183,193,L,R,0,0
-20251110,Lyon CH,Hard,Yannick Hanfmann,Jan Kumstat,6-1 6-3,103,695,33.99,18.86,193,,R,R,0,0
-20251102,Athens,Hard,Yannick Hanfmann,Marcos Giron,7-6(3) 6-4,117,72,33.97,32.28,193,180,R,R,0,0
-20251102,Athens,Hard,Yannick Hanfmann,Vit Kopriva,6-2 5-7 7-5,117,92,33.97,28.38,193,178,R,R,0,0
-20251102,Athens,Hard,Yannick Hanfmann,Ivan Ivanov,6-4 6-2,117,935,33.97,17.01,193,,R,R,0,0
-20251102,Athens,Hard,Yannick Hanfmann,Alex Molcan,7-6(2) 6-3,117,199,33.97,27.92,193,178,R,L,0,0
-20251102,Athens,Hard,Yannick Hanfmann,Lukas Klein,6-2 6-4,117,123,33.97,27.62,193,193,R,R,0,0
-20251027,Paris Masters,Hard,Jacob Fearnley,Yannick Hanfmann,6-4 6-2,78,125,24.28,33.95,183,193,R,R,0,0
-20251027,Paris Masters,Hard,Yannick Hanfmann,Adrian Mannarino,6-3 6-2,125,60,33.95,37.33,193,180,R,L,0,0
-20251013,Brussels,Hard,Lorenzo Musetti,Yannick Hanfmann,7-6(3) 7-5,8,139,23.61,33.92,185,193,R,R,0,0
-20251013,Brussels,Hard,Yannick Hanfmann,Matteo Arnaldi,6-7(4) 6-4 6-4,139,74,33.92,24.64,193,185,R,R,0,0
-20251013,Brussels,Hard,Yannick Hanfmann,Tibo Colson,6-7(3) 7-5 6-2,139,505,33.92,25.25,193,196,R,R,0,0
-20251013,Brussels,Hard,Yannick Hanfmann,Calvin Hemery,6-3 6-4,139,207,33.92,30.71,193,191,R,R,0,0
-20251001,Shanghai Masters,Hard,Yannick Hanfmann,Frances Tiafoe,6-7(9) 6-2 6-1,150,28,33.88,27.7,193,188,R,R,0,0
-20251001,Shanghai Masters,Hard,Yannick Hanfmann,Lorenzo Sonego,2-6 6-3 6-1,150,46,33.88,30.39,193,191,R,R,0,0
-20251001,Shanghai Masters,Hard,Yannick Hanfmann,Jason Kubler,6-2 6-3,150,190,33.88,32.37,193,178,R,R,0,0
-20251001,Shanghai Masters,Hard,Yannick Hanfmann,Shintaro Mochizuki,6-3 7-5,150,102,33.88,22.33,193,175,R,R,0,0
-20250922,Jingshan CH,Hard,Eliot Spizzirri,Yannick Hanfmann,7-5 4-6 6-4,128,159,23.75,33.86,183,193,R,R,0,0
-20250922,Jingshan CH,Hard,Yannick Hanfmann,Denis Yevseyev,6-1 6-3,159,364,33.86,32.34,193,188,R,R,0,0
-20250922,Jingshan CH,Hard,Yannick Hanfmann,Chun Hsin Tseng,6-1 6-7(4) 6-0,159,122,33.86,24.12,193,175,R,R,0,0
-20250922,Jingshan CH,Hard,Yannick Hanfmann,Tristan Boyer,6-7(2) 7-6(6) 6-4,159,120,33.86,24.42,193,188,R,R,0,0
+20260112,ATP Auckland,Hard,Sebastian Baez,Emilio Nava,4-6 7-5 6-3,39,88,25.04,24.11,170,185,R,R,0,0
+20260112,ATP Auckland,Hard,Emilio Nava,Jan Lennard Struff,3-6 6-4 6-3,88,84,24.11,35.72,185,193,R,R,0,0
+20260112,ATP Auckland,Hard,Emilio Nava,Patrick Kypson,6-3 6-4,88,116,24.11,26.21,185,188,R,R,0,0
+20260105,Hong Kong,Hard,Laslo Djere,Emilio Nava,7-5 7-6(1),95,88,30.6,24.09,188,185,R,R,0,0
+20260105,Hong Kong,Hard,Emilio Nava,Kai Thompson,6-3 6-2,88,1941,24.09,24.0,185,,R,U,0,0
+20251110,Montevideo CH,Clay,Gustavo Heide,Emilio Nava,4-6 7-5 6-4,304,88,23.7,23.94,191,185,R,R,0,0
+20251110,Montevideo CH,Clay,Emilio Nava,Daniel Dutra Da Silva,6-2 6-4,88,360,23.94,37.35,185,173,R,L,0,0
+20251020,Costa do Sauipe CH,Clay,Juan Carlos Prado Angelo,Emilio Nava,7-6(2) 6-1,248,92,20.62,23.88,185,185,R,R,0,0
+20251020,Costa do Sauipe CH,Clay,Emilio Nava,Gonzalo Bueno,6-2 6-3,92,220,23.88,21.55,185,173,R,R,0,0
+20251020,Costa do Sauipe CH,Clay,Emilio Nava,Rodrigo Pacheco Mendez,6-3 6-4,92,200,23.88,20.49,185,188,R,L,0,0
+20251013,Curitiba CH,Clay,Adolfo Daniel Vallejo,Emilio Nava,6-2 6-3,253,93,21.46,23.86,183,185,R,R,0,0
+20250929,Antofagasta CH,Clay,Federico Agustin Gomez,Emilio Nava,4-6 6-4 6-4,208,92,28.84,23.82,191,185,R,R,0,0
+20250929,Antofagasta CH,Clay,Emilio Nava,Matheus Pucinelli De Almeida,6-3 6-4,92,277,23.82,24.5,185,183,R,R,0,0
+20250922,Buenos Aires CH,Clay,Joao Lucas Reis Da Silva,Emilio Nava,4-6 7-5 7-5,222,90,25.49,23.81,178,185,R,R,0,0
+20250915,Villa Maria CH,Clay,Emilio Nava,Alex Barrena,6-3 6-3,100,224,23.79,22.93,185,175,R,R,0,0
+20250915,Villa Maria CH,Clay,Emilio Nava,Murkel Alejandro Dellien Velasco,6-4 7-6(5),100,279,23.79,28.0,185,193,R,R,0,0
+20250915,Villa Maria CH,Clay,Emilio Nava,Juan Carlos Prado Angelo,7-6(9) 6-4,100,273,23.79,20.53,185,185,R,R,0,0
+20250915,Villa Maria CH,Clay,Emilio Nava,Juan Pablo Varillas,6-3 6-2,100,324,23.79,29.94,185,185,R,R,0,0
+20250915,Villa Maria CH,Clay,Emilio Nava,Daniel Dutra Da Silva,4-6 6-4 6-4,100,352,23.79,37.2,185,173,R,L,0,0
+20250825,US Open,Hard,Taylor Fritz,Emilio Nava,7-5 6-2 6-3,4,101,27.82,23.73,196,185,R,R,0,0
+20250807,Cincinnati Masters,Hard,Taylor Fritz,Emilio Nava,6-4 6-4,4,105,27.78,23.68,196,185,R,R,0,0
+20250807,Cincinnati Masters,Hard,Emilio Nava,Borna Coric,6-3 7-5,105,90,23.68,28.73,185,188,R,R,0,0
+20250807,Cincinnati Masters,Hard,Emilio Nava,Mariano Navone,7-5 6-4,105,78,23.68,24.44,185,178,R,R,0,0
+20250807,Cincinnati Masters,Hard,Emilio Nava,Mikhail Kukushkin,7-5 6-2,105,223,23.68,37.62,185,183,R,R,0,0
+20250727,Canada Masters,Hard,Karen Khachanov,Emilio Nava,6-7(6) 6-4 6-1,16,114,29.18,23.65,198,185,R,R,0,0
+20250727,Canada Masters,Hard,Emilio Nava,Terence Atmane,6-2 7-5,114,132,23.65,23.55,185,193,R,L,0,0
+20250727,Canada Masters,Hard,Emilio Nava,Zizou Bergs,6-1 7-6(4),114,52,23.65,26.15,185,185,R,R,0,0
+20250727,Canada Masters,Hard,Emilio Nava,Mitchell Krueger,6-4 7-6(5),114,166,23.65,31.54,185,188,R,R,0,0
+20250721,Washington,Hard,Learner Tien,Emilio Nava,6-1 6-4,67,116,19.63,23.63,180,185,L,R,0,0
+20250714,Los Cabos,Hard,Andrey Rublev,Emilio Nava,5-7 6-4 6-3,10,123,27.73,23.61,188,185,R,R,0,0
+20250714,Los Cabos,Hard,Emilio Nava,Bu Yunchaokete,3-6 7-5 7-6(6),123,73,23.61,23.48,185,185,R,R,0,0
+20250714,Los Cabos,Hard,Emilio Nava,Aleksandar Vukic,7-6(4) 6-3,123,90,23.61,29.27,185,188,R,R,0,0
+20250630,Wimbledon,Grass,Dominic Stricker,Emilio Nava,7-6(2) 6-4,238,119,22.87,23.58,183,185,L,R,0,0
+20250630,Wimbledon,Grass,Emilio Nava,Mitchell Krueger,7-6(6) 7-6(3),119,164,23.58,31.46,185,188,R,R,0,0
+20250616,Nottingham 2 CH,Grass,Colton Smith,Emilio Nava,6-7(5) 6-4 6-4,146,121,22.28,23.54,,185,U,R,0,0
+20250616,Nottingham 2 CH,Grass,Emilio Nava,Ryan Peniston,7-6(5) 6-4,121,271,23.54,29.6,185,180,R,L,0,0
+20250616,Nottingham 2 CH,Grass,Emilio Nava,Jack Pinnington Jones,6-3 6-7(10) 6-3,121,282,23.54,22.21,185,180,R,R,0,0
+20250609,Bratislava CH,Clay,Federico Cina,Emilio Nava,7-6(3) 6-3,287,119,18.2,23.52,183,185,R,R,0,0
+20250609,Bratislava CH,Clay,Emilio Nava,Andrej Martin,6-1 6-1,119,306,23.52,35.72,185,183,R,R,0,0
+20250602,Heilbronn CH,Clay,Guy Den Ouden,Emilio Nava,7-5 6-3,187,137,23.15,23.5,183,185,R,R,0,0
+20250602,Heilbronn CH,Clay,Emilio Nava,Diego Dedura Palomero,6-4 6-4,137,386,23.5,17.22,185,178,R,L,0,0
+20250602,Heilbronn CH,Clay,Emilio Nava,Marat Sharipov,6-3 6-3,137,243,23.5,22.65,185,188,R,R,0,0
+20250526,Roland Garros,Clay,Holger Rune,Emilio Nava,6-3 7-6(5) 6-3,10,137,22.08,23.48,188,185,R,R,0,0
+20250526,Roland Garros,Clay,Emilio Nava,Botic Van De Zandschulp,6-2 7-5 7-5,137,89,23.48,29.64,185,191,R,R,0,0
+20250518,Hamburg,Clay,Marko Topo,Emilio Nava,6-3 3-6 6-2,358,138,21.68,23.46,185,185,R,R,0,0
+20250512,Tunis CH,Clay,Francesco Maestrelli,Emilio Nava,7-6(1) 6-3,303,137,22.39,23.44,196,185,R,R,0,0
+20250512,Tunis CH,Clay,Emilio Nava,Dan Added,6-2 7-5,137,371,23.44,26.08,185,183,R,R,0,0
+20250421,Savannah CH,Clay,Joel Schwaerzler,Emilio Nava,6-3 6-4,327,132,19.23,23.38,188,185,L,R,0,0
+20250414,Tallahassee CH,Clay,Chris Rodesch,Emilio Nava,4-6 6-3 6-4,239,140,23.74,23.36,198,185,R,R,0,0
+20250414,Tallahassee CH,Clay,Emilio Nava,Mathys Erhard,6-2 6-4,140,281,23.36,23.47,185,188,R,R,0,0
+20250414,Tallahassee CH,Clay,Emilio Nava,Murphy Cassone,6-2 6-3,140,218,23.36,22.66,185,188,R,R,0,0
+20250414,Tallahassee CH,Clay,Emilio Nava,Tung Lin Wu,6-4 6-4,140,249,23.36,26.92,185,188,R,R,0,0
+20250414,Tallahassee CH,Clay,Emilio Nava,Christian Sigsgaard,6-4 6-4,140,550,23.36,28.08,185,188,R,R,0,0
+20250407,Sarasota CH,Clay,Emilio Nava,Liam Draxl,6-2 7-6(2),169,176,23.35,23.34,185,185,R,R,0,0
+20250407,Sarasota CH,Clay,Emilio Nava,Eliot Spizzirri,7-6(6) 6-4,169,127,23.35,23.29,185,183,R,R,0,0
+20250407,Sarasota CH,Clay,Emilio Nava,Tomas Barrios Vera,7-5 7-6(3),169,128,23.35,27.32,185,191,R,R,0,0
+20250407,Sarasota CH,Clay,Emilio Nava,Gabi Adrian Boitan,6-3 6-2,169,370,23.35,25.74,185,185,R,R,0,0
+20250407,Sarasota CH,Clay,Emilio Nava,Chris Rodesch,6-4 6-4,169,238,23.35,23.72,185,198,R,R,0,0
+20250324,Concepcion CH,Clay,Emilio Nava,Nicolas Kicker,6-1 7-6(3),235,715,23.31,32.6,185,178,R,R,0,0
+20250324,Concepcion CH,Clay,Emilio Nava,Genaro Alberto Olivieri,6-2 6-4,235,324,23.31,26.64,185,175,R,R,0,0
+20250324,Concepcion CH,Clay,Emilio Nava,Joao Lucas Reis Da Silva,6-2 6-3,235,380,23.31,24.99,185,178,R,R,0,0
+20250324,Concepcion CH,Clay,Emilio Nava,Gonzalo Bueno,6-0 6-3,235,264,23.31,20.97,185,173,R,R,0,0
+20250324,Concepcion CH,Clay,Emilio Nava,Daniel Dutra Da Silva,6-2 6-4,235,321,23.31,36.72,185,173,R,L,0,0
+20250317,Asuncion CH,Clay,Emilio Nava,Thiago Monteiro,7-5 6-3,235,99,23.29,30.8,185,183,R,L,0,0
+20250317,Asuncion CH,Clay,Emilio Nava,Adolfo Daniel Vallejo,6-4 6-2,235,187,23.29,20.88,185,183,R,R,0,0
+20250317,Asuncion CH,Clay,Emilio Nava,Tomas Barrios Vera,2-6 6-3 7-5,235,149,23.29,27.27,185,191,R,R,0,0
+20250317,Asuncion CH,Clay,Emilio Nava,Juan Pablo Varillas,6-7(4) 6-2 6-2,235,236,23.29,29.45,185,185,R,R,0,0
+20250317,Asuncion CH,Clay,Emilio Nava,Lorenzo Joaquin Rodriguez,6-4 6-2,235,471,23.29,25.46,185,196,R,R,0,0
+20250310,Santiago CH,Clay,Daniel Elahi Galan,Emilio Nava,7-6(8) 6-2,123,238,28.73,23.27,191,185,R,R,0,0
+20250310,Santiago CH,Clay,Emilio Nava,Andrea Collarini,5-7 6-3 6-3,238,202,23.27,33.11,185,183,R,L,0,0
+20250310,Santiago CH,Clay,Emilio Nava,Gonzalo Bueno,1-6 6-1 6-3,238,270,23.27,20.93,185,173,R,R,0,0
+20250310,Santiago CH,Clay,Emilio Nava,Juan Pablo Ficovich,6-0 6-4,238,169,23.27,28.12,185,191,R,R,0,0
+20250303,Cordoba CH,Clay,Gonzalo Villanueva,Emilio Nava,2-6 7-6(6) 6-3,438,238,30.14,23.25,175,185,R,R,0,0
+20250303,Cordoba CH,Clay,Emilio Nava,Roman Andres Burruchaga,7-5 6-3,238,136,23.25,23.11,185,183,R,R,0,0
+20250224,Santiago,Clay,Juan Pablo Varillas,Emilio Nava,6-3 6-4,188,239,29.39,23.23,185,185,R,R,0,0
+20250203,Rosario CH,Clay,Sebastian Baez,Emilio Nava,6-3 6-3,31,215,24.1,23.17,170,185,R,R,0,0
+20250203,Rosario CH,Clay,Emilio Nava,Alex Barrena,7-6(4) 0-0 RET,215,583,23.17,22.32,185,175,R,R,0,0
+20250203,Rosario CH,Clay,Emilio Nava,Mateo Del Pino,6-3 6-2,215,1303,23.17,21.6,185,173,R,L,0,0
+20250127,Piracicaba CH,Clay,Juan Pablo Ficovich,Emilio Nava,7-6(13) 6-7(2) 6-3,189,211,28.01,23.15,191,185,R,R,0,0
+20250127,Piracicaba CH,Clay,Emilio Nava,Murkel Alejandro Dellien Velasco,6-3 4-6 7-6(5),211,197,23.15,27.36,185,193,R,R,0,0
+20250120,Punta del Este CH,Clay,Daniel Elahi Galan,Emilio Nava,6-3 6-3,128,211,28.59,23.13,191,185,R,R,0,0
+20250120,Punta del Este CH,Clay,Emilio Nava,Federico Coria,3-6 6-3 6-3,211,96,23.13,32.87,185,180,R,R,0,0
+20250120,Punta del Este CH,Clay,Emilio Nava,Roman Andres Burruchaga,6-1 6-4,211,151,23.13,22.99,185,183,R,R,0,0
+20250120,Punta del Este CH,Clay,Emilio Nava,Adolfo Daniel Vallejo,3-6 6-3 6-2,211,234,23.13,20.73,185,183,R,R,0,0
+20250113,Buenos Aires Tigre CH,Clay,Juan Pablo Varillas,Emilio Nava,6-4 7-5,207,211,29.27,23.12,185,185,R,R,0,0
+20250113,Buenos Aires Tigre CH,Clay,Emilio Nava,Max Houkes,7-6(5) 6-4,211,328,23.12,24.53,185,188,R,L,0,0
+20250113,Buenos Aires Tigre CH,Clay,Emilio Nava,Alex Marti Pujolras,6-1 6-7(9) 7-6(5),211,333,23.12,25.92,185,185,R,R,0,0
+20250113,Australian Open,Hard,Tomas Barrios Vera,Emilio Nava,7-6(0) 7-6(3),152,211,27.09,23.12,191,185,R,R,0,0
+20260112,ATP Adelaide,Hard,Tomas Machac,James Duckworth,6-3 6-3,35,86,25.25,33.98,183,183,R,R,0,0
+20260104,Brisbane,Hard,Alex Michelsen,James Duckworth,6-7(4) 7-6(2) 6-3,37,86,21.36,33.95,193,183,R,R,0,0
+20260104,Brisbane,Hard,James Duckworth,Terence Atmane,7-6(4) 6-2,86,62,33.95,23.99,183,193,R,L,0,0
+20260104,Brisbane,Hard,James Duckworth,Tristan Schoolkate,6-3 6-2,86,97,33.95,24.85,183,183,R,R,0,0
+20251124,Playford CH,Hard,Dane Sweeny,James Duckworth,7-6(6) 5-7 7-6(5),209,87,24.78,33.84,170,183,R,R,0,0
+20251124,Playford CH,Hard,James Duckworth,Rio Noguchi,7-6(5) 6-2,87,241,33.84,26.91,183,168,R,R,0,0
+20251124,Playford CH,Hard,James Duckworth,Karan Singh,6-4 6-1,87,479,33.84,22.4,183,188,R,R,0,0
+20251124,Playford CH,Hard,James Duckworth,Masamichi Imamura,6-3 6-2,87,544,33.84,27.0,183,178,R,R,0,0
+20251117,Sydney CH,Hard,James Duckworth,Hayato Matsuoka,6-1 6-4,106,483,33.82,20.84,183,180,R,R,0,0
+20251117,Sydney CH,Hard,James Duckworth,Jason Kubler,7-5 6-2,106,190,33.82,32.5,183,178,R,R,0,0
+20251117,Sydney CH,Hard,James Duckworth,Dane Sweeny,6-2 6-3,106,215,33.82,24.76,183,170,R,R,0,0
+20251117,Sydney CH,Hard,James Duckworth,Matthew Dellavedova,6-3 6-0,106,423,33.82,25.47,183,191,R,R,0,0
+20251117,Sydney CH,Hard,James Duckworth,Moerani Bouzige,6-4 6-1,106,317,33.82,26.35,183,180,R,R,0,0
+20251110,Brisbane 3 CH,Hard,Alex Bolt,James Duckworth,7-5 6-1,238,106,32.85,33.8,183,183,L,R,0,0
+20251110,Brisbane 3 CH,Hard,James Duckworth,Blake Ellis,3-6 6-1 6-4,106,445,33.8,26.84,183,191,R,R,0,0
+20251110,Brisbane 3 CH,Hard,James Duckworth,Omar Jasika,6-0 3-2 RET,106,311,33.8,28.48,183,183,R,L,0,0
+20251103,Taipei CH,Hard,Yoshihito Nishioka,James Duckworth,7-5 7-6(5),134,113,30.1,33.79,170,183,L,R,0,0
+20251103,Taipei CH,Hard,James Duckworth,Coleman Wong,6-3 6-4,113,152,33.79,21.41,183,191,R,R,0,0
+20251103,Taipei CH,Hard,James Duckworth,Kaichi Uchida,6-3 7-6(2),113,328,33.79,31.2,183,180,R,R,0,0
+20251103,Taipei CH,Hard,James Duckworth,Michael Vrbensky,6-3 6-2,113,715,33.79,25.86,183,180,R,R,0,0
+20251103,Taipei CH,Hard,James Duckworth,Taro Daniel,2-6 7-6(2) 6-2,113,324,33.79,32.77,183,191,R,R,0,0
+20251027,Seoul CH,Hard,Rio Noguchi,James Duckworth,1-6 7-5 6-3,252,112,26.83,33.77,168,183,R,R,0,0
+20251013,Almaty,Hard,Daniil Medvedev,James Duckworth,6-7(8) 6-3 6-2,14,138,29.67,33.73,198,183,R,R,0,0
+20251013,Almaty,Hard,James Duckworth,Flavio Cobolli,6-3 6-2,138,22,33.73,23.44,183,183,R,R,0,0
+20251013,Almaty,Hard,James Duckworth,Gabriel Diallo,7-6(3) 6-7(3) 6-4,138,35,33.73,24.05,183,203,R,R,0,0
+20251013,Almaty,Hard,James Duckworth,Ugo Blanchet,6-3 6-4,138,150,33.73,26.77,183,175,R,R,0,0
+20251013,Almaty,Hard,James Duckworth,Mikhail Kukushkin,6-4 4-6 7-5,138,289,33.73,37.8,183,183,R,R,0,0
+20251013,Almaty,Hard,James Duckworth,Saba Purtseladze,6-3 1-0 RET,138,286,33.73,24.15,183,191,R,R,0,0
+20251006,Jinan CH,Hard,Colton Smith,James Duckworth,6-4 7-6(6),135,103,22.59,33.71,,183,U,R,0,0
+20251001,Shanghai Masters,Hard,Gauthier Onclin,James Duckworth,7-6(0) 7-5,194,103,24.59,33.69,180,183,R,R,0,0
+20250922,Jingshan CH,Hard,Alex Bolt,James Duckworth,6-2 6-7(1) 7-6(5),221,109,32.71,33.67,183,183,L,R,0,0
+20250917,Chengdu,Hard,Taro Daniel,James Duckworth,7-6(4) 7-6(0),168,107,32.64,33.66,191,183,R,R,0,0
+20250825,US Open,Hard,Tristan Boyer,James Duckworth,6-3 7-5 6-4,113,106,24.34,33.59,188,183,R,R,0,0
+20250825,US Open,Hard,Zsombor Piros,James Duckworth,6-1 4-6 6-2,156,106,25.87,33.59,180,183,R,R,0,0
+20250825,US Open,Hard,James Duckworth,James Mccabe,7-5 5-7 7-6(5),106,176,33.59,22.14,183,188,R,R,0,0
+20250825,US Open,Hard,James Duckworth,Facundo Bagnis,6-4 6-2,106,462,33.59,35.49,183,183,R,L,0,0
+20250807,Cincinnati Masters,Hard,Li Tu,James Duckworth,7-6(4) 6-4,176,99,29.2,33.54,183,183,R,R,0,0
+20250727,Canada Masters,Hard,Lorenzo Musetti,James Duckworth,7-5 6-1,10,106,23.4,33.51,185,183,R,R,0,0
+20250727,Canada Masters,Hard,James Duckworth,Justin Boulais,6-3 6-1,106,618,33.51,23.77,183,183,R,L,0,0
+20250714,Los Cabos,Hard,Adam Walton,James Duckworth,3-6 6-3 6-4,97,113,26.24,33.48,183,183,R,R,0,0
+20250714,Los Cabos,Hard,James Duckworth,Alejandro Davidovich Fokina,6-3 6-4,113,26,33.48,26.11,183,183,R,R,0,0
+20250714,Los Cabos,Hard,James Duckworth,Adrian Mannarino,6-3 6-4,113,93,33.48,37.04,183,180,R,L,0,0
+20250707,Newport CH,Grass,Patrick Maloney,James Duckworth,6-2 7-6(5),325,103,25.41,33.46,193,183,R,R,0,0
+20250630,Wimbledon,Grass,Felix Auger Aliassime,James Duckworth,6-2 3-6 6-7(2) 6-4 6-4,28,103,24.89,33.44,193,183,R,R,0,0
+20250623,Eastbourne,Grass,Alejandro Davidovich Fokina,James Duckworth,6-7(3) 6-3 6-4,28,106,26.05,33.42,183,183,R,R,0,0
+20250623,Eastbourne,Grass,James Duckworth,Aleksandar Vukic,6-3 6-7(5) 6-1,106,80,33.42,29.21,183,188,R,R,0,0
+20250623,Eastbourne,Grass,James Duckworth,Johannus Monday,6-4 6-2,106,236,33.42,23.42,183,198,R,L,0,0
+20250623,Eastbourne,Grass,James Duckworth,Henry Searle,6-3 5-7 7-5,106,409,33.42,19.24,183,193,R,L,0,0
+20250616,Queen's Club,Grass,Christopher Oconnell,James Duckworth,7-6(4) 6-0,79,100,31.04,33.4,183,183,R,R,0,0
+20250609,Stuttgart,Grass,Justin Engel,James Duckworth,4-6 6-4 7-6(5),281,94,17.69,33.38,,183,U,R,0,0
+20250609,Stuttgart,Grass,James Duckworth,Nikoloz Basilashvili,6-7(4) 7-6(5) 6-3,94,120,33.38,33.29,183,185,R,R,0,0
+20250609,Stuttgart,Grass,James Duckworth,Benjamin Hassan,6-3 7-6(4),94,191,33.38,30.34,183,183,R,R,0,0
+20250602,Birmingham CH,Grass,Brandon Holt,James Duckworth,6-2 7-5,101,92,27.16,33.36,185,183,R,R,0,0
+20250526,Roland Garros,Clay,Alexander Bublik,James Duckworth,6-2 6-4 6-4,62,92,27.94,33.34,196,183,R,R,0,0
+20250518,Geneva,Clay,Remy Bertola,James Duckworth,7-6(3) 6-4,335,92,26.71,33.32,175,183,R,R,0,0
+20250414,San Luis Potosi CH,Clay,James Duckworth,Max Wiskandt,6-1 6-1,92,485,33.23,23.2,183,191,R,R,0,0
+20250414,San Luis Potosi CH,Clay,James Duckworth,Dan Martin,7-6(8) 6-2,92,,33.23,25.93,183,,R,U,0,0
+20250414,San Luis Potosi CH,Clay,James Duckworth,Alfredo Perez,7-6(7) 6-4,92,450,33.23,27.9,183,193,R,R,0,0
+20250414,San Luis Potosi CH,Clay,James Duckworth,Maximilian Neuchrist,6-2 7-6(4),92,445,33.23,33.73,183,,R,R,0,0
+20250414,San Luis Potosi CH,Clay,James Duckworth,Rafael De Alba,6-1 6-2,92,1338,33.23,24.0,183,,R,U,0,0
+20250407,Mexico City CH,Clay,Juan Pablo Varillas,James Duckworth,2-6 6-4 6-4,251,90,29.5,33.21,185,183,R,R,0,0
+20250407,Mexico City CH,Clay,James Duckworth,Mateus Alves,6-3 7-6(3),90,334,33.21,24.2,183,193,R,R,0,0
+20250331,Houston,Clay,Colton Smith,James Duckworth,6-2 6-2,200,89,22.07,33.19,,183,U,R,0,0
+20250324,Morelia CH,Hard,Dmitry Popko,James Duckworth,1-6 6-2 6-4,245,95,28.41,33.17,191,183,R,R,0,0
+20250324,Morelia CH,Hard,James Duckworth,Beibit Zhukayev,6-2 6-4,95,215,33.17,24.45,183,198,R,R,0,0
+20250324,Morelia CH,Hard,James Duckworth,Juan Alejandro Hernandez Serrano,6-4 7-6(6),95,595,33.17,25.75,183,175,R,R,0,0
+20250324,Morelia CH,Hard,James Duckworth,Tyler Zink,7-5 6-3,95,425,33.17,24.15,183,185,R,R,0,0
+20250324,Morelia CH,Hard,James Duckworth,Alan Fernando Rubio Fierros,6-1 6-3,95,757,33.17,26.14,183,175,R,R,0,0
+20250319,Miami Masters,Hard,Rei Sakamoto,James Duckworth,7-5 7-6(5),330,95,18.74,33.16,193,183,R,R,0,0
+20250319,Miami Masters,Hard,James Duckworth,Federico Agustin Gomez,7-5 7-5,95,138,33.16,28.31,183,191,R,R,0,0
+20250311,Phoenix CH,Hard,Jacob Fearnley,James Duckworth,7-6(3) 6-3,81,97,23.66,33.14,183,183,R,R,0,0
+20250305,Indian Wells Masters,Hard,Li Tu,James Duckworth,6-4 6-2,177,97,28.77,33.12,183,183,R,R,0,0
+20250305,Indian Wells Masters,Hard,James Duckworth,Terence Atmane,7-6(5) 7-6(4),97,168,33.12,23.15,183,193,R,L,0,0
+20250224,Acapulco,Hard,Nishesh Basavareddy,James Duckworth,6-4 6-2,106,94,19.82,33.1,180,183,R,R,0,0
+20250203,Dallas,Hard,Casper Ruud,James Duckworth,7-5 4-6 6-2,5,86,26.12,33.04,183,183,R,R,0,0
+20250203,Dallas,Hard,Ethan Quinn,James Duckworth,7-6(4) 7-5,199,86,20.9,33.04,191,183,R,R,0,0
+20250203,Dallas,Hard,James Duckworth,Eric Hadigian,6-1 6-1,86,956,33.04,25.2,183,,R,U,0,0
+20250113,Australian Open,Hard,Roberto Carballes Baena,James Duckworth,6-4 6-2 7-5,57,89,31.81,32.98,183,183,R,R,0,0
+20250113,Australian Open,Hard,James Duckworth,Dominic Stricker,6-2 6-4 6-2,89,304,32.98,22.41,183,183,R,L,0,0
+20250106,Adelaide,Hard,Li Tu,James Duckworth,6-1 7-5,179,94,28.61,32.96,183,183,R,R,0,0
+20250106,Adelaide,Hard,James Duckworth,Jacob Bradshaw,6-2 6-2,94,575,32.96,22.21,183,188,R,R,0,0
+20250106,Adelaide,Hard,James Duckworth,Pavel Kotov,7-6(3) 6-7(7) 7-6(5),94,99,32.96,26.14,183,191,R,R,0,0
+20260119,ATP Australian Open,Hard,Nicolai Budkov Kjaer,Pierre Hugues Herbert,6-2 6-3,135,157,19.38,34.84,188,188,R,R,0,0
+20260119,ATP Australian Open,Hard,Nicolai Budkov Kjaer,James Mccabe,4-6 6-3 7-6(6),135,173,19.38,22.54,188,188,R,R,0,0
+20260119,ATP Australian Open,Hard,Nicolai Budkov Kjaer,Yosuke Watanuki,6-7(5) 7-5 6-4,135,162,19.38,27.77,188,180,R,R,0,0
+20260105,Canberra CH,Hard,Alexander Blockx,Nicolai Budkov Kjaer,6-2 6-3,115,135,20.74,19.35,191,188,R,R,0,0
+20251217,Next Gen Finals,Hard,Alexander Blockx,Nicolai Budkov Kjaer,4-3(4) 4-3(8) 4-2,116,136,20.69,19.29,191,188,R,R,0,0
+20251217,Next Gen Finals,Hard,Learner Tien,Nicolai Budkov Kjaer,3-4(2) 4-1 4-2 4-2,28,136,20.04,19.29,180,188,L,R,0,0
+20251217,Next Gen Finals,Hard,Nicolai Budkov Kjaer,Martin Landaluce,4-1 3-4(7) 4-2 4-3(4),136,134,19.29,19.94,188,191,R,R,0,0
+20251217,Next Gen Finals,Hard,Nicolai Budkov Kjaer,Rafael Jodar,4-1 4-2 1-4 4-2,136,168,19.29,19.25,188,,R,U,0,0
+20251102,Metz,Hard,Clement Tabur,Nicolai Budkov Kjaer,7-5 7-5,243,132,25.77,19.17,173,188,R,R,0,0
+20251020,Vienna,Hard,Tomas Martin Etcheverry,Nicolai Budkov Kjaer,6-3 6-3,60,137,26.26,19.13,196,188,R,R,0,0
+20251013,Stockholm,Hard,Marin Cilic,Nicolai Budkov Kjaer,7-5 6-3,92,136,37.04,19.12,198,188,R,R,0,0
+20251006,Roanne CH,Hard,Hugo Gaston,Nicolai Budkov Kjaer,6-4 3-6 6-1,101,149,25.03,19.1,173,188,L,R,0,0
+20251006,Roanne CH,Hard,Nicolai Budkov Kjaer,Henry Bernet,6-3 3-6 6-1,149,503,19.1,18.7,188,,R,R,0,0
+20251006,Roanne CH,Hard,Nicolai Budkov Kjaer,Vitaliy Sachko,6-7(4) 6-2 6-4,149,209,19.1,28.23,188,188,R,R,0,0
+20250929,Mouilleron le Captif CH,Hard,Nicolai Budkov Kjaer,Patrick Kypson,6-0 6-3,149,184,19.08,25.92,188,188,R,R,0,0
+20250929,Mouilleron le Captif CH,Hard,Nicolai Budkov Kjaer,Clement Chidekh,6-1 4-6 6-2,149,232,19.08,24.3,188,180,R,R,0,0
+20250929,Mouilleron le Captif CH,Hard,Nicolai Budkov Kjaer,Francesco Passaro,6-4 6-4,149,139,19.08,24.73,188,180,R,R,0,0
+20250929,Mouilleron le Captif CH,Hard,Nicolai Budkov Kjaer,Loann Massard,6-3 6-2,149,513,19.08,20.18,188,,R,U,0,0
+20250929,Mouilleron le Captif CH,Hard,Nicolai Budkov Kjaer,Nikolay Vylegzhanin,6-1 6-3,149,475,19.08,25.45,188,178,R,R,0,0
+20250922,Orleans CH,Hard,Martin Landaluce,Nicolai Budkov Kjaer,6-4 6-4,136,155,19.7,19.06,191,188,R,R,0,0
+20250922,Orleans CH,Hard,Nicolai Budkov Kjaer,Edas Butvilas,4-6 6-3 6-4,155,217,19.06,21.17,188,191,R,R,0,0
+20250922,Orleans CH,Hard,Nicolai Budkov Kjaer,Hugo Gaston,6-3 6-4,155,105,19.06,24.99,188,173,R,L,0,0
+20250917,Chengdu,Hard,Mackenzie Mcdonald,Nicolai Budkov Kjaer,4-6 7-5 6-0,98,158,30.42,19.04,178,188,R,R,0,0
 20250917,Chengdu,Hard,Nicolai Budkov Kjaer,Yannick Hanfmann,6-3 6-4,158,134,19.04,33.85,188,193,R,R,0,0
-20250912,Davis Cup QLS R2: GER vs JPN,Hard,Yannick Hanfmann,Shintaro Mochizuki,6-3 6-3,135,104,33.83,22.28,193,175,R,R,0,0
-20250825,US Open,Hard,Pablo Llamas Ruiz,Yannick Hanfmann,1-6 6-3 6-4,361,132,22.87,33.78,188,193,R,R,0,0
-20250812,Cancun CH,Hard,Daniel Altmaier,Yannick Hanfmann,6-1 3-6 6-1,60,132,26.92,33.75,188,193,R,R,0,0
-20250812,Cancun CH,Hard,Yannick Hanfmann,Jan Lennard Struff,3-6 7-5 6-1,132,143,33.75,35.3,193,193,R,R,0,0
-20250728,Hagen CH,Clay,Yannick Hanfmann,Guy Den Ouden,3-6 6-2 6-2,150,173,33.71,23.3,193,183,R,R,0,0
-20250728,Hagen CH,Clay,Yannick Hanfmann,Olle Wallin,6-3 6-4,150,465,33.71,23.76,193,,R,U,0,0
-20250728,Hagen CH,Clay,Yannick Hanfmann,Jan Choinski,7-6(6) 6-4,150,151,33.71,29.13,193,196,R,R,0,0
-20250728,Hagen CH,Clay,Yannick Hanfmann,Timofey Skatov,3-6 6-4 7-6(6),150,305,33.71,24.51,193,175,R,R,0,0
-20250728,Hagen CH,Clay,Yannick Hanfmann,Jay Dylan Hara Friend,7-5 6-2,150,839,33.71,21.6,193,,R,R,0,0
-20250721,Kitzbuhel,Clay,Arthur Rinderknech,Yannick Hanfmann,6-4 3-6 6-1,65,141,30.0,33.69,196,193,R,R,0,0
-20250721,Kitzbuhel,Clay,Yannick Hanfmann,Sebastian Baez,5-7 6-3 7-5,141,43,33.69,24.56,193,170,R,R,0,0
-20250721,Kitzbuhel,Clay,Yannick Hanfmann,Lukas Neumayer,7-5 6-2,141,162,33.69,22.87,193,183,R,R,0,0
-20250721,Kitzbuhel,Clay,Yannick Hanfmann,Andrej Martin,6-1 6-3,141,321,33.69,35.83,193,183,R,R,0,0
-20250721,Kitzbuhel,Clay,Yannick Hanfmann,Albert Ramos,6-1 7-6(7),141,285,33.69,37.51,193,188,R,L,0,0
-20250714,Gstaad,Clay,Calvin Hemery,Yannick Hanfmann,7-5 7-6(7),171,134,30.46,33.67,191,193,R,R,0,0
-20250707,Braunschweig CH,Clay,Filip Misolic,Yannick Hanfmann,7-6(3) 7-5,111,135,23.91,33.65,180,193,R,R,0,0
-20250707,Braunschweig CH,Clay,Yannick Hanfmann,Luka Pavlovic,7-6(2) 6-4,135,241,33.65,25.27,193,196,R,R,0,0
-20250707,Braunschweig CH,Clay,Yannick Hanfmann,Clement Tabur,6-3 6-4,135,215,33.65,25.45,193,173,R,R,0,0
-20250630,Wimbledon,Grass,Beibit Zhukayev,Yannick Hanfmann,7-6(7) 6-3,247,135,24.71,33.63,198,193,R,R,0,0
-20250630,Wimbledon,Grass,Yannick Hanfmann,Hugo Grenier,7-5 6-2,135,175,33.63,29.27,193,196,R,R,0,0
-20250616,Halle,Grass,Yannick Hanfmann,Nicolas Jarry,6-3 6-3,138,144,33.59,29.68,193,201,R,R,0,0
-20250616,Halle,Grass,Yannick Hanfmann,Yoshihito Nishioka,6-4 6-1,138,78,33.59,29.72,193,170,R,L,0,0
-20250609,Stuttgart,Grass,Marton Fucsovics,Yannick Hanfmann,7-5 6-4,112,135,33.33,33.57,188,193,R,R,0,0
-20250609,Stuttgart,Grass,Yannick Hanfmann,Tristan Boyer,7-6(12) 6-4,135,115,33.57,24.13,193,188,R,R,0,0
-20250609,Stuttgart,Grass,Yannick Hanfmann,Max Wiskandt,6-4 6-2,135,417,33.57,23.35,193,191,R,R,0,0
-20250526,Roland Garros,Clay,Lorenzo Musetti,Yannick Hanfmann,7-5 6-2 6-0,7,142,23.23,33.53,185,193,R,R,0,0
-20250526,Roland Garros,Clay,Yannick Hanfmann,Titouan Droguet,6-4 3-6 6-3,142,234,33.53,23.95,193,191,R,R,0,0
-20250526,Roland Garros,Clay,Yannick Hanfmann,Matteo Martineau,6-4 6-4,142,289,33.53,26.36,193,183,R,R,0,0
-20250526,Roland Garros,Clay,Yannick Hanfmann,Ignacio Buse,6-2 4-6 6-3,142,192,33.53,21.17,193,185,R,R,0,0
-20250507,Rome Masters,Clay,Sebastian Ofner,Yannick Hanfmann,7-6(1) 6-2,143,125,28.99,33.48,191,193,R,R,0,0
-20250507,Rome Masters,Clay,Yannick Hanfmann,Taro Daniel,6-2 4-6 6-4,125,138,33.48,32.27,193,191,R,R,0,0
-20250427,Estoril CH,Clay,Giovanni Fonio,Yannick Hanfmann,6-3 6-4,372,123,26.97,33.45,183,193,R,R,0,0
-20250423,Madrid Masters,Clay,Hugo Gaston,Yannick Hanfmann,7-6(6) 4-6 6-4,80,123,24.57,33.44,173,193,L,R,0,0
-20250414,Munich,Clay,Tallon Griekspoor,Yannick Hanfmann,7-6(3) 6-3,37,131,28.78,33.42,188,193,R,R,0,0
-20250414,Munich,Clay,Yannick Hanfmann,Jakub Mensik,7-6(4) 4-6 6-3,131,23,33.42,19.62,193,193,R,R,0,0
-20250407,Monte Carlo Masters,Clay,David Goffin,Yannick Hanfmann,7-5 4-6 6-4,56,121,34.33,33.4,180,193,R,R,0,0
-20250331,Houston,Clay,Adrian Mannarino,Yannick Hanfmann,7-6(5) 6-3,144,123,36.75,33.38,180,193,L,R,0,0
-20250319,Miami Masters,Hard,Shintaro Mochizuki,Yannick Hanfmann,7-6(5) 6-4,155,113,21.8,33.35,175,193,R,R,0,0
-20250224,Santiago,Clay,Francisco Cerundolo,Yannick Hanfmann,6-2 4-6 7-6(5),26,109,26.54,33.28,185,193,R,R,0,0
-20250224,Santiago,Clay,Yannick Hanfmann,Facundo Diaz Acosta,7-5 6-3,109,130,33.28,24.19,193,183,R,L,0,0
-20250217,Rio de Janeiro,Clay,Marco Trungelliti,Yannick Hanfmann,6-4 6-3,146,101,35.05,33.26,178,193,R,R,0,0
-20250131,Davis Cup QLS R1: GER vs ISR,Hard,Yannick Hanfmann,Daniel Cukierman,6-4 6-4,92,556,33.22,29.57,193,,R,R,0,0
-20250113,Australian Open,Hard,Marcos Giron,Yannick Hanfmann,2-6 7-5 6-1 7-5,46,95,31.47,33.17,180,193,R,R,0,0
-20250106,Adelaide,Hard,Brandon Nakashima,Yannick Hanfmann,6-1 2-6 6-3,37,98,23.43,33.15,188,193,R,R,0,0
-20250106,Adelaide,Hard,Yannick Hanfmann,Manuel Guinard,7-6(1) 6-3,98,261,33.15,29.14,193,198,R,R,0,0
-20250106,Adelaide,Hard,Yannick Hanfmann,Hugo Gaston,3-6 7-6(2) 6-2,98,81,33.15,24.28,193,173,R,L,0,0
-20260112,ATP Adelaide,Hard,Quentin Halys,Benjamin Bonzi,6-3 6-4,85,106,29.21,29.59,191,183,R,R,0,0
-20260104,Brisbane,Hard,Ethan Quinn,Benjamin Bonzi,4-6 6-3 6-3,76,99,21.82,29.57,191,183,R,R,0,0
-20251013,Brussels,Hard,Jiri Lehecka,Benjamin Bonzi,6-7(8) 6-1 4-1 RET,17,53,23.93,29.34,185,183,R,R,0,0
-20251013,Brussels,Hard,Benjamin Bonzi,Valentin Royer,7-6(3) 4-6 6-1,53,70,29.34,24.38,183,188,R,R,0,0
-20251013,Brussels,Hard,Benjamin Bonzi,Reilly Opelka,6-4 6-4,53,62,29.34,28.13,183,211,R,R,0,0
-20251001,Shanghai Masters,Hard,Gabriel Diallo,Benjamin Bonzi,6-4 6-4,35,48,24.02,29.31,203,183,R,R,0,0
-20251001,Shanghai Masters,Hard,Benjamin Bonzi,Reilly Opelka,7-6(2) 6-4,48,64,29.31,28.09,183,211,R,R,0,0
-20250925,Beijing,Hard,Fabian Marozsan,Benjamin Bonzi,7-6(1) 6-3,57,47,25.97,29.3,193,183,R,R,0,0
-20250825,US Open,Hard,Arthur Rinderknech,Benjamin Bonzi,4-6 6-3 6-3 6-2,82,51,30.09,29.21,196,183,R,R,0,0
-20250825,US Open,Hard,Benjamin Bonzi,Marcos Giron,2-6 4-6 7-5 6-3 6-4,51,55,29.21,32.09,183,180,R,R,0,0
-20250807,Cincinnati Masters,Hard,Felix Auger Aliassime,Benjamin Bonzi,6-4 6-3,28,63,25.0,29.16,193,183,R,R,0,0
-20250807,Cincinnati Masters,Hard,Benjamin Bonzi,Stefanos Tsitsipas,6-7(4) 6-3 6-4,63,29,29.16,26.99,183,193,R,R,0,0
-20250807,Cincinnati Masters,Hard,Benjamin Bonzi,Lorenzo Musetti,5-7 6-4 7-6(4),63,10,29.16,23.43,183,185,R,R,0,0
-20250807,Cincinnati Masters,Hard,Benjamin Bonzi,Matteo Arnaldi,6-7(1) 6-3 6-4,63,37,29.16,24.45,183,185,R,R,0,0
-20250727,Canada Masters,Hard,Adam Walton,Benjamin Bonzi,4-6 6-0 6-3,88,66,26.28,29.13,183,183,R,R,0,0
-20250721,Washington,Hard,Fabian Marozsan,Benjamin Bonzi,7-5 6-1,54,69,25.79,29.11,193,183,R,R,0,0
-20250630,Wimbledon,Grass,Jordan Thompson,Benjamin Bonzi,7-5 6-7(2) 4-6 6-2 6-4,44,64,31.2,29.06,183,183,R,R,0,0
-20250622,Mallorca,Grass,Brandon Holt,Benjamin Bonzi,2-6 6-4 6-4,101,64,27.21,29.03,185,183,R,R,0,0
-20250616,Halle,Grass,Quentin Halys,Benjamin Bonzi,6-4 6-4,48,62,28.64,29.02,191,183,R,R,0,0
-20250616,Halle,Grass,Benjamin Bonzi,Li Tu,6-4 7-6(7),62,169,29.02,29.05,183,183,R,R,0,0
-20250616,Halle,Grass,Benjamin Bonzi,Patrick Zahraj,6-3 6-4,62,278,29.02,25.92,183,188,R,R,0,0
-20250609,Stuttgart,Grass,Jiri Lehecka,Benjamin Bonzi,6-4 6-4,33,61,23.58,29.0,185,183,R,R,0,0
-20250526,Roland Garros,Clay,Pierre Hugues Herbert,Benjamin Bonzi,7-5 3-6 4-6 7-5 6-2,147,60,34.19,28.96,188,183,R,R,0,0
-20250423,Madrid Masters,Clay,Taylor Fritz,Benjamin Bonzi,4-6 7-5 0-0 RET,4,62,27.49,28.87,196,183,R,R,0,0
-20250423,Madrid Masters,Clay,Benjamin Bonzi,Hubert Hurkacz,6-4 7-5,62,28,28.87,28.19,183,196,R,R,0,0
-20250423,Madrid Masters,Clay,Benjamin Bonzi,Marin Cilic,6-3 6-2,62,109,28.87,36.57,183,198,R,R,0,0
-20250414,Barcelona,Clay,Daniel Rincon,Benjamin Bonzi,6-2 6-4,226,63,22.27,28.85,185,183,L,R,0,0
-20250407,Monte Carlo Masters,Clay,Albert Ramos,Benjamin Bonzi,6-4 0-6 6-3,,62,37.22,28.83,188,183,L,R,0,0
-20250319,Miami Masters,Hard,Jacob Fearnley,Benjamin Bonzi,7-6(6) 2-6 6-4,83,63,23.68,28.77,183,183,R,R,0,0
-20250311,Cap Cana CH,Hard,Damir Dzumhur,Benjamin Bonzi,6-0 6-2,84,62,32.81,28.75,175,183,R,R,0,0
-20250311,Cap Cana CH,Hard,Benjamin Bonzi,Rodrigo Pacheco Mendez,2-6 6-2 6-2,62,231,28.75,19.88,183,188,R,L,0,0
-20250305,Indian Wells Masters,Hard,Jenson Brooksby,Benjamin Bonzi,1-6 7-5 7-5,937,62,24.36,28.74,188,183,R,R,0,0
-20250224,Acapulco,Hard,Brandon Nakashima,Benjamin Bonzi,7-6(6) 7-5,42,62,23.56,28.71,188,183,R,R,0,0
-20250210,Marseille,Hard,Luca Van Assche,Benjamin Bonzi,3-6 6-3 7-6(7),164,64,20.75,28.67,178,183,R,R,0,0
-20250203,Lille CH,Hard,Arthur Bouquier,Benjamin Bonzi,6-2 6-7(5) 6-3,424,62,24.11,28.65,188,183,R,R,0,0
-20250203,Lille CH,Hard,Benjamin Bonzi,Pierre Hugues Herbert,6-3 1-6 6-4,62,180,28.65,33.88,183,188,R,R,0,0
-20250113,Australian Open,Hard,Jiri Lehecka,Benjamin Bonzi,6-2 6-3 6-3,29,64,23.18,28.6,185,183,R,R,0,0
-20250113,Australian Open,Hard,Benjamin Bonzi,Francesco Passaro,6-2 6-4 3-6 6-4,64,104,28.6,24.02,183,180,R,R,0,0
-20250113,Australian Open,Hard,Benjamin Bonzi,David Goffin,6-1 6-2 7-6(7),64,54,28.6,34.1,183,180,R,R,0,0
-20250106,Adelaide,Hard,Miomir Kecmanovic,Benjamin Bonzi,6-2 6-3,55,70,25.35,28.58,183,183,R,R,0,0
-20250106,Adelaide,Hard,Benjamin Bonzi,Li Tu,6-3 6-3,70,179,28.58,28.61,183,183,R,R,0,0
-20250106,Adelaide,Hard,Benjamin Bonzi,James Mccabe,6-3 4-6 6-3,70,258,28.58,21.51,183,188,R,R,0,0
-20250106,Adelaide,Hard,Benjamin Bonzi,Fabio Fognini,3-2 RET,70,89,28.58,37.62,183,178,R,R,0,0
+20250913,Davis Cup WG1 R1: TPE vs NOR,Hard,Nicolai Budkov Kjaer,Tung Lin Wu,4-6 6-3 6-4,159,291,19.03,27.34,188,188,R,R,0,0
+20250913,Davis Cup WG1 R1: TPE vs NOR,Hard,Nicolai Budkov Kjaer,Chun Hsin Tseng,7-6(2) 6-4,159,120,19.03,24.1,188,175,R,R,0,0
+20250901,Genoa CH,Clay,Gianluca Cadenasso,Nicolai Budkov Kjaer,6-4 6-4,531,158,20.92,19.0,178,188,R,R,0,0
+20250825,Como CH,Clay,Luka Mikrut,Nicolai Budkov Kjaer,4-6 6-1 6-4,340,158,21.36,18.98,188,188,R,R,0,0
+20250825,Como CH,Clay,Nicolai Budkov Kjaer,Raul Brancaccio,7-5 6-2,158,377,18.98,28.31,188,185,R,R,0,0
+20250825,Como CH,Clay,Nicolai Budkov Kjaer,Giovanni Fonio,6-4 7-6(8),158,407,18.98,27.3,188,183,R,R,0,0
+20250825,Como CH,Clay,Nicolai Budkov Kjaer,Cedrik Marcel Stebe,7-6(5) 6-4,158,447,18.98,34.88,188,183,R,L,0,0
+20250811,Todi CH,Clay,Valentin Vacherot,Nicolai Budkov Kjaer,6-1 6-3,246,163,26.74,18.94,193,188,R,R,0,0
+20250811,Todi CH,Clay,Nicolai Budkov Kjaer,Matheus Pucinelli De Almeida,7-6(2) 3-0 RET,163,278,18.94,24.36,188,183,R,R,0,0
+20250811,Todi CH,Clay,Nicolai Budkov Kjaer,Juan Bautista Torres,6-2 4-6 7-6(5),163,316,18.94,23.36,188,178,R,R,0,0
+20250728,Astana CH,Hard,Nicolai Budkov Kjaer,Alexandr Binda,6-4 6-3,187,420,18.9,23.85,188,175,R,R,0,0
+20250728,Astana CH,Hard,Nicolai Budkov Kjaer,Shintaro Imai,6-3 7-5,187,577,18.9,31.89,188,178,R,R,0,0
+20250728,Astana CH,Hard,Nicolai Budkov Kjaer,Ricardas Berankis,7-6(4) 6-4,187,387,18.9,35.1,188,175,R,R,0,0
+20250728,Astana CH,Hard,Nicolai Budkov Kjaer,Maximus Jones,6-3 6-0,187,394,18.9,20.89,188,185,R,R,0,0
+20250728,Astana CH,Hard,Nicolai Budkov Kjaer,Takuya Kumasaka,6-3 6-4,187,492,18.9,26.79,188,175,R,R,0,0
+20250721,Tampere CH,Clay,Nicolai Budkov Kjaer,Sascha Gueymard Wayenburg,7-6(5) 6-7(2) 6-2,253,249,18.89,21.97,188,188,R,R,0,0
+20250721,Tampere CH,Clay,Nicolai Budkov Kjaer,Hynek Barton,6-4 7-6(4),253,328,18.89,21.29,188,183,R,R,0,0
+20250721,Tampere CH,Clay,Nicolai Budkov Kjaer,Mathys Erhard,6-0 4-0 RET,253,262,18.89,23.73,188,188,R,R,0,0
+20250721,Tampere CH,Clay,Nicolai Budkov Kjaer,Frederico Ferreira Silva,7-5 6-4,253,251,18.89,30.34,188,178,R,L,0,0
+20250721,Tampere CH,Clay,Nicolai Budkov Kjaer,Alex Barrena,6-3 6-2,253,233,18.89,22.78,188,175,R,R,0,0
+20250714,Bastad,Clay,Sebastian Baez,Nicolai Budkov Kjaer,3-6 6-2 7-5,37,298,24.54,18.87,170,188,R,R,0,0
+20250714,Bastad,Clay,Nicolai Budkov Kjaer,Thiago Monteiro,5-7 6-3 7-6(2),298,152,18.87,31.12,188,183,R,L,0,0
+20250714,Bastad,Clay,Nicolai Budkov Kjaer,Pablo Llamas Ruiz,3-6 7-6(4) 6-3,298,571,18.87,22.75,188,188,R,R,0,0
+20250714,Bastad,Clay,Nicolai Budkov Kjaer,Thiago Seyboth Wild,6-3 6-4,298,133,18.87,25.34,188,185,R,R,0,0
+20250707,Nottingham 3 CH,Grass,Jack Pinnington Jones,Nicolai Budkov Kjaer,6-3 6-2,281,303,22.27,18.85,180,188,R,R,0,0
+20250707,Nottingham 3 CH,Grass,Nicolai Budkov Kjaer,Amit Vales,6-3 3-6 6-3,303,868,18.85,20.08,188,,R,U,0,0
+20250707,Nottingham 3 CH,Grass,Nicolai Budkov Kjaer,Lorenzo Lorusso,7-6(7) 6-4,303,1039,18.85,25.5,188,188,R,R,0,0
+20250630,Wimbledon,Grass,Adrian Mannarino,Nicolai Budkov Kjaer,6-2 6-3,123,303,37.0,18.83,180,188,L,R,0,0
+20250630,Wimbledon,Grass,Nicolai Budkov Kjaer,Yan Bai,7-6(3) 6-2,303,253,18.83,36.11,188,185,R,R,0,0
+20250616,Nottingham 2 CH,Grass,Martin Landaluce,Nicolai Budkov Kjaer,6-2 2-6 6-2,147,307,19.44,18.79,191,188,R,R,0,0
+20250526,Vicenza CH,Clay,Federico Bondioli,Nicolai Budkov Kjaer,6-3 7-5,479,319,20.03,18.73,185,188,L,R,0,0
+20250526,Vicenza CH,Clay,Nicolai Budkov Kjaer,Massimo Giunta,2-6 6-4 6-2,319,731,18.73,20.88,188,191,R,R,0,0
+20250519,Skopje CH,Clay,Corentin Denolly,Nicolai Budkov Kjaer,7-6(2) 6-1,302,291,27.95,18.71,188,188,L,R,0,0
+20250505,Prague CH,Clay,Martin Landaluce,Nicolai Budkov Kjaer,6-4 6-3,147,307,19.32,18.67,191,188,R,R,0,0
+20250505,Prague CH,Clay,Nicolai Budkov Kjaer,Calvin Hemery,6-2 6-3,307,176,18.67,30.27,188,191,R,R,0,0
+20250505,Prague CH,Clay,Nicolai Budkov Kjaer,Alejandro Moro Canas,7-5 6-1,307,197,18.67,24.41,188,183,R,R,0,0
+20250428,Mauthausen CH,Clay,Lukas Neumayer,Nicolai Budkov Kjaer,7-5 7-5,191,305,22.64,18.66,183,188,R,R,0,0
+20250414,Oeiras 4 CH,Clay,Carlos Taberner,Nicolai Budkov Kjaer,6-3 7-6(4),145,307,27.68,18.62,183,188,R,R,0,0
+20250407,Monte Carlo Masters,Clay,Bu Yunchaokete,Nicolai Budkov Kjaer,6-3 6-1,67,306,23.21,18.6,185,188,R,R,0,0
+20250324,Girona CH,Clay,Elmer Moller,Nicolai Budkov Kjaer,6-4 6-0,156,306,21.71,18.56,183,188,R,R,0,0
+20250324,Girona CH,Clay,Nicolai Budkov Kjaer,Justin Engel,6-4 3-6 7-6(5),306,353,18.56,17.48,188,,R,U,0,0
+20250317,Murcia CH,Clay,Ivan Gakhov,Nicolai Budkov Kjaer,6-4 7-6(2),318,306,28.36,18.54,191,188,L,R,0,0
+20250317,Murcia CH,Clay,Nicolai Budkov Kjaer,Javier Barranco Cosano,6-2 6-1,306,243,18.54,26.33,188,180,R,L,0,0
+20250303,Thionville CH,Hard,Liam Draxl,Nicolai Budkov Kjaer,6-4 6-7(10) 6-4,171,299,23.24,18.5,185,188,R,R,0,0
+20250217,Glasgow CH,Hard,Nicolai Budkov Kjaer,Viktor Durasovic,6-4 6-3,439,280,18.46,27.92,188,185,R,R,0,0
+20250217,Glasgow CH,Hard,Nicolai Budkov Kjaer,Max Hans Rehberg,6-3 7-6(3),439,256,18.46,21.43,188,183,R,R,0,0
+20250217,Glasgow CH,Hard,Nicolai Budkov Kjaer,Liam Draxl,6-3 1-6 6-1,439,184,18.46,23.2,188,185,R,R,0,0
+20250217,Glasgow CH,Hard,Nicolai Budkov Kjaer,Raul Brancaccio,6-4 7-6(7),439,434,18.46,27.79,188,185,R,R,0,0
+20250217,Glasgow CH,Hard,Nicolai Budkov Kjaer,Hugo Grenier,6-3 3-6 6-2,439,169,18.46,28.91,188,196,R,R,0,0
+20250210,Manama CH,Hard,Viktor Durasovic,Nicolai Budkov Kjaer,7-6(5) 6-2,295,455,27.9,18.44,185,188,R,R,0,0
+20250210,Manama CH,Hard,Nicolai Budkov Kjaer,Adrian Andreev,7-5 1-0 RET,455,228,18.44,23.75,188,175,R,R,0,0
+20250130,Davis Cup QLS R1: NOR vs ARG,Hard,Tomas Martin Etcheverry,Nicolai Budkov Kjaer,7-5 2-6 7-6(5),42,506,25.54,18.41,196,188,R,R,0,0
+20250130,Davis Cup QLS R1: NOR vs ARG,Hard,Mariano Navone,Nicolai Budkov Kjaer,4-6 6-3 6-4,49,506,23.92,18.41,178,188,R,R,0,0
+20250120,M25 Esch/Alzette,Hard,Mikael Ymer,Nicolai Budkov Kjaer,6-1 5-7 6-2,,506,26.37,18.39,183,188,R,R,0,0
+20250120,M25 Esch/Alzette,Hard,Nicolai Budkov Kjaer,Chris Rodesch,7-6(3) 7-5,506,286,18.39,23.51,188,198,R,R,0,0
+20250120,M25 Esch/Alzette,Hard,Nicolai Budkov Kjaer,Patrick Zahraj,6-3 6-3,506,463,18.39,25.51,188,188,R,R,0,0
+20250106,Nottingham CH,Hard,Dimitar Kuzmanov,Nicolai Budkov Kjaer,6-2 7-5,336,518,31.44,18.35,183,188,R,R,0,0
+20250106,Nottingham CH,Hard,Nicolai Budkov Kjaer,Blake Mott,6-3 7-6(5),518,488,18.35,28.71,188,180,R,R,0,0
+20250106,Nottingham CH,Hard,Nicolai Budkov Kjaer,Ben Jones,7-6(3) 7-6(5),518,651,18.35,26.64,188,193,R,R,0,0
+20260119,ATP Australian Open,Hard,Arthur Gea,Adolfo Daniel Vallejo,6-2 6-2,197,146,21.05,21.73,180,183,R,R,0,0
+20260119,ATP Australian Open,Hard,Arthur Gea,Roman Andres Burruchaga,6-2 6-3,197,103,21.05,23.99,180,183,R,R,0,0
+20260119,ATP Australian Open,Hard,Arthur Gea,Zdenek Kolar,6-2 6-3,197,176,21.05,29.28,180,183,R,R,0,0
+20260105,Noumea CH,Hard,Arthur Gea,Jurij Rodionov,6-3 4-6 7-5,241,195,21.01,26.64,180,191,R,L,0,0
+20260105,Noumea CH,Hard,Arthur Gea,Michael Zheng,4-6 6-1 6-4,241,182,21.01,21.94,180,188,R,R,0,0
+20260105,Noumea CH,Hard,Arthur Gea,Liam Draxl,6-3 6-2,241,132,21.01,24.08,180,185,R,R,0,0
+20260105,Noumea CH,Hard,Arthur Gea,Facundo Diaz Acosta,7-6(5) 6-3,241,210,21.01,25.06,180,183,R,L,0,0
+20260105,Noumea CH,Hard,Arthur Gea,Alex Barrena,6-4 6-0,241,186,21.01,23.24,180,175,R,R,0,0
+20251110,Lyon CH,Hard,Vit Kopriva,Arthur Gea,6-2 6-2,102,229,28.41,20.85,178,180,R,R,0,0
+20251027,Monastir CH,Hard,Petr Brunclik,Arthur Gea,7-6(1) 6-2,379,234,19.28,20.82,188,180,L,R,0,0
+20251027,Monastir CH,Hard,Arthur Gea,Remy Bertola,7-6(4) 6-1,234,243,20.82,27.16,180,175,R,R,0,0
+20251027,Monastir CH,Hard,Arthur Gea,Jan Kumstat,6-3 6-4,234,725,20.82,18.82,180,,R,R,0,0
+20251027,Monastir CH,Hard,Arthur Gea,Lorenzo Carboni,7-5 7-6(4),234,432,20.82,19.66,180,168,R,R,0,0
+20251013,Olbia CH,Hard,Edas Butvilas,Arthur Gea,6-4 3-6 6-3,300,254,21.22,20.78,191,180,R,R,0,0
+20251013,Olbia CH,Hard,Arthur Gea,Tom Paris,6-2 6-0,254,285,20.78,23.11,180,191,R,R,0,0
+20251006,M25 Monastir,Hard,Arthur Gea,Igor Kudriashov,6-2 6-0,249,918,20.76,22.03,180,,R,U,0,0
+20251006,M25 Monastir,Hard,Arthur Gea,Robin Bertrand,6-1 6-2,249,317,20.76,22.56,180,178,R,R,0,0
+20251006,M25 Monastir,Hard,Arthur Gea,Eric Vanshelboim,6-1 6-0,249,498,20.76,24.23,180,188,R,R,0,0
+20251006,M25 Monastir,Hard,Arthur Gea,Jorge Plans,6-3 6-2,249,884,20.76,23.69,180,,R,U,0,0
+20251006,M25 Monastir,Hard,Arthur Gea,Leo Deflandre,6-1 6-2,249,1485,20.76,23.65,180,,R,U,0,0
+20250929,Villena CH,Hard,Neil Oberleitner,Arthur Gea,7-6(6) 6-4,453,249,26.15,20.74,193,180,R,R,0,0
+20250908,Guangzhou Huangpu CH,Hard,Billy Harris,Arthur Gea,7-5 7-6(6),136,253,30.62,20.68,193,180,R,R,0,0
+20250908,Guangzhou Huangpu CH,Hard,Arthur Gea,Alexandr Binda,6-4 6-4,253,382,20.68,23.96,180,175,R,R,0,0
+20250901,Shanghai CH,Hard,Yasutaka Uchiyama,Arthur Gea,7-5 6-4,225,247,33.07,20.66,183,180,R,R,0,0
+20250825,Zhangjiagang CH,Hard,Jie Cui,Arthur Gea,5-7 7-6(4) 6-0,289,247,27.58,20.64,183,180,R,R,0,0
+20250811,M25 Bali,Hard,Arthur Gea,Philip Sekulic,6-1 6-2,283,602,20.61,21.93,180,191,R,R,0,0
+20250811,M25 Bali,Hard,Arthur Gea,Sidharth Rawat,6-2 6-4,283,798,20.61,32.31,180,175,R,R,0,0
+20250811,M25 Bali,Hard,Arthur Gea,Matthew Dellavedova,6-2 6-0,283,425,20.61,25.2,180,191,R,R,0,0
+20250811,M25 Bali,Hard,Arthur Gea,Kabir Hans,6-2 6-2,283,2143,20.61,23.97,180,,R,U,0,0
+20250811,M25 Bali,Hard,Arthur Gea,Max Basing,6-0 6-2,283,662,20.61,22.86,180,180,R,R,0,0
+20250804,M25 Bali,Hard,Arthur Gea,Yanki Erel,6-3 3-6 7-5,283,579,20.59,24.86,180,178,R,L,0,0
+20250804,M25 Bali,Hard,Arthur Gea,Philip Sekulic,7-6(1) 6-4,283,602,20.59,21.91,180,191,R,R,0,0
+20250804,M25 Bali,Hard,Arthur Gea,Yusuke Takahashi,6-3 7-5,283,423,20.59,27.8,180,170,R,R,0,0
+20250804,M25 Bali,Hard,Arthur Gea,Alexander Klintcharov,1-6 6-1 6-2,283,768,20.59,28.94,180,188,R,R,0,0
+20250804,M25 Bali,Hard,Arthur Gea,Jack Loutit,6-4 1-0,283,1114,20.59,21.11,180,,R,L,0,0
+20250714,San Marino CH,Clay,Harold Mayot,Arthur Gea,6-1 7-6(4),178,286,23.44,20.53,180,180,R,R,0,0
+20250707,Trieste CH,Clay,Tomas Barrios Vera,Arthur Gea,6-4 6-7(2) 6-2,108,290,27.57,20.51,191,180,R,R,0,0
+20250630,Troyes CH,Clay,Harold Mayot,Arthur Gea,6-3 0-6 6-4,184,290,23.4,20.49,180,180,R,R,0,0
+20250630,Troyes CH,Clay,Arthur Gea,Gregoire Barrere,2-6 6-0 6-1,290,369,20.49,31.37,180,183,R,R,0,0
+20250623,Milan CH,Clay,Rafael Jodar,Arthur Gea,6-0 2-6 6-3,677,295,18.77,20.47,,180,U,R,0,0
+20250623,Milan CH,Clay,Arthur Gea,Oriol Roca Batalla,6-4 1-6 6-3,295,331,20.47,32.15,180,175,R,R,0,0
+20250623,Milan CH,Clay,Arthur Gea,Diego Dedura Palomero,7-6(4) 6-1,295,355,20.47,17.28,180,178,R,L,0,0
+20250616,Royan CH,Clay,Titouan Droguet,Arthur Gea,4-6 6-1 6-3,225,291,24.0,20.45,191,180,R,R,0,0
+20250616,Royan CH,Clay,Arthur Gea,Robert Strombachs,6-7(2) 6-1 6-1,291,322,20.45,25.75,180,191,R,R,0,0
+20250609,Lyon CH,Clay,Clement Tabur,Arthur Gea,3-6 6-4 6-0,234,296,25.37,20.43,173,180,R,R,0,0
+20250609,Lyon CH,Clay,Arthur Gea,Michael Geerts,6-4 6-3,296,272,20.43,30.39,180,178,R,R,0,0
+20250602,M25 Grasse,Clay,Raphael Perot,Arthur Gea,6-4 6-4,692,309,23.92,20.41,,180,U,R,0,0
+20250602,M25 Grasse,Clay,Arthur Gea,Lucas Marionneau,6-1 6-4,309,947,20.41,18.79,180,,R,U,0,0
+20250526,Roland Garros,Clay,Titouan Droguet,Arthur Gea,7-5 4-6 6-1,234,309,23.95,20.39,191,180,R,R,0,0
+20250526,Roland Garros,Clay,Arthur Gea,Alexander Blockx,4-6 6-4 6-3,309,143,20.39,20.13,180,191,R,R,0,0
+20250513,Bordeaux CH,Clay,Bernabe Zapata Miralles,Arthur Gea,5-2 RET,330,296,28.33,20.36,183,180,R,R,0,0
+20250429,Aix-en-Provence CH,Clay,Valentin Vacherot,Arthur Gea,7-5 6-3,223,314,26.45,20.32,193,180,R,R,0,0
+20250421,M25 Santa Margherita di Pula,Clay,Max Alcala Gurri,Arthur Gea,2-6 6-3 6-3,435,314,22.61,20.3,178,180,R,R,0,0
+20250421,M25 Santa Margherita di Pula,Clay,Arthur Gea,Iannis Miletich,6-1 6-2,314,844,20.3,19.65,180,,R,U,0,0
+20250421,M25 Santa Margherita di Pula,Clay,Arthur Gea,Alessandro Spadola,6-4 6-3,314,1257,20.3,22.13,180,178,R,L,0,0
+20250414,M25 Santa Margherita di Pula,Clay,Jay Clarke,Arthur Gea,4-6 6-3 6-4,255,315,26.72,20.28,183,180,R,R,0,0
+20250414,M25 Santa Margherita di Pula,Clay,Arthur Gea,Giovanni Fonio,6-4 6-2,315,376,20.28,26.94,180,183,R,R,0,0
+20250414,M25 Santa Margherita di Pula,Clay,Arthur Gea,Andrea Picchione,6-0 7-5,315,365,20.28,26.85,180,183,R,R,0,0
+20250414,M25 Santa Margherita di Pula,Clay,Arthur Gea,Manuel Mazza,6-2 6-3,315,778,20.28,26.0,180,178,R,R,0,0
+20250414,M25 Santa Margherita di Pula,Clay,Arthur Gea,Leonardo Malgaroli,6-3 6-2,315,1132,20.28,22.69,180,,R,U,0,0
+20250407,Monza CH,Clay,Jan Choinski,Arthur Gea,4-6 6-2 6-3,201,332,28.82,20.26,196,180,R,R,0,0
+20250407,Monza CH,Clay,Arthur Gea,Dimitar Kuzmanov,7-6(5) 6-4,332,276,20.26,31.69,180,183,R,R,0,0
+20250331,Menorca CH,Clay,Vilius Gaubas,Arthur Gea,7-5 6-3,198,348,20.25,20.24,178,180,R,R,0,0
+20250331,Menorca CH,Clay,Arthur Gea,Gerard Campana Lee,6-3 4-6 6-0,348,397,20.24,20.5,180,183,R,R,0,0
+20250324,Girona CH,Clay,Timofey Skatov,Arthur Gea,6-2 7-6(6),175,305,24.17,20.22,175,180,R,R,0,0
+20250310,Hersonissos 2 CH,Hard,Dimitar Kuzmanov,Arthur Gea,6-3 6-3,376,286,31.62,20.18,183,180,R,R,0,0
+20250303,Hersonissos 1 CH,Hard,Dimitar Kuzmanov,Arthur Gea,6-3 6-2,376,286,31.6,20.16,183,180,R,R,0,0
+20250210,Marseille,Hard,Hugo Grenier,Arthur Gea,7-5 6-4,202,306,28.89,20.11,196,180,R,R,0,0
+20250210,Marseille,Hard,Arthur Gea,Yosuke Watanuki,7-6(2) 6-4,306,342,20.11,26.83,180,180,R,R,0,0
+20250210,Marseille,Hard,Arthur Gea,Henri Squire,7-5 0-0 RET,306,180,20.11,24.37,180,196,R,R,0,0
+20250203,Lille CH,Hard,Valentin Royer,Arthur Gea,7-6(2) 6-2,208,322,23.69,20.09,188,180,R,R,0,0
+20250203,Lille CH,Hard,Arthur Gea,Oleg Prihodko,6-3 7-5,322,327,20.09,27.34,180,180,R,R,0,0
+20250203,Lille CH,Hard,Arthur Gea,Tom Gentzsch,6-4 7-5,322,473,20.09,21.42,180,191,R,R,0,0
+20250120,Quimper CH,Hard,Laslo Djere,Arthur Gea,6-4 6-2,114,383,29.64,20.05,188,180,R,R,0,0
+20250113,M15 Bressuire,Hard,Arthur Gea,Mae Malige,6-2 6-2,383,643,20.03,18.8,180,,R,R,0,0
+20250113,M15 Bressuire,Hard,Arthur Gea,Micah Braswell,6-2 5-7 6-4,383,449,20.03,23.19,180,183,R,R,0,0
+20250113,M15 Bressuire,Hard,Arthur Gea,Quinn Vandecasteele,7-6(6) 6-3,383,665,20.03,22.37,180,191,R,R,0,0
+20250113,M15 Bressuire,Hard,Arthur Gea,James Story,6-2 6-3,383,787,20.03,23.86,180,,R,U,0,0
+20250113,M15 Bressuire,Hard,Arthur Gea,Alexandre Reco,6-4 6-1,383,783,20.03,25.72,180,185,R,R,0,0
+20250106,M25 Hazebrouck,Hard,Joris De Loore,Arthur Gea,7-6(2) 6-7(5) 6-3,328,383,31.71,20.01,191,180,R,R,0,0
+20250106,M25 Hazebrouck,Hard,Arthur Gea,Daniil Glinka,6-0 6-0,383,491,20.01,24.65,180,188,R,L,0,0
+20250106,M25 Hazebrouck,Hard,Arthur Gea,Pierre Delage,6-2 7-6(2),383,1058,20.01,23.96,180,198,R,R,0,0
+20250106,M25 Hazebrouck,Hard,Arthur Gea,Alexandre Reco,6-1 6-2,383,783,20.01,25.7,180,185,R,R,0,0
+20250106,M25 Hazebrouck,Hard,Arthur Gea,Mees Rottgering,0-6 7-5 6-0,383,868,20.01,17.5,180,180,R,L,0,0
+20260112,Glasgow Challenger,Hard,Tom Gentzsch,Mikhail Kukushkin,,283,293,22.35,38.05,191,183,R,R,0,0
+20260112,Glasgow Challenger,Hard,Mikhail Kukushkin,Remy Bertola,6-1 6-2,293,255,38.05,27.37,183,175,R,R,0,0
+20260112,Glasgow Challenger,Hard,Mikhail Kukushkin,Adria Soriano Barrera,6-2 7-6(5),293,355,38.05,26.61,183,191,R,R,0,0
+20260105,Nottingham CH,Hard,Johannus Monday,Mikhail Kukushkin,6-4 6-2,233,313,23.95,38.03,198,183,L,R,0,0
+20260105,Nottingham CH,Hard,Mikhail Kukushkin,Cannon Kingsley,6-2 7-5,313,537,38.03,24.67,183,188,R,R,0,0
+20260105,Nottingham CH,Hard,Mikhail Kukushkin,Christoph Negritu,6-2 6-1,313,368,38.03,31.79,183,193,R,R,0,0
+20260105,Nottingham CH,Hard,Mikhail Kukushkin,Mae Malige,6-3 6-0,313,437,38.03,19.77,183,,R,R,0,0
+20251110,Lyon CH,Hard,Tom Paris,Mikhail Kukushkin,6-3 6-2,260,317,23.19,37.88,191,183,R,R,0,0
+20251110,Lyon CH,Hard,Mikhail Kukushkin,Luca Van Assche,6-2 7-6(5),317,168,37.88,21.5,183,178,R,R,0,0
+20251110,Lyon CH,Hard,Mikhail Kukushkin,Billy Harris,7-6(2) 7-5,317,124,37.88,30.79,183,193,R,R,0,0
+20251110,Lyon CH,Hard,Mikhail Kukushkin,Marat Sharipov,6-4 6-4,317,277,37.88,23.09,183,188,R,R,0,0
+20251110,Lyon CH,Hard,Mikhail Kukushkin,Gilles Arnaud Bailly,6-1 6-3,317,201,37.88,20.14,183,180,R,R,0,0
+20251103,Helsinki CH,Hard,Stuart Parker,Mikhail Kukushkin,6-2 5-2 RET,384,314,28.26,37.86,185,183,R,R,0,0
+20251020,Brest CH,Hard,Jonas Forejtek,Mikhail Kukushkin,6-3 7-6(3),455,295,24.61,37.82,183,183,R,R,0,0
+20251013,Almaty,Hard,Mikhail Kukushkin,Taro Daniel,7-6(3) 6-1,289,177,37.8,32.71,183,191,R,R,0,0
+20250929,Mouilleron le Captif CH,Hard,Clement Chidekh,Mikhail Kukushkin,6-7(4) 6-3 6-2,232,295,24.3,37.76,180,183,R,R,0,0
+20250929,Mouilleron le Captif CH,Hard,Mikhail Kukushkin,Mees Rottgering,6-2 6-7(4) 6-2,295,695,37.76,18.23,183,180,R,L,0,0
+20250929,Mouilleron le Captif CH,Hard,Mikhail Kukushkin,Sascha Gueymard Wayenburg,7-5 6-0,295,207,37.76,22.16,183,188,R,R,0,0
+20250915,Saint-Tropez CH,Hard,Tom Paris,Mikhail Kukushkin,7-6(5) 6-4,306,259,23.04,37.72,191,183,R,R,0,0
+20250915,Saint-Tropez CH,Hard,Mikhail Kukushkin,Pierre Hugues Herbert,5-7 7-6(4) 7-5,259,143,37.72,34.5,183,188,R,R,0,0
+20250908,Rennes CH,Hard,Enzo Couacaud,Mikhail Kukushkin,7-5 6-3,543,231,30.52,37.7,183,183,R,R,0,0
+20250825,US Open,Hard,Billy Harris,Mikhail Kukushkin,6-7(5) 6-3 6-2,151,234,30.58,37.66,193,183,R,R,0,0
+20250825,US Open,Hard,Mikhail Kukushkin,Andrea Pellegrino,7-6(4) 6-3,234,141,37.66,28.42,183,185,R,R,0,0
+20250728,Porto CH,Hard,Elias Ymer,Mikhail Kukushkin,6-3 3-6 6-4,232,195,29.3,37.59,185,183,R,R,0,0
+20250728,Porto CH,Hard,Mikhail Kukushkin,Aslan Karatsev,7-6(7) 6-4,195,247,37.59,31.9,183,185,R,R,0,0
+20250714,Pozoblanco CH,Hard,Ryan Peniston,Mikhail Kukushkin,6-3 6-4,249,197,29.68,37.55,180,183,L,R,0,0
+20250630,Wimbledon,Grass,August Holmgren,Mikhail Kukushkin,4-6 7-6(4) 6-2,192,189,27.19,37.51,188,183,R,R,0,0
+20250630,Wimbledon,Grass,Mikhail Kukushkin,Thiago Seyboth Wild,4-6 6-4 6-3,189,129,37.51,25.31,183,185,R,R,0,0
+20250616,Nottingham 2 CH,Grass,Chris Rodesch,Mikhail Kukushkin,7-6(5) 3-6 6-3,166,191,23.91,37.47,198,183,R,R,0,0
+20250609,Ilkley CH,Grass,Jack Pinnington Jones,Mikhail Kukushkin,6-2 7-5,340,182,22.2,37.45,180,183,R,R,0,0
+20250526,Roland Garros,Clay,Geoffrey Blancaneaux,Mikhail Kukushkin,6-1 6-1,273,163,26.8,37.42,180,183,R,R,0,0
+20250513,Bordeaux CH,Clay,Brandon Nakashima,Mikhail Kukushkin,6-3 7-5,29,165,23.78,37.38,188,183,R,R,0,0
+20250513,Bordeaux CH,Clay,Mikhail Kukushkin,Pavel Kotov,7-6(6) 6-4,165,136,37.38,26.48,183,191,R,R,0,0
+20250505,Prague CH,Clay,Lukas Klein,Mikhail Kukushkin,W/O,210,165,27.12,37.36,193,183,R,R,0,0
+20250505,Prague CH,Clay,Mikhail Kukushkin,Maxim Mrva,6-0 5-7 6-4,165,619,37.36,17.76,183,,R,U,0,0
+20250414,Oeiras 4 CH,Clay,Elmer Moller,Mikhail Kukushkin,W/O,148,167,21.77,37.3,183,183,R,R,0,0
+20250414,Oeiras 4 CH,Clay,Mikhail Kukushkin,Matteo Gigante,6-4 6-4,167,200,37.3,23.27,183,180,R,L,0,0
+20250319,Miami Masters,Hard,Adam Walton,Mikhail Kukushkin,6-1 6-4,89,160,25.92,37.23,183,183,R,R,0,0
+20250311,Phoenix CH,Hard,Kei Nishikori,Mikhail Kukushkin,6-3 2-1 RET,76,166,35.2,37.21,178,183,R,R,0,0
+20250311,Phoenix CH,Hard,Mikhail Kukushkin,Yasutaka Uchiyama,6-4 6-2,166,160,37.21,32.6,183,183,R,R,0,0
+20250311,Phoenix CH,Hard,Mikhail Kukushkin,Bor Artnak,4-6 6-4 6-2,166,458,37.21,20.77,183,193,R,R,0,0
+20250311,Phoenix CH,Hard,Mikhail Kukushkin,Mitchell Krueger,5-7 7-6(2) 6-0,166,140,37.21,31.16,183,188,R,R,0,0
+20250305,Indian Wells Masters,Hard,Giulio Zeppieri,Mikhail Kukushkin,7-6(6) 6-2,394,166,23.24,37.19,183,183,L,R,0,0
+20250305,Indian Wells Masters,Hard,Mikhail Kukushkin,Theo Papamalamis,6-4 6-7(4) 7-5,166,602,37.19,19.15,183,183,R,R,0,0
+20250224,Dubai,Hard,Otto Virtanen,Mikhail Kukushkin,6-1 7-5,111,139,23.68,37.17,193,183,R,R,0,0
+20250217,Doha,Hard,Luca Nardi,Mikhail Kukushkin,6-4 6-4,85,143,21.54,37.15,185,183,R,R,0,0
+20250217,Doha,Hard,Mikhail Kukushkin,Daniel Merida Aguilar,6-2 6-4,143,285,37.15,20.39,183,188,R,R,0,0
+20250210,Manama CH,Hard,Andrea Vavassori,Mikhail Kukushkin,2-6 6-3 6-2,240,110,29.77,37.13,193,183,R,R,0,0
+20250210,Manama CH,Hard,Mikhail Kukushkin,Evgeny Karlovskiy,6-2 6-3,110,427,37.13,30.51,183,191,R,R,0,0
+20250203,Rotterdam,Hard,Harold Mayot,Mikhail Kukushkin,6-1 7-6(4),138,112,23.0,37.11,180,183,R,R,0,0
+20250203,Rotterdam,Hard,Mikhail Kukushkin,Jelle Sels,6-4 6-1,112,330,37.11,29.49,183,188,R,R,0,0
+20250127,Montpellier,Hard,Nikoloz Basilashvili,Mikhail Kukushkin,6-3 3-6 5-0 RET,178,112,32.93,37.09,185,183,R,R,0,0
+20250120,Quimper CH,Hard,Titouan Droguet,Mikhail Kukushkin,6-3 6-3,183,110,23.6,37.07,191,183,R,R,0,0
+20250120,Quimper CH,Hard,Mikhail Kukushkin,Jozef Kovalik,6-7(3) 6-3 6-4,110,129,37.07,32.21,183,183,R,R,0,0
+20250113,Australian Open,Hard,Mark Lajal,Mikhail Kukushkin,6-0 6-2,235,110,21.68,37.05,191,183,R,R,0,0

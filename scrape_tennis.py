@@ -8,8 +8,8 @@ from datetime import datetime
 
 # CONFIGURATION
 OUTPUT_FILE = "atp_matches_2025_scraped.csv"
-PLAYERS_LIMIT = 120 # Cover Top 100 + margin
-DELAY = 2 # Moderate delay
+PLAYERS_LIMIT = 250 # Cover Top 250 to catch qualifiers
+DELAY = 0.5 # Moderate delay
 
 def get_top_players():
     print("Fetching top players from Elo ratings...")
