@@ -92,7 +92,7 @@ st.sidebar.markdown("### ⚙️ PARAMETERS")
 
 # Caricamento Modello (Cached - No changes to logic)
 @st.cache_resource
-def get_model():
+def get_model(version=2):
     with st.spinner('🚀 Booting Neural Engine...'):
         return tennis_bot.build_model()
 
@@ -122,7 +122,7 @@ country_code = weather_utils.TOURNEY_COUNTRY_MAP.get(tourney_name, 'UNK')
 st.sidebar.caption(f"📍 Location: {country_code}")
 
 try:
-    model, stats, h2h, elo, elo_surf, dates, pressure, players = get_model()
+    model, stats, h2h, elo, elo_surf, dates, pressure, players = get_model(version=2)
     st.sidebar.success("✅ System Ready")
 except Exception as e:
     st.error(f"❌ System Error: {e}")
