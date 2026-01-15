@@ -8,6 +8,9 @@ import os
 import requests
 from io import StringIO
 import time
+import pickle
+
+MODEL_FILE = "tennis_bot_model_v1.pkl"
 
 # CONFIGURAZIONE
 START_YEAR = 2016
@@ -133,6 +136,8 @@ def load_data():
             
     return full_historical_df
 
+import weather_utils
+
 # --- 2. ELABORAZIONE DATI (FEATURE ENGINEERING) ---
 
 # Mappa Tornei -> Nazione (Global)
@@ -167,6 +172,23 @@ def process_data(df, players_last_stats=None, predict_mode=False, tourney_countr
         tourney_country_map = {}
 
     start_time = time.time()
+    
+    # --- PREFETCH WEATHER ---
+    print("Prefetching weather data (Bulk Mode)...")
+    unique_tourneys = df['tourney_name'].unique()
+    # Identifica locations uniche per evitare chiamate duplicate anche se torneo diverso ma stesso luogo (es. Montreal/Toronto se avessi map precisa, ma qui uso lat/lon)
+    prefetched_coords = set()
+    
+    for t_name in unique_tourneys:
+        meta = weather_utils.get_tournament_meta(t_name)
+        if meta.get('lat') is not None:
+            coord_key = (meta['lat'], meta['lon'])
+            if coord_key not in prefetched_coords:
+                 # Fetch 2016-2026 (Hardcoded range or infer from df)
+                 weather_utils.weather_client.prefetch_location(meta['lat'], meta['lon'], 2016, 2026)
+                 prefetched_coords.add(coord_key)
+                 time.sleep(1.0) # Avoid 429 Rate Limit
+    print("Weather prefetch complete.")
     
     # 1. Dizionari di Storia (Tracking)
     history = {}        # {player_id: {matches: [], surface_wins: {}, ...}}
@@ -337,6 +359,36 @@ def process_data(df, players_last_stats=None, predict_mode=False, tourney_countr
         hand2 = str(row.get('loser_hand', 'R'))
         is_lefty_matchup = 1 if (hand1 == 'L' and hand2 == 'R') or (hand1 == 'R' and hand2 == 'L') else 0
 
+        # 12. Environmental Conditions (NEW)
+        # Get Tournament Meta
+        t_meta = weather_utils.get_tournament_meta(tourney_name)
+        is_indoor = 1 if t_meta['type'] == 'Indoor' else 0
+        
+        # Get Weather
+        # Use date_curr. If it's NaT or invalid, default to today or skip? date_curr should be valid as we sorted by it.
+        # Fallback to tourney_date if date_curr is missing logic (though line 182 handles it)
+        weather_date = date_curr if pd.notna(date_curr) else row['tourney_date']
+        # Se è un DataFrame timestamp, converti in date object
+        if isinstance(weather_date, pd.Timestamp):
+             weather_date = weather_date.to_pydatetime()
+        
+        # Optimize: if invalid date, use default
+        weather_info = {'temp': 20.0, 'humidity': 50.0}
+        try:
+             weather_info = weather_utils.weather_client.get_weather(t_meta['lat'], t_meta['lon'], weather_date)
+        except Exception as e:
+             # logging.error(f"Weather fetch failed: {e}")
+             pass
+             
+        temp = weather_info['temp']
+        humidity = weather_info['humidity']
+        
+        # 13. Heat Performance (Experimental)
+        # Se temp > 30, vedo se i giocatori vincono spesso al caldo?
+        # Non ho ancora history 'heat_wins', per ora lascio feature base.
+        
+
+
         # --- PREPARE ROW FOR TRAINING ---
         # Features: Diff (P1 - P2) for symmetric training
         
@@ -357,6 +409,9 @@ def process_data(df, players_last_stats=None, predict_mode=False, tourney_countr
             'Diff_Decider': decider_win1 - decider_win2,
             'Diff_Home': is_home1 - is_home2, 
             'Is_Lefty': is_lefty_matchup,                      # NEW
+            'Temperature': temp,                               # NEW
+            'Humidity': humidity,                              # NEW
+            'Is_Indoor': is_indoor,                            # NEW
             'Target': 1, # P1 (Winner) won
             'Date': row['Date'],
             'P1_ID': p1_id,
@@ -435,7 +490,7 @@ def process_data(df, players_last_stats=None, predict_mode=False, tourney_countr
     print(f"Dataset finale pronto: {len(processed_rows)} match.")
     return pd.DataFrame(processed_rows), history, surface_history, quality_history, serve_history, h2h_stats
 
-def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_surface, last_match_date, pressure_stats, last_rankings, p1_name, p2_name, match_surface='Hard', tourney_country_code='UNK'):
+def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_surface, last_match_date, pressure_stats, last_rankings, p1_name, p2_name, match_surface='Hard', tourney_country_code='UNK', tourney_name='Australian Open', match_date=None):
     """Versione che ritorna dati grezzi per la GUI"""
     
     p1_info = last_rankings.get(p1_name.lower())
@@ -497,6 +552,22 @@ def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_sur
     hand2 = p2_info['hand']
     is_lefty = 1 if (hand1 == 'L' and hand2 == 'R') or (hand1 == 'R' and hand2 == 'L') else 0
     
+    # Environmental
+    t_meta = weather_utils.get_tournament_meta(tourney_name)
+    is_indoor = 1 if t_meta['type'] == 'Indoor' else 0
+    
+    if match_date is None:
+        match_date = pd.Timestamp.now().date() + pd.Timedelta(days=1)
+        
+    weather_info = {'temp': 20.0, 'humidity': 50.0}
+    try:
+         weather_info = weather_utils.weather_client.get_weather(t_meta['lat'], t_meta['lon'], match_date)
+    except:
+         pass
+         
+    temp = weather_info['temp']
+    hum = weather_info['humidity']
+
     features = pd.DataFrame([{
         'Diff_Rank': np.log(p2_info['rank'] + 1) - np.log(p1_info['rank'] + 1),
         'Diff_Elo': p1_elo - p2_elo,
@@ -513,7 +584,10 @@ def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_sur
         'Diff_TB_Win': p1_tb - p2_tb,
         'Diff_Decider': p1_dec - p2_dec,
         'Diff_Home': is_home1 - is_home2,
-        'Is_Lefty': is_lefty
+        'Is_Lefty': is_lefty,
+        'Temperature': temp,
+        'Humidity': hum,
+        'Is_Indoor': is_indoor
     }])
     
     # 4. Predizione
@@ -525,6 +599,7 @@ def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_sur
         'prob_p1': prob,
         'stats_p1': {'rank': p1_info['rank'], 'elo': p1_elo, 'elo_surface': p1_elo_s, 'form': p1_form, 'bp_save': p1_bp, 'decider': p1_dec},
         'stats_p2': {'rank': p2_info['rank'], 'elo': p2_elo, 'elo_surface': p2_elo_s, 'form': p2_form, 'bp_save': p2_bp, 'decider': p2_dec},
+        'weather': {'temp': temp, 'humidity': hum, 'is_indoor': is_indoor},
         'h2h': "N/A" # Simplified
     }
 
@@ -537,8 +612,24 @@ def predict_2026_match(model, player_stats, h2h_stats, elo_ratings, elo_surface,
         print(f"Vincitore Previsto: {winner} ({conf*100:.1f}%)")
         print(f"Dettagli: Rank {data['stats_p1']['rank']}vs{data['stats_p2']['rank']}, Elo {int(data['stats_p1']['elo'])}vs{int(data['stats_p2']['elo'])}")
 
-def build_model():
+def build_model(force_retrain=False):
     """funzione principale per allenare il modello e ritornare gli oggetti necessari alla GUI"""
+    
+    # Check Persistence
+    if not force_retrain and os.path.exists(MODEL_FILE):
+        print(f"Loading model from {MODEL_FILE}...")
+        try:
+            with open(MODEL_FILE, 'rb') as f:
+                data = pickle.load(f)
+            # Unpack
+            # model, history, h2h_stats, surface_history, quality_history, serve_history, last_known
+            # Wait, build_model below returns specific set.
+            # (model, history, h2h_stats, {}, {}, {}, {}, last_known)
+            # I should save exactly what I return.
+            return data
+        except Exception as e:
+            print(f"Error loading model: {e}. Retraining.")
+
     # 1. Caricamento
     df_raw = load_data()
     print(f"Totale match caricati: {len(df_raw)}")
@@ -606,7 +697,8 @@ def build_model():
         'Diff_Rank', 'Diff_Elo', 'Diff_Elo_Surface', 'Diff_Form', 
         'Diff_Form_Surface', 'Diff_Quality', 'Diff_Serve_Rating',
         'Diff_Big_Server', 'Diff_Height', 'Diff_Age', 'Diff_Days',
-        'Diff_BP_Save', 'Diff_TB_Win', 'Diff_Decider', 'Diff_Home', 'Is_Lefty'
+        'Diff_BP_Save', 'Diff_TB_Win', 'Diff_Decider', 'Diff_Home', 'Is_Lefty',
+        'Temperature', 'Humidity', 'Is_Indoor'
     ]
     
     X_train = train[features_cols]
@@ -641,7 +733,14 @@ def build_model():
     
     # Return compatible signature for tennis_app.py
     # model, stats, h2h, elo, elo_surf, dates, pressure, players
-    return model, history, h2h_stats, {}, {}, {}, {}, last_known
+    ret_obj = (model, history, h2h_stats, {}, {}, {}, {}, last_known)
+    
+    # Save
+    print(f"Saving model to {MODEL_FILE}...")
+    with open(MODEL_FILE, 'wb') as f:
+        pickle.dump(ret_obj, f)
+        
+    return ret_obj
 
 if __name__ == "__main__":
     model, stats, h2h, elo, elo_s, date, press, last = build_model()

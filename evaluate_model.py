@@ -1,6 +1,7 @@
 import tennis_bot
 import pandas as pd
 import re
+from datetime import datetime
 
 # Raw data from Flashscore (Jan 14-15, 2026)
 raw_matches_text = """
@@ -193,9 +194,17 @@ def main():
         p1 = m['p1']
         p2 = m['p2']
         
+        # Parse date
+        try:
+             dt_obj = datetime.strptime(m['date'], "%d.%m.%Y").date()
+        except:
+             dt_obj = None
+
         # Predict
         prediction_data = tennis_bot.predict_2026_match_data(
-            model, stats, h2h, elo, elo_s, date, press, last_known, p1, p2, match_surface='Hard', tourney_country_code='AUS'
+            model, stats, h2h, elo, elo_s, date, press, last_known, p1, p2, 
+            match_surface='Hard', tourney_country_code='AUS', 
+            tourney_name='Australian Open', match_date=dt_obj
         )
         
         if not prediction_data:

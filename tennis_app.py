@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import tennis_bot
+import weather_utils
+from datetime import datetime
 
 # --- CUSTOM CSS & STYLING ---
 def local_css():
@@ -101,10 +103,23 @@ st.sidebar.subheader("🏟️ Match Setup")
 surface = st.sidebar.selectbox("Surface", ["Hard", "Clay", "Grass", "Carpet"], index=0)
 best_of = st.sidebar.radio("Format", ["Best of 3", "Best of 5"], index=1)
 best_of_val = 3 if best_of == "Best of 3" else 5
-tourney_country = st.sidebar.selectbox("🏟️ Court Country", 
-                                       ["Neutral", "AUS", "FRA", "GBR", "USA", "ITA", "ESP", "GER", "CHN", "CAN"], 
-                                       index=0)
-country_code = 'UNK' if tourney_country == "Neutral" else tourney_country
+
+# Tournament & Date
+tourney_list = list(weather_utils.TOURNAMENT_META.keys())
+tourney_name = st.sidebar.selectbox("🏟️ Tournament", tourney_list, index=0)
+match_date = st.sidebar.date_input("📅 Match Date", datetime.today())
+
+# Country Code map (Partial map for display/backend compatibility if needed)
+# Backend uses tourney_name primarily for weather now, but Country Code for Home Adv.
+# We can infer or keep UNK default. Let's try to map generic.
+tourney_country = "UNK" # Simplified, backend handles Home Adv logic via name mapping internally?
+# Actually tennis_bot.predict_2026_match_data takes tourney_country_code.
+# Let's try to use the dictionary in bot if possible or just pass UNK if user doesn't specify.
+# To keep UI simple, I won't ask for Country Code explicitly if I have Tournament Name.
+# But for Home Advantage I need it.
+# I will infer it from tennis_bot.TOURNEY_COUNTRY_MAP if possible.
+country_code = tennis_bot.TOURNEY_COUNTRY_MAP.get(tourney_name, 'UNK')
+st.sidebar.caption(f"📍 Location: {country_code}")
 
 try:
     model, stats, h2h, elo, elo_surf, dates, pressure, players = get_model()
@@ -142,7 +157,8 @@ with col_btn:
 
 if predict_clicked:
     match_data = tennis_bot.predict_2026_match_data(
-        model, stats, h2h, elo, elo_surf, dates, pressure, players, p1_name, p2_name, surface, country_code
+        model, stats, h2h, elo, elo_surf, dates, pressure, players, p1_name, p2_name, surface, country_code,
+        tourney_name=tourney_name, match_date=match_date
     )
     st.session_state['match_data'] = match_data
 
@@ -173,6 +189,17 @@ if 'match_data' in st.session_state and st.session_state['match_data']:
     st.progress(float(prob_p1), text=f"WIN PROBABILITY DISTRIBUTION")
     st.caption(f"⬅️ {p1_name} ({prob_p1*100:.1f}%) | {p2_name} ({prob_p2*100:.1f}%) ➡️")
         
+    # Weather Info
+    w = match_data.get('weather', {})
+    if w:
+        st.markdown("### 🌤️ FORECAST CONDITIONS")
+        w_col1, w_col2, w_col3 = st.columns(3)
+        w_col1.metric("Temperature", f"{w.get('temp', 20):.1f}°C")
+        w_col2.metric("Humidity", f"{w.get('humidity', 50):.0f}%")
+        env_type = "Indoor 🏟️" if w.get('is_indoor', 0) == 1 else "Outdoor ☀️"
+        w_col3.metric("Court Type", env_type)
+        st.markdown("---")
+
     # Stats Comparison with Progress Bars inside Dataframe? Streamlit dataframe is interactive.
     # Let's clean up the table visual.
     st.markdown(f"### 📊 HEAD-TO-HEAD STATISTICS ({surface})")
