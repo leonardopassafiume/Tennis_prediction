@@ -505,10 +505,10 @@ def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_sur
     p2_form, p2_sform, p2_qual, p2_serv, p2_bp, p2_dec, p2_tb = get_stats(p2_info)
     
     # Elo
-    p1_elo = p1_info['elo']
-    p2_elo = p2_info['elo']
-    p1_elo_s = p1_info['elo_surface'].get(match_surface, 1500)
-    p2_elo_s = p2_info['elo_surface'].get(match_surface, 1500)
+    p1_elo = p1_info.get('elo', 1500)
+    p2_elo = p2_info.get('elo', 1500)
+    p1_elo_s = p1_info.get('elo_surface', {}).get(match_surface, 1500)
+    p2_elo_s = p2_info.get('elo_surface', {}).get(match_surface, 1500)
     
     # Days (Assume 3-4 days if tournament ongoing, simplified)
     p1_days = 4
@@ -522,11 +522,11 @@ def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_sur
     is_home2 = 1 if p2_ioc == tourney_country_code and tourney_country_code != 'UNK' else 0
     
     # Big Server & Lefty
-    big_server1 = 1 if p1_info['ht'] > 195 else 0
-    big_server2 = 1 if p2_info['ht'] > 195 else 0
+    big_server1 = 1 if p1_info.get('ht', 185) > 195 else 0
+    big_server2 = 1 if p2_info.get('ht', 185) > 195 else 0
     
-    hand1 = p1_info['hand']
-    hand2 = p2_info['hand']
+    hand1 = p1_info.get('hand', 'R')
+    hand2 = p2_info.get('hand', 'R')
     is_lefty = 1 if (hand1 == 'L' and hand2 == 'R') or (hand1 == 'R' and hand2 == 'L') else 0
     
     # Environmental
@@ -546,7 +546,7 @@ def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_sur
     hum = weather_info['humidity']
 
     features = pd.DataFrame([{
-        'Diff_Rank': np.log(p2_info['rank'] + 1) - np.log(p1_info['rank'] + 1),
+        'Diff_Rank': np.log(p2_info.get('rank', 100) + 1) - np.log(p1_info.get('rank', 100) + 1),
         'Diff_Elo': p1_elo - p2_elo,
         'Diff_Elo_Surface': p1_elo_s - p2_elo_s,
         'Diff_Form': p1_form - p2_form,
@@ -554,8 +554,8 @@ def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_sur
         'Diff_Quality': p1_qual - p2_qual,
         'Diff_Serve_Rating': p1_serv - p2_serv,
         'Diff_Big_Server': big_server1 - big_server2,
-        'Diff_Height': p1_info['ht'] - p2_info['ht'],
-        'Diff_Age': p1_info['age'] - p2_info['age'],
+        'Diff_Height': p1_info.get('ht', 185) - p2_info.get('ht', 185),
+        'Diff_Age': p1_info.get('age', 25) - p2_info.get('age', 25),
         'Diff_Days': 0, 
         'Diff_BP_Save': p1_bp - p2_bp,
         'Diff_TB_Win': p1_tb - p2_tb,
@@ -574,8 +574,9 @@ def predict_2026_match_data(model, player_stats, h2h_stats, elo_ratings, elo_sur
         'p1_name': p1_info['name'],
         'p2_name': p2_info['name'],
         'prob_p1': prob,
-        'stats_p1': {'rank': p1_info['rank'], 'elo': p1_elo, 'elo_surface': p1_elo_s, 'form': p1_form, 'bp_save': p1_bp, 'decider': p1_dec},
-        'stats_p2': {'rank': p2_info['rank'], 'elo': p2_elo, 'elo_surface': p2_elo_s, 'form': p2_form, 'bp_save': p2_bp, 'decider': p2_dec},
+        'prob_p1': prob,
+        'stats_p1': {'rank': p1_info.get('rank', 100), 'elo': p1_elo, 'elo_surface': p1_elo_s, 'form': p1_form, 'bp_save': p1_bp, 'decider': p1_dec},
+        'stats_p2': {'rank': p2_info.get('rank', 100), 'elo': p2_elo, 'elo_surface': p2_elo_s, 'form': p2_form, 'bp_save': p2_bp, 'decider': p2_dec},
         'weather': {'temp': temp, 'humidity': hum, 'is_indoor': is_indoor},
         'h2h': "N/A" # Simplified
     }
